@@ -128,7 +128,7 @@ return [
 
     'cookie' => env(
         'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+        Str::slug(env('APP_NAME', 'laravel'), '_') . '_session'
     ),
 
     /*
@@ -198,4 +198,16 @@ return [
 
     'same_site' => 'lax',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Previous Input Protection
+    |--------------------------------------------------------------------------
+    |
+    | When using the "file" session driver, you may specify a high number of minutes
+    | for which the old input should be considered valid. This will allow you to
+    | re-use the old input indefinitely without re-uploading the file on each form.
+    |
+    */
+
+    // 'old_input' => 'file',
 ];

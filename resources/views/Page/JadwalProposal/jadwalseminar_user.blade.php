@@ -46,31 +46,28 @@
 
         </head>
         @include('layout.sidebar')   
-<nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-</nav>
+
+<div class="h-screen bg-gray-100 sm:ml-64">
     
-<div class="sm:ml-64 rounded-[40px]">
-    <!-- <div class="flex items-center justify-center h-48 mb-4 rounded-[2px] bg-green-800 dark:bg-gray-800">
-    </div> -->
-    <div class="bg-green-800 h-40 pr-20 pt-7 w-full">
+    <div class="w-full h-40 pr-20 bg-green-800 pt-7">
     @include('layout.profile')
 
-    <div class="-mt-11 ml-8 lg:p-2 border-b-2 rounded-lg bg-yellow-300 border-gray-300 shadow-lg h-16 w-auto ">
-        <h1 class="p-3 font-sans text-lg text-black font-bold">JADWAL UJIAN SKRIPSI</h1>
+    <div class="w-auto h-16 ml-8 bg-yellow-300 border-b-2 border-gray-300 rounded-lg shadow-lg -mt-11 lg:p-2 ">
+        <h1 class="p-3 font-sans text-lg font-bold text-black">JADWAL SEMINAR PROPOSAL</h1>
     </div>
 
 <!-- DATA TABEL -->
 <div class="container p-10 pb-8 md:px-8 lg:px-11">
-                    <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
-                        <div class="w-full flex">
+                    <div class="relative overflow-x-auto bg-white">
+                        <div class="flex w-full">
                             <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
 								<div class="flex justify-between  mb-4 mt-[0px]">
-									<div></div>
-									<!--  -->
+									
 								</div>
-								<div class="relative overflow-x-auto mb-3">
+
+                            	<div class="relative mb-3 overflow-x-auto border rounded-md shadow-lg shadow-gray-400">
 									<table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
-										<thead class="text-sm text-gray-700 bg-gray-300 text-center dark:bg-gray-700 dark:text-gray-400">
+										<thead class="text-sm text-center text-gray-700 bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
 											<tr>
 												<th scope="col" class="px-4 py-4">
 													No
@@ -79,7 +76,7 @@
 													Nama Mahasiswa
 												</th>
 												<th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
-													Judul Skripsi
+													Judul Proposal
 												</th>
 												<th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
 													Tanggal Acc Pembimbing 1 & 2
@@ -87,16 +84,13 @@
 												<th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
 													Nama Pembimbing 1 & 2
 												</th>
-                                                <th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
-													Nama Penguji 1 & 2
-												</th>
 												<th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
 													Aksi
 												</th>
 											</tr>
 										</thead>
 										<tbody>
-												<tr class="bg-white border-b text-black text-left dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+												<tr class="text-left text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 													<th scope="row" class="px-3 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     1
 													</th>
@@ -110,14 +104,10 @@
 													<td class="px-3 py-2 font-medium">
 													    01/01/2023 & 03/01/2023 
 													</td>
-                                                    <td class="px-3 py-2 font-medium">
-													    Nirsal, S.Kom., M.Pd. & Supriadi, S.Ag., M.Pd. 
-													</td>
 													<td class="px-3 py-2 font-medium">
-                                                        Vicky Bin Djusmin , S.Kom., M.Kom. & Ulvah, S.Kom., M.M.
+                                                        Nirsal, S.Kom., M.Pd. & Supriadi, S.Ag., M.Pd.
 													</td>
-                                                    
-					                                <td class = "px-3 py-2 font-medium text-right border-slate-200 relative flex items-center justify-center">
+					                                <td class = "relative flex items-center justify-center px-3 py-2 font-medium text-right border-slate-200">
                                                     <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-[3px] text-sm 
                                                     px-2 py-2 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800">Verifikasi</button>
 
@@ -130,7 +120,7 @@
 								</div>
                
                                 <br>
-                                <div class = "flex justify-end items-center">
+                                <div class = "flex items-center justify-end">
                                 <nav aria-label="Page navigation example">
                                 <ul class="inline-flex -space-x-px">
                                     <li>

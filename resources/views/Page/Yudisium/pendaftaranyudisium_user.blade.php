@@ -46,11 +46,9 @@
 
         </head>
         @include('layout.sidebar')   
-<nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700"></nav>
-    
-<div class="sm:ml-64 rounded-[40px]">
-    <!-- <div class="flex items-center justify-center h-48 mb-4 rounded-[2px] bg-green-800 dark:bg-gray-800">
-    </div> -->
+   
+<div class="sm:ml-64 h-screen">
+  
     <div class="bg-green-800 h-40 pr-20 pt-7 w-full">
     @include('layout.profile')
 
@@ -59,47 +57,46 @@
     </div>
 
 {{-- FORM --}}
-                                <!-- <form action="/createpinjam" method="POST">
-                                   
-                                </form> -->
+                               
                                 <div class="border p-5 shadow-xl bg-gray-50 mx-28 my-12 rounded-md grid grid-cols-2 gap-0 md:grid md:grid-cols-3 md:gap-0">
                                     <div class="col-span-2"</div>
                                         <div>
-                                            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Mahasiswa</label>
-                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <label for="small-input" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Nama Mahasiswa</label>
+                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nama">
                                         </div>
                                         <br>
                                         <div class="mr-">
-                                            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIM</label>
-                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <label for="small-input" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">NIM</label>
+                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nim">
                                         </div>
                                         <br>
                                         <div class="mr-">
-                                            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Judul Proposal</label>
-                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <label for="small-input" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Judul Proposal</label>
+                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Judul">
                                         </div>
                                         <br>
                                         <div class="mr-">
-                                            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Pembimbing 1</label>
-                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <label for="small-input" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Nama Pembimbing 1</label>
+                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pembimbing 1">
                                         </div>
                                         <br>
                                         <div class="mr-">
-                                            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Pembimbing 2</label>
-                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <label for="small-input" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Nama Pembimbing 2</label>
+                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pembimbing 2">
                                         </div>
                                         <br>
                                         <div class="mr-">
-                                            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Penguji 1</label>
-                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <label for="small-input" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Nama Penguji 1</label>
+                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Penguji 1">
                                         </div>
                                         <br>
                                         <div class="mr-">
-                                            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Penguji 2</label>
-                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <label for="small-input" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Nama Penguji 2</label>
+                                            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Penguji 2">
                                         </div>
                                         <br>
-                                        <div>
+                                        
+                                        <div class="flex justify-end">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 
                                             font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 my-5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit
                                         </button>

@@ -48,9 +48,8 @@
 
         </head>
         @include('layout.sidebar')   
-<nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700"></nav>
-    
-<div class="sm:mx-64  rounded-[40px] w-[1262px]">
+
+<div class="sm:ml-64  bg-gray-100 h-full">
     <!-- <div class="flex items-center justify-center h-48 mb-4 rounded-[2px] bg-green-800 dark:bg-gray-800">
     </div> -->
     <div class="bg-green-800 h-52 pr-20 pt-7 w-full ">
@@ -71,13 +70,47 @@
 </div>
 
     <div class="-mt-11 ml-8 lg:p-2 border-b-2 rounded-lg bg-yellow-300 border-gray-300 shadow-lg h-16 w-auto ">
-        <h1 class="p-3 font-sans text-lg text-black font-bold">PERSYARATAN YUDISIUM</h1>
+        <h1 class="p-3 font-sans text-lg text-black font-bold">PERSYARATAN UJIAN SKRIPSI</h1>
     </div>
-<div class="border p-10 shadow-xl bg-gray-50 mx-28 my-12 rounded-md grid grid-cols-2 gap-0 md:grid md:grid-cols-3 md:gap-0">
-    <div class="col-span-2"</div>
+    <div class="border p-10 shadow-xl shadow-gray-400 h-full bg-white mx-28 my-12 rounded-md grid grid-cols-2 gap-0 md:grid md:grid-cols-3 md:gap-0">
+        <div class="col-span-2"</div>
+        <div class="py-3">
+            <p class="text-lg"> Hasil cetak/print pengisian formulir pendaftaran ujian skripsi</p>
+            <input type="file" class="border border-gray-500 w-full rounded">
+        </div>
 
-    <div class="py-5">
-            <p class="text-lg"> Biodata Power Point</p>
+        <div class="py-3">
+            <p class="text-lg"> Hasil cetak skripsi yaang telah acc uji similarity (4 rangkap)</p>
+            <input type="file" class="border border-gray-500 w-full rounded">
+        </div>
+
+        <div class="py-3">
+            <p class="text-lg"> Hasil cetak bukti Acc skripsi dari kedua pembimbing</p>
+            <input type="file" class="border border-gray-500 w-full rounded">
+        </div>
+
+        <div class="py-3">
+            <p class="text-lg"> Surat keterangan persetujuan ujian skripsi dari ketua prodi</p>
+            <input type="file" class="border border-gray-500 w-full rounded">
+        </div>
+
+        <div class="py-3">
+            <p class="text-lg"> Bukti lembar pengesahan seminar proposal yang telah disetujui oleh kedua penguji dan ketua prodi</p>
+            <input type="file" class="border border-gray-500 w-full rounded">
+        </div>
+
+        <div class="py-3">
+            <p class="text-lg"> Hasil cetak/print KRS semester berjalan dan telah ditanda tangani oleh ketua prodi </p>
+            <input type="file" class="border border-gray-500 w-full rounded">
+        </div>
+
+         <div class="py-3">
+            <p class="text-lg"> Fotocopy KTM</p>
+            <input type="file" class="border border-gray-500 w-full rounded">
+        </div>
+
+         <div class="py-3">
+            <p class="text-lg"> Surat keterangan lunas SPP</p>
             <input type="file" class="border border-gray-500 w-full rounded">
         </div>
    

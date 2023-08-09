@@ -52,11 +52,11 @@
 <div class="sm:ml-64 rounded-[40px]">
     <!-- <div class="flex items-center justify-center h-48 mb-4 rounded-[2px] bg-green-800 dark:bg-gray-800">
     </div> -->
-<div class="bg-green-800 h-40 pr-20 pt-7 w-full">
+    <div class="bg-green-800 h-40 pr-20 pt-7 w-full">
     @include('layout.profile')
 
     <div class="-mt-11 ml-8 lg:p-2 border-b-2 rounded-lg bg-yellow-300 border-gray-300 shadow-lg h-16 w-auto ">
-        <h1 class="p-3 font-sans text-lg text-black font-bold">PENDAFTARAN YUDISIUM</h1>
+        <h1 class="p-3 font-sans text-lg text-black font-bold">PERSYARATAN SEMINAR PROPOSAL</h1>
     </div>
 
 <!-- DATA TABEL -->
@@ -80,16 +80,17 @@
 										</button>
 									</form>
 								</div>
+
                                 <div>
-                                    <button type="button" class="text-white flex item-center  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-[3px] text-base 
-                                            px-2 py-1.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"><p class="px-2"> Tambah data</p>
+                                <button type="button" class="text-white flex item-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-[3px]  
+                                                px-4 py-1.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"><p class="px-2"> Tambah data</p>
                                         <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor"d="M11 13v3q0 .425.288.713T12 17q.425 0 .713-.288T13 16v-3h3q.425 0 .713-.288T17 12q0-.425-.288-.713T16 11h-3V8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8v3H8q-.425 0-.713.288T7 12q0 .425.288.713T8 13h3Zm1 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/>
+                                        <path fill="currentColor" d="M11 13v3q0 .425.288.713T12 17q.425 0 .713-.288T13 16v-3h3q.425 0 .713-.288T17 12q0-.425-.288-.713T16 11h-3V8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8v3H8q-.425 0-.713.288T7 12q0 .425.288.713T8 13h3Zm1 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/>
                                         </svg>
-                                    </button>
+                                </button>
                                 </div>
 
-								<div class="relative overflow-x-auto mb-3">
+								<div class="relative overflow-x-auto mb-3 border rounded-md shadow-lg shadow-gray-400">
 									<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 										<thead class="text-sm text-gray-700 bg-gray-300 text-center dark:bg-gray-700 dark:text-gray-400">
 											<tr>
@@ -103,13 +104,7 @@
 													Nim
 												</th>
 												<th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
-													Judul Skripsi
-												</th>
-                                                <th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
-													Pembimbing 1 & Pembimbing 2
-												</th>
-												<th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
-													Penguji 1 & Penguji 2
+													Judul Proposal
 												</th>
 												<th scope="col" class="px-4 py-4 border-l-2 border-gray-200">
 													Aksi
@@ -131,15 +126,9 @@
                                                         Rancang Bangun Sistem Informasi Pendaftaran Seminar Proposal, Skripsi dan Yudisium 
                                                         pada Program Studi Informatika, Fakultas Teknik Komputer Universitas Cokroaminoto Palopo
 													</td>
-													<td class="px-3 py-2 font-medium">
-													    Nirsal, S.Kom., M.Pd.  Supriadi, S.Ag., M.Pd. 
-													</td>
-													<td class="px-3 py-2 font-medium">
-                                                        1 & 2
-													</td>
                                                     <td class = "px-3 py-2 font-medium text-right border-slate-200 relative flex items-center justify-center">
                                                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-[3px] text-sm 
-                                                    px-[16px] py-[8px] mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
+                                                    px-[16px] py-[8px] mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Detail</button>
 
                                                     <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-[3px] text-sm 
                                                     px-2 py-2 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">Hapus</button>
@@ -177,7 +166,5 @@
             </div>
         </div>
         <!-- END -->
-
-
 
 </html>

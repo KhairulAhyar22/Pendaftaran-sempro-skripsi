@@ -49,19 +49,19 @@
 <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
 </nav>
     
-<div class="sm:ml-64 rounded-[40px]">
+<div class="sm:ml-64 bg-gray-100  h-screen">
     <!-- <div class="flex items-center justify-center h-48 mb-4 rounded-[2px] bg-green-800 dark:bg-gray-800">
     </div> -->
 <div class="bg-green-800 h-40 pr-20 pt-7 w-full">
     @include('layout.profile')
 
     <div class="-mt-11 ml-8 lg:p-2 border-b-2 rounded-lg bg-yellow-300 border-gray-300 shadow-lg h-16 w-auto ">
-        <h1 class="p-3 font-sans text-lg text-black font-bold">JADWAL SEMINAR PROPOSAL</h1>
+        <h1 class="p-3 font-sans text-lg text-black font-bold">JADWAL UJIAN SKRIPSI</h1>
     </div>
 
 <!-- DATA TABEL -->
 <div class="container p-10 pb-8 md:px-8 lg:px-11">
-                    <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
+                    <div class="relative overflow-x-auto bg-white shadow-lg rounded-lg shadow-gray-400">
                         <div class="w-full flex">
                             <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
 								<div class="flex justify-between  mb-4 mt-[0px]">

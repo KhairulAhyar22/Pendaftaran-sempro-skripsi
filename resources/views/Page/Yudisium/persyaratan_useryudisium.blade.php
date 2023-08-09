@@ -48,14 +48,13 @@
 
         </head>
         @include('layout.sidebar')   
-<nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700"></nav>
-    
-<div class="sm:mx-64  rounded-[40px] w-[1262px]">
+
+<div class="h-screen bg-gray-100 sm:ml-64 ">
     <!-- <div class="flex items-center justify-center h-48 mb-4 rounded-[2px] bg-green-800 dark:bg-gray-800">
     </div> -->
-    <div class="bg-green-800 h-52 pr-20 pt-7 w-full ">
-    <div class="flex justify-end items-center">
-    <div class="text-white text-sm">
+    <div class="w-full h-40 pr-20 bg-green-800 pt-7 ">
+    <div class="flex items-center justify-end">
+    <div class="text-sm text-white">
         <div class="pr-6 text-right">
             <span>Halo, Selamat Datang</span> <br>
             <span class="font-bold">(Admin)</span>
@@ -69,11 +68,27 @@
         </div>
     </div>
 </div>
-    
-    @include('layout.admin')
-<div class="bg-white w-[1050px] h-full -mt-24 ml-8 rounded-lg p-5">
-    <div class="grid grid-cols-4 gap-1 w-full px-7 mt-8">
+
+    <div class="w-auto h-16 ml-8 bg-yellow-300 border-b-2 border-gray-300 rounded-lg shadow-lg -mt-11 lg:p-2 shadow-gray-400 ">
+        <h1 class="p-3 font-sans text-lg font-bold text-black">PERSYARATAN YUDISIUM</h1>
+    </div>
+<div class="grid grid-cols-2 gap-0 p-10 my-12 border rounded-md shadow-xl bg-gray-50 mx-28 md:grid md:grid-cols-3 md:gap-0">
+    <div class="col-span-2"</div>
+
+    <div class="py-5">
+            <p class="text-lg"> Biodata Power Point</p>
+            <input type="file" class="w-full border border-gray-500 rounded">
+        </div>
+   
+    <div class="flex justify-end">
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 
+                font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 my-5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Upload File
+        </button>
     </div>
 </div>
+<!-- <div class="bg-white w-[1050px] h-full -mt-24 ml-8 rounded-lg p-5">
+    <div class="grid w-full grid-cols-4 gap-1 mt-8 px-7">
+    </div>
+</div> -->
 
 </html>

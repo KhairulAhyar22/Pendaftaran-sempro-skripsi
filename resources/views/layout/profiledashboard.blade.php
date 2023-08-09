@@ -1,5 +1,5 @@
 <div class="rounded-[40px]">
-    <div class="w-full px-10 bg-gray-200 py-7 ">
+    <div class="w-full px-10 bg-gray-200 h-52 pt-7 ">
         <div class="flex items-center justify-end">
             <div class="text-sm text-white">
                 <div class="px-6 text-right text-gray-900 ">

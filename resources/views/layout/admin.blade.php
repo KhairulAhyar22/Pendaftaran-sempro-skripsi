@@ -6,11 +6,11 @@
             </div>
             <div class="max-w-xl">
                 <p class="mt-3 text-xl font-bold text-center text-gray-500">SELAMAT DATANG DALAM SISTEM INFORMASI
-                    SEMINAR PROPOSAL, SKRIPSI DAN YUDISIUM PROGRAM STUDI INFORMATIKA </p>
+                    SEMINAR PROPOSAL DAN SKRIPSI PROGRAM STUDI INFORMATIKA </p>
             </div>
         </div>
     </div>
-    <div class="grid w-full lg:grid-cols-3 grid-cols-1 gap-1 mt-10 lg:p-2 px-7">
+    {{-- <div class="grid w-full lg:grid-cols-3 grid-cols-1 gap-1 mt-10 lg:p-2 px-7">
         <div class="w-auto p-1">
             <div class="bg-amber-500 shadow-xl flex flex-col justify-between leading-normal h-[100px] rounded-t-lg">
                 <div class="justify-between p-3 leading-normal flex gap-x-4">
@@ -117,5 +117,5 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>

@@ -46,6 +46,22 @@ class PdSemproController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            // 'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+            'file_krs' => 'required',
+            'file_proposal' => 'required',
+        ]);
+        
+        $file_krs = $request->file('file_krs');
+        // dd($file_krs);
+        $filename_krs = time() . ' ' . $file_krs->getClientOriginalName();
+                
+        $file_proposal = $request->file('file_proposal');
+        $filename_proposal = time() . ' ' . $file_proposal->getClientOriginalName();
+
+        $file_krs->move(public_path('Dokument/Proposal/KRS'), $filename_krs);
+        $file_proposal->move(public_path('Dokument/Proposal/Proposal'), $filename_proposal);
+
         $datainput = [
             'nama_mahasiswa' => $request->nama_mahasiswa,
             'nim' => $request->nim,
@@ -56,6 +72,8 @@ class PdSemproController extends Controller
             'tgl_accp1' => $request->tgl_accp1,
             'tgl_accp2' => $request->tgl_accp2,
             'no_hp' => $request->no_hp,
+            'file_krs' => $filename_krs,
+            'file_proposal' => $filename_proposal,
             'status_dok' => 'Belum Lengkap',
             'status' => 'Terbuat',
         ];

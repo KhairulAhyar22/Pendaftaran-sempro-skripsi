@@ -14,7 +14,7 @@
                 <div class="flex w-full">
                     <div class="border-b-3 rounded-lg w-full">
 
-                        <form action="/proposal" method="post" class="">
+                        <form action="/proposal" method="post" class="" enctype="multipart/form-data">
                             @csrf
                             <div class="py-3 px-8 bg-emerald-700 mb-10 rounded-t-lg">
                                 <h3 class="text-white font-medium text-lg">Form Daftar Seminar Proposal</h3>
@@ -151,6 +151,26 @@
                                             <div class="text-xs text-red-500">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                    <div class="mb-3">
+                                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            for="file_proposal">Upload Proposal</label>
+                                        <input name="file_proposal"
+                                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                            aria-describedby="file_proposal_help" id="file_proposal" type="file">
+                                        @error('file_proposal')
+                                            <div class="text-xs text-red-500">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            for="file_krs">Upload KRS</label>
+                                        <input name="file_krs"
+                                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                            aria-describedby="file_krs_help" id="file_krs" type="file">
+                                        @error('file_krs')
+                                            <div class="text-xs text-red-500">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="flex justify-start lg:mx-10 my-8 ">
                                     <button type=" submit"
@@ -158,7 +178,6 @@
                                                     font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit
                                     </button>
                                 </div>
-
                             </div>
                         </form>
                     </div>

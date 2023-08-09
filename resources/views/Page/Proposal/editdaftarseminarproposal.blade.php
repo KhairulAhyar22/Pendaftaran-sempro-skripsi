@@ -8,7 +8,6 @@
             <h1 class="font-sans text-lg font-bold text-black">PENDAFTARAN SEMINAR PROPOSAL</h1>
         </div>
 
-
         <div class="container px-7 my-5 mt-7 pb-8">
             <div class="relative overflow-x-auto bg-white rounded-lg border">
                 <div class="flex w-full">
@@ -124,7 +123,7 @@
                                         <label for="tgl_accp1"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             Tgl ACC Pembimbing Utama</label>
-                                        <input type="date" id="tgl_accp1" name="tgl_accp1" value="{{ old('tgl_accp1', Carbon\Carbon::parse($data->tgl_accp1)->format('Y-m-d')) }}"
+                                        <input type="date" id="tgl_accp1" name="tgl_accp1" value="{{ old('tgl_accp1', Carbon::parse($data->tgl_accp1)->format('Y-m-d')) }}"
                                             placeholder="Write tgl_accp2 here..."
                                             class="{{ $errors->has('tgl_accp2') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
@@ -136,7 +135,7 @@
                                         <label for="tgl_accp2"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             Tgl ACC Pembimbin Utama</label>
-                                        <input type="date" id="tgl_accp2" name="tgl_accp2" value="{{ old('tgl_accp2', Carbon\Carbon::parse($data->tgl_accp2)->format('Y-m-d')) }}"
+                                        <input type="date" id="tgl_accp2" name="tgl_accp2" value="{{ old('tgl_accp2', Carbon::parse($data->tgl_accp2)->format('Y-m-d')) }}"
                                             placeholder="Write tgl_accp2 here..."
                                             class="{{ $errors->has('tgl_accp2') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>

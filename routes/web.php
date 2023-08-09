@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PdSemproController;
 use App\Http\Controllers\PdSkripsiController;
 
@@ -16,11 +17,15 @@ use App\Http\Controllers\PdSkripsiController;
 */
 // ADMIN DAN USER PENDAFTARAN SEMINAR,SKRIPSI,YUDISIUM
 
+Route::post('/authenticate', [LoginController::class, 'authenticate'])->middleware('guest');
+Route::get('/logout', [LoginController::class, 'logout']);
+
 Route::get('/dashboard', function () {
     return view('page.general.dashboard');
 });
 // ==================== SEMINAR PROPOSAL =====================
-Route::resource('proposal', PdSemproController::class);
+Route::resource('/proposal', PdSemproController::class);
+
 Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
 Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
 
@@ -32,26 +37,6 @@ Route::post('/skripsi/store/dokumentpersyaratan/{id}', [PdSkripsiController::cla
 // Route::get('/daftaryudisium', function () {
 //     return view('pendaftaranyudisium_user');
 // });
-
-// ADMIN KELOLA JADWAL SEMINAR,SKRIPSI,YUDISIUM
-Route::get('/jadwalseminar_admin', function () {
-    return view('page.proposal.jadwalseminar_admin');
-});
-Route::get('/jadwalskripsi_admin', function () {
-    return view('jadwalskripsi_admin');
-});
-Route::get('/jadwalyudisium_admin', function () {
-    return view('jadwalyudisium_admin');
-});
-Route::get('/jadwalseminar_user', function () {
-    return view('jadwalseminar_user');
-});
-Route::get('/jadwalskripsi_user', function () {
-    return view('jadwalskripsi_user');
-});
-Route::get('/jadwalyudisium_user', function () {
-    return view('jadwalyudisium_user');
-});
 
 // ADMIN KELOLA PERSYARATAN SEMINAR,SKRIPSI,YUDISIUM
 Route::get('/persyaratan_userSeminar', function () {
@@ -76,10 +61,10 @@ Route::get('/tambahdaftarseminar', function () {
     return view('tambahdaftarseminar');
 });
 Route::get('/login', function () {
-    return view('login');
+    return view('page.general.login');
 });
 Route::get('/register', function () {
-    return view('register');
+    return view('page.general.register');
 });
 
 
@@ -113,4 +98,3 @@ Route::get('/register', function () {
 // Route::get('/iren', function () {
 //     return view('dashboard');
 // });
-

@@ -83,7 +83,7 @@
                                         <p>{{ $data->no_hp }}</p>
                                     </div>
                                 </div>
-                                <div class="mb-2">
+                                {{-- <div class="mb-2">
                                     <div class="sm:flex md:justify-start flex-col">
 
                                         <h3 class="block mb-2 text-base font-semibold text-gray-900 dark:text-white">Status
@@ -91,7 +91,7 @@
                                         </h3>
                                         <p>{{ $data->status_dok }}</p>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="relative mb-3 overflow-x-auto">
                                 <h3 class="my-4 font-medium text-lg">Kelengkapan Dokumen</h3>
@@ -102,52 +102,22 @@
                                                 KRS
                                             </th>
                                             <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                Kartu Konsul
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                KHS
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                Ket. Lunas SPP
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                Slip Pembayaran Smtr. Berjalan
+                                                Proposal
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr
                                             class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                            @if ($dokument != null)
-                                                <th scope="row" class="px-4 py-4">
-                                                    <a href="/Proposal/KRS/{{ $dokument->file_krs }}" target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_krs }}</a>
-                                                </th>
-                                                <td class="px-4 py-4">
-                                                    <a href="/Proposal/KartuKonsul/{{ $dokument->file_kartu_konsul }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_kartu_konsul }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/Proposal/KHS/{{ $dokument->file_khs }}" target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_khs }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/Proposal/LunasSPP/{{ $dokument->file_lunas_spp }}" target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_lunas_spp }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/Proposal/SlipPembayaran/{{ $dokument->file_slip_pembayaran }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_slip_pembayaran }}</a>
-                                                </td>
-                                            @else
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                            @endif
+                                            <th scope="row" class="px-4 py-4">
+                                                <a href="Dokument/Proposal/KRS/{{ $data->file_krs }}" target="_blank"
+                                                    class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $data->file_krs ? $data->file_krs : '-'}}</a>
+                                            </th>
+                                            <td class="px-4 py-4">
+                                                <a href="Dokument/Proposal/Proposal/{{ $data->file_proposal }}"
+                                                    target="_blank"
+                                                    class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $data->file_proposal ? $data->file_proposal : '-' }}</a>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -51,9 +51,6 @@
                                             No.Hp
                                         </th>
                                         <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
-                                            Status Dok.
-                                        </th>
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
                                             Aksi
                                         </th>
                                     </tr>
@@ -87,9 +84,6 @@
                                             </td>
                                             <td class="px-2.5 py-2">
                                                 {{ $data->no_hp }}
-                                            </td>
-                                            <td class="px-2.5 py-2 font-medium {{ $data->status_dok == 'Belum Lengkap' ? 'text-red-600' : 'text-emerald-700' }}">
-                                                {{ $data->status_dok }}
                                             </td>
                                             <td
                                                 class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2.5 py-2 text-sm text-center text-gray-500">
@@ -131,19 +125,6 @@
                                                                 </div>
                                                             </a>
                                                         </li>
-                                                        @if ($data->status_dok == 'Belum Lengkap')
-                                                            <li>
-                                                                <a href="/proposal/create/dokumentpersyaratan/{{ $data->id }}"
-                                                                    class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
-                                                                    <div
-                                                                        class="flex items-center justify-end w-28 mx-auto">
-                                                                        <iconify-icon icon="simple-line-icons:check"
-                                                                            class="text-[18px] mr-2"></iconify-icon>
-                                                                        <p class="text-sm">Lengkapi</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        @endif
                                                         <li>
                                                             <form action="/proposal/{{ $data->id }}" method="POST" onsubmit="return confirm('Anda yakin akan hapus?')">
                                                                 @csrf

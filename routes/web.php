@@ -28,11 +28,13 @@ Route::resource('/proposal', PdSemproController::class);
 
 Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
 Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
+Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
 
 // ==================== UJIAN SKRIPSI =======================
 Route::resource('skripsi', PdSkripsiController::class);
 Route::get('/skripsi/create/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'createdokumentskripsi']);
 Route::post('/skripsi/store/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'storedokumentskripsi']);
+Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasilformskripsi']);
 
 // Route::get('/daftaryudisium', function () {
 //     return view('pendaftaranyudisium_user');

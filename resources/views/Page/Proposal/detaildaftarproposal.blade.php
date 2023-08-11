@@ -28,6 +28,16 @@
                                         <p>{{ $data->nim }}</p>
                                     </div>
                                 </div>
+                                
+                                <div class="mb-2">
+                                    <div class="sm:flex md:justify-start flex-col">
+
+                                        <h3 class="block mb-2 text-base font-semibold text-gray-900 dark:text-white">Status
+                                            Status Mahasiswa :
+                                        </h3>
+                                        <p>{{ $data->status_mahasiswa }}</p>
+                                    </div>
+                                </div>
                                 <div class="mb-2">
                                     <div class="sm:flex md:justify-start flex-col">
                                         <h3 class="block mb-2 text-base font-semibold text-gray-900 dark:text-white">Jenis
@@ -83,15 +93,6 @@
                                         <p>{{ $data->no_hp }}</p>
                                     </div>
                                 </div>
-                                {{-- <div class="mb-2">
-                                    <div class="sm:flex md:justify-start flex-col">
-
-                                        <h3 class="block mb-2 text-base font-semibold text-gray-900 dark:text-white">Status
-                                            Dokumen Seminar Proposal :
-                                        </h3>
-                                        <p>{{ $data->status_dok }}</p>
-                                    </div>
-                                </div> --}}
                             </div>
                             <div class="relative mb-3 overflow-x-auto">
                                 <h3 class="my-4 font-medium text-lg">Kelengkapan Dokumen</h3>
@@ -110,11 +111,11 @@
                                         <tr
                                             class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                             <th scope="row" class="px-4 py-4">
-                                                <a href="Dokument/Proposal/KRS/{{ $data->file_krs }}" target="_blank"
+                                                <a href="/Dokument/Proposal/KRS/{{ $data->file_krs }}" target="_blank"
                                                     class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $data->file_krs ? $data->file_krs : '-'}}</a>
                                             </th>
                                             <td class="px-4 py-4">
-                                                <a href="Dokument/Proposal/Proposal/{{ $data->file_proposal }}"
+                                                <a href="/Dokument/Proposal/Proposal/{{ $data->file_proposal }}"
                                                     target="_blank"
                                                     class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $data->file_proposal ? $data->file_proposal : '-' }}</a>
                                             </td>

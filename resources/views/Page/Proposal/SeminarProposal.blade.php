@@ -39,6 +39,9 @@
                                             Nim
                                         </th>
                                         <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
+                                            Status Mahasiswa
+                                        </th>
+                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
                                             Judul Proposal
                                         </th>
                                         <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
@@ -68,6 +71,9 @@
                                             </td>
                                             <td class="px-2.5 py-2">
                                                 {{ $data->nim }}
+                                            </td>
+                                            <td class="px-2.5 py-2">
+                                                {{ $data->status_mahasiswa }}
                                             </td>
                                             <td class="px-2.5 py-2">
                                                 {{ $data->judul_proposal }}
@@ -122,6 +128,17 @@
                                                                     <iconify-icon icon="iconamoon:eye"
                                                                         class="text-[18px] mr-2"></iconify-icon>
                                                                     <p class="text-sm">Show</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ url("/proposal/hasilformproposal/{$data->id}") }}"
+                                                                class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                <div class="flex items-center justify-end w-28 mx-auto">
+                                                                    <iconify-icon icon="ic:round-download" class="text-[20px] mr-2"></iconify-icon>
+                                                                    {{-- <iconify-icon icon="iconamoon:eye"
+                                                                        class="text-[18px] mr-2"></iconify-icon> --}}
+                                                                    <p class="text-sm">Unduh Form</p>
                                                                 </div>
                                                             </a>
                                                         </li>

@@ -49,6 +49,7 @@ class PdSemproController extends Controller
         $request->validate([
             // 'file' => 'required|mimes:pdf,xlx,csv|max:2048',
             'file_krs' => 'required',
+            'jenis_kelamin' => 'required',
             'file_proposal' => 'required',
         ]);
         
@@ -65,8 +66,9 @@ class PdSemproController extends Controller
         $datainput = [
             'nama_mahasiswa' => $request->nama_mahasiswa,
             'nim' => $request->nim,
-            'judul_proposal' => $request->judul_proposal,
+            'judul_proposal' => $request->judul_proposal,   
             'jenis_kelamin' => $request->jenis_kelamin,
+            'status_mahasiswa' =>$request->status_mahasiswa,    
             'pembimbing1' => $request->pembimbing1,
             'pembimbing2' => $request->pembimbing2,
             'tgl_accp1' => $request->tgl_accp1,
@@ -77,7 +79,9 @@ class PdSemproController extends Controller
             'status_dok' => 'Belum Lengkap',
             'status' => 'Terbuat',
         ];
-        PdSempro::create($datainput);
+        $sempro = PdSempro::create($datainput);
+        // dd($sempro);
+        return redirect('/proposal/hasilformproposal/'. $sempro->id);
         return redirect('/proposal');
     }
 
@@ -127,6 +131,7 @@ class PdSemproController extends Controller
         $datainput = [
             'nama_mahasiswa' => $request->nama_mahasiswa,
             'nim' => $request->nim,
+            'status_mahasiswa' => $request->status_mahasiswa,    
             'judul_proposal' => $request->judul_proposal,
             'jenis_kelamin' => $request->jenis_kelamin,
             'pembimbing1' => $request->pembimbing1,
@@ -199,5 +204,14 @@ class PdSemproController extends Controller
 
         PdSempro::find($id)->update(['status_dok' => 'Lengkap']);
         return redirect('/proposal');
+    }
+    public function hasilformproposal($id)
+    {
+        $daftardosen = Dosen::all();
+        $data = DB::table('tb_daftar_sempro')->find($id);
+        return view('page.proposal.hasilformproposal', compact(
+            'daftardosen',
+            'data'
+        ));
     }
 }

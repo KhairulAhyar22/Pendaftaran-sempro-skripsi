@@ -30,6 +30,15 @@
                                 </div>
                                 <div class="mb-2">
                                     <div class="sm:flex md:justify-start flex-col">
+
+                                        <h3 class="block mb-2 text-base font-semibold text-gray-900 dark:text-white">
+                                            Status Mahasiswa :
+                                        </h3>
+                                        <p>{{ $data->status_mahasiswa }}</p>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="sm:flex md:justify-start flex-col">
                                         <h3 class="block mb-2 text-base font-semibold text-gray-900 dark:text-white">Jenis
                                             Kelamin : </h3>
                                         <p>{{ $data->jenis_kelamin }}</p>
@@ -87,92 +96,13 @@
                                 <div class="mb-2">
                                     <div class="sm:flex md:justify-start flex-col">
 
-                                        <h3 class="block mb-2 text-base font-semibold text-gray-900 dark:text-white">Status
-                                            Dokumen Seminar Proposal :
+                                        <h3 class="block mb-2 text-base font-semibold text-gray-900 dark:text-white">
+                                            Uji Similarity :
                                         </h3>
-                                        <p>{{ $data->status_dok }}</p>
+                                        <a target="_blank" href="/Dokument/Skripsi/UjiSimilarity/{{ $data->uji_similarity }}"
+                                            class="text-blue-600 hover:font-medium">{{ $data->uji_similarity }}</a>                                        
                                     </div>
                                 </div>
-                            </div>
-                            <div class="relative mb-3 overflow-x-auto">
-                                <h3 class="my-4 font-medium text-lg">Kelengkapan Dokumen</h3>
-                                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                    <thead class="text-sm text-center text-gray-100 bg-emerald-700">
-                                        <tr>
-                                            <th scope="col" class="px-4 py-4 font-medium">
-                                                SKRIPSI
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                BUKTI ACC
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                SPUS
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                PENGESAHAN PROPOSAL
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                KRS
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                KTM
-                                            </th>
-                                            <th scope="col" class="px-4 py-4 font-medium border-l-2 border-gray-200">
-                                                BUKTI LUNAS SPP
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                            @if ($dokument != null)
-                                                <td class="px-4 py-4">
-                                                    <a href="/UjianSkripsi/Skripsi/{{ $dokument->file_skripsi }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_skripsi }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/UjianSkripsi/BuktiACC/{{ $dokument->file_bukti_acc }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_bukti_acc }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/UjianSkripsi/SPUS/{{ $dokument->file_spus }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_spus }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/UjianSkripsi/PengesahanProposal/{{ $dokument->file_pengesahan_proposal }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_pengesahan_proposal }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/UjianSkripsi/KRS/{{ $dokument->file_krs }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_krs }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/UjianSkripsi/KTM/{{ $dokument->file_ktm }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_ktm }}</a>
-                                                </td>
-                                                <td class="px-4 py-4">
-                                                    <a href="/UjianSkripsi/BuktiLunasSPP/{{ $dokument->file_bukti_lunasspp }}"
-                                                        target="_blank"
-                                                        class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $dokument->file_bukti_lunasspp }}</a>
-                                                </td>
-                                            @else
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                                <td class="px-4 py-4">-</td>
-                                            @endif
-                                        </tr>
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
 

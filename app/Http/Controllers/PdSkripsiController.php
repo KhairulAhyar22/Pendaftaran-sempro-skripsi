@@ -49,6 +49,7 @@ class PdSkripsiController extends Controller
         $request->validate([
             'nama_mahasiswa' => 'required',
             'nim' => 'required',
+            'status_mahasiswa' => 'required',
             'jenis_kelamin' => 'required',
             'judul_skripsi' => 'required',
             'pembimbing1' => 'required',
@@ -56,11 +57,17 @@ class PdSkripsiController extends Controller
             'tglacc_proposal' => 'required',
             'no_hp' => 'required',
             'nama_pa' => 'required',
+            'uji_similarity' => 'required',
         ]);
+
+        $uji_similarity = $request->file('uji_similarity');
+        $filename_uji_similarity = time() . ' ' . $uji_similarity->getClientOriginalName();
+        $uji_similarity->move(public_path('Dokument/Skripsi/UjiSimilarity'), $filename_uji_similarity);
 
         $data = [
             'nama_mahasiswa' => $request->nama_mahasiswa,
             'nim' => $request->nim,
+            'status_mahasiswa' => $request->status_mahasiswa,
             'jenis_kelamin' => $request->jenis_kelamin,
             'judul_skripsi' => $request->judul_skripsi,
             'pembimbing1' => $request->pembimbing1,
@@ -70,9 +77,11 @@ class PdSkripsiController extends Controller
             'nama_pa' => $request->nama_pa,
             'status_dok' => 'Belum Lengkap',
             'status' => 'Terbuat',
+            'uji_similarity' => $filename_uji_similarity,
         ];
 
-        PdSkripsi::create($data);
+        $skripsi = PdSkripsi::create($data);
+        return redirect('/skripsi/hasilformskripsi/'.$skripsi->id);
         return redirect('skripsi');
     }
 
@@ -124,6 +133,7 @@ class PdSkripsiController extends Controller
         $datainput = [
             'nama_mahasiswa' => $request->nama_mahasiswa,
             'nim' => $request->nim,
+            'status_mahasiswa' => $request->status_mahasiswa,
             'judul_skripsi' => $request->judul_skripsi,
             'jenis_kelamin' => $request->jenis_kelamin,
             'pembimbing1' => $request->pembimbing1,
@@ -213,5 +223,15 @@ class PdSkripsiController extends Controller
 
         PdSkripsi::find($id)->update(['status_dok' => 'Lengkap']);
         return redirect('/skripsi');
+    }
+    public function hasilformskripsi($id)
+    {
+        $daftardosen = Dosen::all();
+        $skripsi = DB::table('tb_daftar_skripsi')->find($id);
+        return view('page.skripsi.hasilformskripsi', compact(
+            'daftardosen',
+            'skripsi'
+        ));
+        
     }
 }

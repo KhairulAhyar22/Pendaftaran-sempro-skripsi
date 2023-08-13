@@ -1,19 +1,19 @@
-<div class="p-5 pb-20 mx-8 -mt-24 bg-white rounded-xl ">
+<div class="p-5 pb-20 mx-8 -mt-32 bg-white drop-shadow-lg rounded-xl ">
     <div class="flex items-center justify-center">
         <div class="pt-8 ">
             <div class="flex justify-center">
-                <img class="w-40 mr-2" src="img/logo.png" alt="Profile Image" alt="Logo Universitas Cokroaminoto Palopo">
+                <img class="w-32 mr-2" src="img/logo.png" alt="Profile Image" alt="Logo Universitas Cokroaminoto Palopo">
             </div>
             <div class="max-w-xl">
-                <p class="mt-3 text-xl font-bold text-center text-gray-500">SELAMAT DATANG DALAM SISTEM INFORMASI
-                    SEMINAR PROPOSAL, SKRIPSI DAN YUDISIUM PROGRAM STUDI INFORMATIKA </p>
+                <p class="mt-3 text-xl font-bold text-center text-gray-500">SISTEM INFORMASI
+                    SEMINAR PROPOSAL DAN SKRIPSI PROGRAM STUDI INFORMATIKA </p>
             </div>
         </div>
     </div>
-    <div class="grid w-full lg:grid-cols-3 grid-cols-1 gap-1 mt-10 lg:p-2 px-7">
+     <!-- <div class="grid w-full grid-cols-1 gap-1 mt-10 lg:grid-cols-3 lg:p-2 px-7">
         <div class="w-auto p-1">
             <div class="bg-amber-500 shadow-xl flex flex-col justify-between leading-normal h-[100px] rounded-t-lg">
-                <div class="justify-between p-3 leading-normal flex gap-x-4">
+                <div class="flex justify-between p-3 leading-normal gap-x-4">
                     <div class="p-1">
                         <span class="font-sans text-lg font-medium text-slate-100">
                             120
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div
-                class="items-center justify-center h-6 border rounded-b-lg bg-slate-100 border-amber-500 gap-x-1 flex ">
+                class="flex items-center justify-center h-6 border rounded-b-lg bg-slate-100 border-amber-500 gap-x-1 ">
                 <p class="text-xs font-medium">cek info</p>
                 <a href="\data_surat"><button type="button"
                         class="inline-flex items-center p-1 mr-2 text-xs font-medium text-center text-white rounded-full bg-amber-300 hover:bg-amber-400 focus:ring-4 focus:outline-none focus:ring-amber-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -50,7 +50,7 @@
         </div>
         <div class="w-auto p-1">
             <div class="bg-red-700 shadow-xl flex flex-col justify-between leading-normal h-[100px] rounded-t-lg">
-                <div class="justify-between p-3 leading-normal flex gap-x-4">
+                <div class="flex justify-between p-3 leading-normal gap-x-4">
                     <div class="p-1">
                         <span class="font-sans text-lg font-medium text-slate-100">
                             120
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div
-                class="items-center justify-center h-6 border border-red-500 rounded-b-lg bg-slate-100 gap-x-1 flex ">
+                class="flex items-center justify-center h-6 border border-red-500 rounded-b-lg bg-slate-100 gap-x-1 ">
                 <p class="text-xs font-medium">cek info</p>
                 <button type="button"
                     class="inline-flex items-center p-1 mr-2 text-xs font-medium text-center text-white bg-red-500 rounded-full hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -85,7 +85,7 @@
         </div>
         <div class="w-auto p-1">
             <div class="bg-sky-700 shadow-xl flex flex-col justify-between leading-normal h-[100px] rounded-t-lg">
-                <div class="justify-between p-3 leading-normal flex gap-x-4">
+                <div class="flex justify-between p-3 leading-normal gap-x-4">
                     <div class="p-1">
                         <span class="font-sans text-lg font-medium text-slate-100">
                             120
@@ -104,7 +104,7 @@
                 </div>
             </div>
             <div
-                class="items-center justify-center h-6 border border-blue-500 rounded-b-lg bg-slate-100 gap-x-1 flex ">
+                class="flex items-center justify-center h-6 border border-blue-500 rounded-b-lg bg-slate-100 gap-x-1 ">
                 <p class="text-xs font-medium">cek info</p>
                 <button type="button"
                     class="inline-flex items-center p-1 mr-2 text-xs font-medium text-center text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -117,5 +117,5 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div>  -->
 </div>

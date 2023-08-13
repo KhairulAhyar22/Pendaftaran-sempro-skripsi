@@ -47,6 +47,34 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3">
+                                        <label for="status_mahasiswa"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status
+                                            Mahasiswa</label>
+                                        <fieldset>
+                                            <legend class="sr-only">Status Mahasiswa</legend>
+                                            <div class="flex items-center mb-4">
+                                                <input id="regular" type="radio" name="status_mahasiswa" value="Regular"
+                                                    class="w-4 h-4 border-gray-400 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                                                    {{ old('status_mahasiswa', $skripsi->status_mahasiswa) == 'Regular' ? 'checked' : '' }}>
+                                                <label for="regular"
+                                                    class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Regular</label>
+                                            </div>
+
+                                            <div class="flex items-center mb-4">
+                                                <input id="nonregular" type="radio" name="status_mahasiswa"
+                                                    value="Non Regular"
+                                                    class="w-4 h-4 border-gray-400 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                                                    {{ old('status_mahasiswa', $skripsi->status_mahasiswa) == 'Non Regular' ? 'checked' : '' }}>
+                                                <label for="nonregular"
+                                                    class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Non
+                                                    Regular (Pindahan/Konversi)</label>
+                                            </div>
+                                        </fieldset>
+                                        @error('status_mahasiswa')
+                                            <div class="text-xs text-red-500">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3">
                                         <label for="jenis_kelamin"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis
                                             Kelamin</label>

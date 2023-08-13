@@ -38,6 +38,9 @@
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             Nim
                                         </th>
+                                        <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
+                                            Status Mahasiswa
+                                        </th>
                                         <th scope="col"
                                             class="px-3 py-2.5 min-w-[100px] border-l-2 font-medium border-gray-200">
                                             Judul Proposal
@@ -50,9 +53,6 @@
                                         </th>
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             Nama PA
-                                        </th>
-                                        <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
-                                            Status Dok.
                                         </th>
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             Aksi
@@ -73,6 +73,9 @@
                                             <td class="px-3 py-2.5">
                                                 {{ $data->nim }}
                                             </td>
+                                            <td class="px-3 py-2.5">
+                                                {{ $data->status_mahasiswa }}
+                                            </td>
                                             <td class="px-3 py-2.5 min-w-[150px]">
                                                 {{ $data->judul_skripsi }}
                                             </td>
@@ -84,10 +87,6 @@
                                             </td>
                                             <td class="px-3 py-2.5">
                                                 {{ $data->nama_pa }}
-                                            </td>
-                                            <td
-                                                class="px-3 py-2.5 font-medium {{ $data->status_dok == 'Belum Lengkap' ? 'text-red-600' : 'text-emerald-700' }}">
-                                                {{ $data->status_dok }}
                                             </td>
                                             <td
                                                 class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2.5 py-2 text-sm text-center text-gray-500">
@@ -129,18 +128,19 @@
                                                                 </div>
                                                             </a>
                                                         </li>
-                                                        @if ($data->status_dok == 'Belum Lengkap')
-                                                            <li>
-                                                                <a href="/skripsi/create/dokumentpersyaratan/{{ $data->id }}"
-                                                                    class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
-                                                                    <div class="flex items-center justify-end w-28 mx-auto">
-                                                                        <iconify-icon icon="simple-line-icons:check"
-                                                                            class="text-[18px] mr-2"></iconify-icon>
-                                                                        <p class="text-sm">Lengkapi</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        @endif
+
+                                                        <li>
+                                                            <a href="/skripsi/hasilformskripsi/{{ $data->id }}"
+                                                                class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                <div class="flex items-center justify-end w-28 mx-auto">
+                                                                    {{-- <iconify-icon icon="simple-line-icons:check"
+                                                                        class="text-[18px] mr-2"></iconify-icon> --}}
+                                                                    <iconify-icon icon="ic:round-download"
+                                                                        class="text-[20px] mr-2"></iconify-icon>
+                                                                    <p class="text-sm">Unduh Form</p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
                                                         <li>
                                                             <form action="/skripsi/{{ $data->id }}" method="POST"
                                                                 onsubmit="return confirm('Anda yakin akan hapus?')">

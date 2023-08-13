@@ -8,7 +8,6 @@
             <h1 class="font-sans text-lg font-bold text-black">PENDAFTARAN SEMINAR PROPOSAL</h1>
         </div>
 
-
         <div class="container px-7 my-5 mt-7 pb-8">
             <div class="relative overflow-x-auto bg-white rounded-lg border">
                 <div class="flex w-full">
@@ -27,7 +26,8 @@
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
                                             Mahasiswa</label>
                                         <input type="text" id="nama_mahasiswa" name="nama_mahasiswa"
-                                            value="{{ old('nama_mahasiswa', $data->nama_mahasiswa) }}" placeholder="Write your mahasiswa here..."
+                                            value="{{ old('nama_mahasiswa', $data->nama_mahasiswa) }}"
+                                            placeholder="Write your mahasiswa here..."
                                             class="{{ $errors->has('nama_mahasiswa') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
                                         @error('nama_mahasiswa')
@@ -38,11 +38,39 @@
                                     <div class="mb-3">
                                         <label for="nim"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIM</label>
-                                        <input type="number" id="nim" name="nim" value="{{ old('nim', $data->nim) }}"
-                                            placeholder="Write nim here..."
+                                        <input type="number" id="nim" name="nim"
+                                            value="{{ old('nim', $data->nim) }}" placeholder="Write nim here..."
                                             class="{{ $errors->has('nim') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
                                         @error('nim')
+                                            <div class="text-xs text-red-500">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="status_mahasiswa"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status
+                                            Mahasiswa</label>
+                                        <fieldset>
+                                            <legend class="sr-only">Status Mahasiswa</legend>
+                                            <div class="flex items-center mb-4">
+                                                <input id="regular" type="radio" name="status_mahasiswa" value="Regular"
+                                                    class="w-4 h-4 border-gray-400 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                                                    {{ old('status_mahasiswa', $data->status_mahasiswa) == 'Regular' ? 'checked' : '' }}>
+                                                <label for="regular"
+                                                    class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Regular</label>
+                                            </div>
+
+                                            <div class="flex items-center mb-4">
+                                                <input id="nonregular" type="radio" name="status_mahasiswa"
+                                                    value="Non Regular"
+                                                    class="w-4 h-4 border-gray-400 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                                                    {{ old('status_mahasiswa', $data->status_mahasiswa) == 'Non Regular' ? 'checked' : '' }}>
+                                                <label for="nonregular"
+                                                    class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Non
+                                                    Regular (Pindahan/Konversi)</label>
+                                            </div>
+                                        </fieldset>
+                                        @error('status_mahasiswa')
                                             <div class="text-xs text-red-500">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -78,7 +106,8 @@
                                             <div class="flex items-center mb-4">
                                                 <input id="country-option-2" type="radio" name="jenis_kelamin"
                                                     value="Perempuan"
-                                                    class="w-4 h-4 border-gray-400 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" {{ old('jenis_kelamin', $data->jenis_kelamin) == 'Perempuan' ? 'checked' : '' }}>
+                                                    class="w-4 h-4 border-gray-400 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                                                    {{ old('jenis_kelamin', $data->jenis_kelamin) == 'Perempuan' ? 'checked' : '' }}>
                                                 <label for="country-option-2"
                                                     class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">P</label>
                                             </div>
@@ -95,7 +124,9 @@
                                             class="{{ $errors->has('pembimbing1') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} block w-full p-2.5 text-sm text-gray-900 border rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
                                             @foreach ($daftardosen as $dosen)
-                                                <option value="{{ $dosen->nama_dosen }}" {{ $data->pembimbing1 == $dosen->nama_dosen ? 'selected' : '' }}>{{ $dosen->nama_dosen }}</option>
+                                                <option value="{{ $dosen->nama_dosen }}"
+                                                    {{ $data->pembimbing1 == $dosen->nama_dosen ? 'selected' : '' }}>
+                                                    {{ $dosen->nama_dosen }}</option>
                                             @endforeach
                                         </select>
                                         @error('pembimbing1')
@@ -110,7 +141,9 @@
                                             class="{{ $errors->has('pembimbing2') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} block w-full p-2.5 text-sm text-gray-900 border rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
                                             @foreach ($daftardosen as $dosen)
-                                                <option value="{{ $dosen->nama_dosen }}" {{ $data->pembimbing2 == $dosen->nama_dosen ? 'selected' : '' }}>{{ $dosen->nama_dosen }}</option>
+                                                <option value="{{ $dosen->nama_dosen }}"
+                                                    {{ $data->pembimbing2 == $dosen->nama_dosen ? 'selected' : '' }}>
+                                                    {{ $dosen->nama_dosen }}</option>
                                             @endforeach
                                             <option value="Nirsal, S.Kom., M.Kom.">Nirsal, S.Kom., M.Kom.</option>
                                             <option value="Vicky Bin Djusmin, S.Kom., M.Kom.">Vicky Bin Djusmin, S.Kom.,
@@ -124,7 +157,8 @@
                                         <label for="tgl_accp1"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             Tgl ACC Pembimbing Utama</label>
-                                        <input type="date" id="tgl_accp1" name="tgl_accp1" value="{{ old('tgl_accp1', Carbon\Carbon::parse($data->tgl_accp1)->format('Y-m-d')) }}"
+                                        <input type="date" id="tgl_accp1" name="tgl_accp1"
+                                            value="{{ old('tgl_accp1', Carbon::parse($data->tgl_accp1)->format('Y-m-d')) }}"
                                             placeholder="Write tgl_accp2 here..."
                                             class="{{ $errors->has('tgl_accp2') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
@@ -136,7 +170,8 @@
                                         <label for="tgl_accp2"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             Tgl ACC Pembimbin Utama</label>
-                                        <input type="date" id="tgl_accp2" name="tgl_accp2" value="{{ old('tgl_accp2', Carbon\Carbon::parse($data->tgl_accp2)->format('Y-m-d')) }}"
+                                        <input type="date" id="tgl_accp2" name="tgl_accp2"
+                                            value="{{ old('tgl_accp2', Carbon::parse($data->tgl_accp2)->format('Y-m-d')) }}"
                                             placeholder="Write tgl_accp2 here..."
                                             class="{{ $errors->has('tgl_accp2') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
@@ -148,8 +183,8 @@
                                         <label for="no_hp"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             No HP</label>
-                                        <input type="number" id="no_hp" name="no_hp" value="{{ old('no_hp', $data->no_hp) }}"
-                                            placeholder="Write no_hp here..."
+                                        <input type="number" id="no_hp" name="no_hp"
+                                            value="{{ old('no_hp', $data->no_hp) }}" placeholder="Write no_hp here..."
                                             class="{{ $errors->has('no_hp') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
                                         @error('no_hp')

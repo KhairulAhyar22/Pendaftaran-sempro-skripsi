@@ -4,7 +4,7 @@
 @include('layout.head')
 
 <body>
-    @include('layout.sidebar')
+    @include('layout.mhs_sidebar')
     <div class="">
         @yield('content')    
     </div>

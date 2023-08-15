@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PdSemproController;
 use App\Http\Controllers\PdSkripsiController;
 
@@ -35,6 +36,16 @@ Route::resource('skripsi', PdSkripsiController::class);
 Route::get('/skripsi/create/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'createdokumentskripsi']);
 Route::post('/skripsi/store/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'storedokumentskripsi']);
 Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasilformskripsi']);
+
+
+//LANDING PAGE
+Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+
+
+
+
+
+
 
 // Route::get('/daftaryudisium', function () {
 //     return view('pendaftaranyudisium_user');

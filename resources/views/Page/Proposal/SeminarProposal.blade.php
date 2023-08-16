@@ -12,10 +12,11 @@
         <div class="container pb-8 my-5 px-7 mt-7">
             <div class="relative overflow-x-auto bg-white border rounded-lg">
                 <div class="flex w-full">
+                    <!-- <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full"> -->
                     <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
 
                         <!-- <div class="flex justify-start">
-                            <a href="/proposal/create"
+                            <a href="/proposal/create" 
                                 class="text-white flex item-center bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-[3px] px-4 py-2.5 my-5 dark:bg-cyan-600 dark:hover:bg-cyan-700 focus:outline-none dark:focus:ring-cyan-800">
                                 <p class="px-2"> Tambah data</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

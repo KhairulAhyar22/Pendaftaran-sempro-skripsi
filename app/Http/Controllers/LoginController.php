@@ -10,12 +10,24 @@ class LoginController extends Controller
 {
     public function authenticate(Request $request)
     {
-        $credentials = $request->validate([
-            'username' => 'required',
-            'password' => 'required'
-        ]);
+        $withusername = [
+            'username' => $request->username,
+            'password' => $request->password,
+        ];
+        $withnim = [
+            'nim' => $request->username,
+            'password' => $request->password,
+        ];
+        // $credentials = $request->validate([
+        //     'username' => 'required',
+        //     'password' => 'required'
+        // ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($withusername)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard')->with('success', 'berhasil');
+        }
+        if (Auth::attempt($withnim)) {
             $request->session()->regenerate();
             return redirect()->intended('/dashboard')->with('success', 'berhasil');
         }
@@ -31,5 +43,19 @@ class LoginController extends Controller
         request()->session()->regenerateToken();
 
         return redirect('/login');
+    }
+
+    public function buatakun(Request $request)
+    {
+        // dd($request->all());
+        $buatakun = [
+            'username' => $request->username,
+            'level' => $request->level,
+            'nim' => $request->nim,
+            'confirm_password' => $request->password,
+            'password' => bcrypt($request->password),
+        ];
+        User::create($buatakun);
+        return redirect()->back();
     }
 }

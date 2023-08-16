@@ -47,7 +47,7 @@
     </div>
     <div class="relative justify-center min-h-screen bg-transparent shadow-xl sm:flex sm:flex-row rounded-3xl">
         <div class="z-10 flex flex-col self-center lg:px-14 sm:max-w-4xl xl:max-w-md">
-            <div class="flex-col self-start hidden text-gray-200 sm:flex px-5">
+            <div class="flex-col self-start hidden px-5 text-gray-200 sm:flex">
                 <img class="w-52 h-52 ml-7" src="img/uncpp.png">
                 <h1 class="my-3 text-4xl font-semibold">Selamat Datang</h1>
                 <p class="pr-3 text-sm opacity-75">Sistem Informasi Program Studi Informatika Fakultas Komputer
@@ -64,11 +64,17 @@
                     </div>
                     <form action="/authenticate" method="post">
                         @csrf
+                        @error('username')
+                            <div class="text-red-400">{{ $message }}</div>
+                        @enderror
+                        @error('password')
+                            <div class="text-red-400">{{ $message }}</div>
+                        @enderror
                         <div class="space-y-6">
                             <div class="">
                                 <input
                                     class="w-full px-4 py-3 text-sm bg-gray-200 border border-gray-400 rounded-lg focus:bg-gray-100 focus:outline-none focus:border-purple-400"
-                                    type="text" placeholder="Username" name="username">
+                                    type="text" placeholder="Username/NIM" name="username">
                             </div>
 
                             <div class="relative" x-data="{ show: true }">
@@ -86,12 +92,12 @@
                         </div>
                     </form>
                 </div>
-                <div class="mt-5">
-                    <a href="/dashboard"
+                {{-- <div class="mt-5">
+                    <a href="/mhs_dashboard"
                         class="flex justify-center w-full p-3 font-semibold tracking-wide text-gray-100 transition duration-100 ease-in bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-600">Masuk
                         Sebagai Mahasiswa
                     </a>
-                </div>
+                </div> --}}
 
             </div>
         </div>

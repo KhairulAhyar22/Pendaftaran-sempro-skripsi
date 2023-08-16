@@ -21,14 +21,23 @@ use App\Http\Controllers\PdSkripsiController;
 Route::post('/authenticate', [LoginController::class, 'authenticate'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'logout']);
 
+Route::post('/authenticate', [LoginController::class, 'authenticate'])->middleware('guest');
+Route::get('/logout', [LoginController::class, 'logout']);
+
 Route::get('/dashboard', function () {
     return view('page.general.dashboard');
+});
+Route::get('/mhs_dashboard', function () {
+    return view('page.general.mhs_dashboard');
 });
 // ==================== SEMINAR PROPOSAL =====================
 Route::resource('/proposal', PdSemproController::class);
 
+Route::resource('/proposal', PdSemproController::class);
+
 Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
 Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
+Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
 Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
 
 // ==================== UJIAN SKRIPSI =======================
@@ -75,8 +84,10 @@ Route::get('/tambahdaftarseminar', function () {
 });
 Route::get('/login', function () {
     return view('page.general.login');
+    return view('page.general.login');
 });
 Route::get('/register', function () {
+    return view('page.general.register');
     return view('page.general.register');
 });
 

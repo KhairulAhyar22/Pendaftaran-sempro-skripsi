@@ -24,7 +24,15 @@ class PdSemproController extends Controller
         // dd($datas);
         return view('Page.Proposal.Seminarproposal', ["datas" => $datas]);
     }
+    // public function index_mhs()
+    // {
+    //     $datas = DB::table('tb_daftar_sempro')
+    //         ->orderByDesc('created_at')
+    //         ->get();
 
+    //     // dd($datas);
+    //     return view('Page.Proposal.createdaftarseminarproposal', ["datas" => $datas]);
+    // }
     /**
      * Show the form for creating a new resource.
      *
@@ -81,7 +89,8 @@ class PdSemproController extends Controller
         ];
         $sempro = PdSempro::create($datainput);
         // dd($sempro);
-        return redirect('/proposal/hasilformproposal/'. $sempro->id);
+        // return redirect('/proposal/hasilformproposal/'. $sempro->id);
+        return redirect('/proposal/create/dokumentpersyaratan/'. $sempro->id);
         return redirect('/proposal');
     }
 
@@ -95,10 +104,12 @@ class PdSemproController extends Controller
     {
         $data = DB::table('tb_daftar_sempro')->find($id);
         $dokument = DokumenPdSempro::where('id_daftar_sempro', $id)->first();
+        $file = DB::table('tb_dok_sempro')->where('id_daftar_sempro', $id)->first();
         // dd($dokument);
         return view('Page.Proposal.detaildaftarproposal', [
             'data' => $data,
             'dokument' => $dokument,
+            'file'=>$file
         ]);
     }
 
@@ -186,11 +197,11 @@ class PdSemproController extends Controller
         $filename_slip_pembayaran = time() . ' ' . $file_slip_pembayaran->getClientOriginalName();
 
         // ============ UPLOAD FILE GAMBAR ==================
-        $file_krs->move(public_path('Proposal/KRS'), $filename_krs);
-        $file_kartu_konsul->move(public_path('Proposal/KartuKonsul'), $filename_kartu_konsul);
-        $file_khs->move(public_path('Proposal/KHS'), $filename_khs);
-        $file_lunas_spp->move(public_path('Proposal/LunasSPP'), $filename_lunas_spp);
-        $file_slip_pembayaran->move(public_path('Proposal/SlipPembayaran'), $filename_slip_pembayaran);
+        $file_krs->move(public_path('Dokument/Proposal/KRS'), $filename_krs);
+        $file_kartu_konsul->move(public_path('Dokument/Proposal/KartuKonsul'), $filename_kartu_konsul);
+        $file_khs->move(public_path('Dokument/Proposal/KHS'), $filename_khs);
+        $file_lunas_spp->move(public_path('Dokument/Proposal/LunasSPP'), $filename_lunas_spp);
+        $file_slip_pembayaran->move(public_path('Dokument/Proposal/SlipPembayaran'), $filename_slip_pembayaran);
 
         // =============== SAVE KE DATABASE ====================
         DokumenPdSempro::create([
@@ -203,15 +214,18 @@ class PdSemproController extends Controller
         ]);
 
         PdSempro::find($id)->update(['status_dok' => 'Lengkap']);
-        return redirect('/proposal');
+        return redirect('/proposal/hasilformproposal/'. $sempro->id);
+        return redirect('/login');
     }
     public function hasilformproposal($id)
     {
         $daftardosen = Dosen::all();
         $data = DB::table('tb_daftar_sempro')->find($id);
+        $file = DB::table('tb_dok_sempro')->find($id);
         return view('page.proposal.hasilformproposal', compact(
             'daftardosen',
-            'data'
+            'data',
+            'file'
         ));
     }
 }

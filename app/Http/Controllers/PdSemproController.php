@@ -99,7 +99,7 @@ class PdSemproController extends Controller
         $sempro = PdSempro::create($datainput);
         // dd($sempro);
         // return redirect('/proposal/hasilformproposal/'. $sempro->id);
-        return redirect('/proposal/create/dokumentpersyaratan/' . $sempro->id);
+        return redirect('/proposal/create/dokumentpersyaratan/'. $sempro->id);
         return redirect('/proposal');
     }
 
@@ -223,7 +223,7 @@ class PdSemproController extends Controller
         ]);
 
         PdSempro::find($id)->update(['status_dok' => 'Lengkap']);
-        return redirect('/proposal/hasilformproposal/' . $sempro->id);
+        return redirect('/proposal/hasilformproposal/'. $id);
         return redirect('/login');
     }
     public function hasilformproposal($id)

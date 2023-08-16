@@ -12,6 +12,7 @@
         <div class="container pb-8 my-5 px-7 mt-7">
             <div class="relative overflow-x-auto bg-white border rounded-lg">
                 <div class="flex w-full">
+                    <!-- <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full"> -->
                     <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
 
                         <!-- <div class="flex justify-start">
@@ -61,7 +62,7 @@
                                 <tbody>
                                     @foreach ($datas as $data)
                                         <tr
-                                            class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            class="text-left border-b even:bg-white odd:bg-gray-200 text-slate-700 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                             <th scope="row"
                                                 class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
                                                 {{ $loop->iteration }}
@@ -110,7 +111,7 @@
                                                     class="right-0 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700">
                                                     <ul class="py-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                         aria-labelledby="dropdownDefaultButton">
-                                                        <li>
+                                                        <!-- <li>
                                                             <a href="/proposal/{{ $data->id }}/edit"
                                                                 class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center">
                                                                 <div class="flex items-center justify-end mx-auto w-28">
@@ -120,7 +121,7 @@
                                                                     <p class="text-sm">Edit</p>
                                                                 </div>
                                                             </a>
-                                                        </li>
+                                                        </li> -->
                                                         <li>
                                                             <a href="{{ url("/proposal/{$data->id}") }}"
                                                                 class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
@@ -131,7 +132,7 @@
                                                                 </div>
                                                             </a>
                                                         </li>
-                                                        <li>
+                                                        <!-- <li>
                                                             <a href="{{ url("/proposal/hasilformproposal/{$data->id}") }}"
                                                                 class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
                                                                 <div class="flex items-center justify-end mx-auto w-28">
@@ -142,7 +143,7 @@
                                                                     <p class="text-sm">Unduh Form</p>
                                                                 </div>
                                                             </a>
-                                                        </li>
+                                                        </li> -->
                                                         <li>
                                                             <form action="/proposal/{{ $data->id }}" method="POST"
                                                                 onsubmit="return confirm('Anda yakin akan hapus?')">

@@ -48,6 +48,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasilformskripsi']);
 
 
+
+    Route::get('/buatakun', function () {
+        return view('page.general.buatakun');
+    });
+    Route::post('/storebuatakun', [LoginController::class, 'buatakun']);
+    
     //=======SEMPRO MAHASISWA========
     // Route::resource('/mhs_proposal', [PdSemproController::class,'index_mhs']);
 
@@ -82,11 +88,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/register', function () {
         return view('page.general.register');
     });
-
-    Route::get('/buatakun', function () {
-        return view('page.general.buatakun');
-    });
-    Route::post('/storebuatakun', [LoginController::class, 'buatakun']);
 });
 
 

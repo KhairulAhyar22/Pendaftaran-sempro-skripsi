@@ -4,7 +4,7 @@
             <div class="text-sm text-white">
                 <div class="px-6 text-right text-gray-900 ">
                     <span>Halo, Selamat Datang</span> <br>
-                    <span class="font-bold">(Admin)</span>
+                    <span class="font-bold">({{ auth()->user()->username }})</span>
                 </div>
             </div>
             <iconify-icon icon="ic:sharp-account-circle" width="35" height="35"></iconify-icon>

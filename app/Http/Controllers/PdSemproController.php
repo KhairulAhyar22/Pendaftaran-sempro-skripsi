@@ -112,12 +112,10 @@ class PdSemproController extends Controller
     public function show($id)
     {
         $data = DB::table('tb_daftar_sempro')->find($id);
-        $dokument = DokumenPdSempro::where('id_daftar_sempro', $id)->first();
         $file = DB::table('tb_dok_sempro')->where('id_daftar_sempro', $id)->first();
-        // dd($dokument);
+        // dd($data);
         return view('Page.Proposal.detaildaftarproposal', [
             'data' => $data,
-            'dokument' => $dokument,
             'file' => $file
         ]);
     }
@@ -182,16 +180,16 @@ class PdSemproController extends Controller
     {
         $request->validate([
             // 'file' => 'required|mimes:pdf,xlx,csv|max:2048',
-            'file_krs' => 'required',
-            'file_kartu_konsul' => 'required',
-            'file_khs' => 'required',
-            'file_lunas_spp' => 'required',
-            'file_slip_pembayaran' => 'required',
+            // 'file_krs' => 'required',
+            'file_kartu_konsul' => 'required|mimes:pdf',
+            'file_khs' => 'required|mimes:pdf',
+            'file_lunas_spp' => 'required|mimes:pdf',
+            'file_slip_pembayaran' => 'required|mimes:pdf',
         ]);
 
         // dd($request->all());
-        $file_krs = $request->file('file_krs');
-        $filename_krs = time() . ' ' . $file_krs->getClientOriginalName();
+        // $file_krs = $request->file('file_krs');
+        // $filename_krs = time() . ' ' . $file_krs->getClientOriginalName();
 
         $file_kartu_konsul = $request->file('file_kartu_konsul');
         $filename_kartu_konsul = time() . ' ' . $file_kartu_konsul->getClientOriginalName();
@@ -206,7 +204,7 @@ class PdSemproController extends Controller
         $filename_slip_pembayaran = time() . ' ' . $file_slip_pembayaran->getClientOriginalName();
 
         // ============ UPLOAD FILE GAMBAR ==================
-        $file_krs->move(public_path('Dokument/Proposal/KRS'), $filename_krs);
+        // $file_krs->move(public_path('Dokument/Proposal/KRS'), $filename_krs);
         $file_kartu_konsul->move(public_path('Dokument/Proposal/KartuKonsul'), $filename_kartu_konsul);
         $file_khs->move(public_path('Dokument/Proposal/KHS'), $filename_khs);
         $file_lunas_spp->move(public_path('Dokument/Proposal/LunasSPP'), $filename_lunas_spp);
@@ -215,7 +213,7 @@ class PdSemproController extends Controller
         // =============== SAVE KE DATABASE ====================
         DokumenPdSempro::create([
             'id_daftar_sempro' => $id,
-            'file_krs' => $filename_krs,
+            // 'file_krs' => $filename_krs,
             'file_kartu_konsul' => $filename_kartu_konsul,
             'file_khs' => $filename_khs,
             'file_lunas_spp' => $filename_lunas_spp,
@@ -236,5 +234,13 @@ class PdSemproController extends Controller
             'data',
             'file'
         ));
+    }
+    public function verifikasiproposal($id)
+    {
+        PdSempro::find($id)->update([
+            // ini masih belum tau apa bagusnya
+            'status' => 'Terverifikasi',
+        ]);
+        return redirect()->back();
     }
 }

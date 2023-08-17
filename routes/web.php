@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
     Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
     Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
+    Route::get('/proposal/vetifikasi/{id}', [PdSemproController::class, 'verifikasiproposal']);
 
     // ==================== UJIAN SKRIPSI =======================
     Route::resource('skripsi', PdSkripsiController::class);

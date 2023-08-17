@@ -25,7 +25,7 @@
                             <div class="p-6 lg:p-6 ">
                                 
                                 <div class="grid grid-cols-1 mb-5 lg:grid-cols-1 lg:mx-10 gap-7 ">
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                             for="file_krs">Upload KRS</label>
                                         <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_krs_help">Hasil
@@ -36,7 +36,7 @@
                                             @error('file_krs')
                                             <div class="text-xs text-red-500">{{ $message }}</div>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                     <div class="mb-3">
                                         
                                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -84,17 +84,17 @@
                                             <div class="text-xs text-red-500">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                             for="file_input">Mengumpulkan 2 Rangkap Proposal yang Telah Dijilid Warna
                                             Merah</label>
-                                        <!-- <input 
+                                        <input 
                                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                             aria-describedby="file_input_help" id="file_input" type="file" disabled>
                                         @error('nama_mahasiswa')
                                             <div class="text-xs text-red-500">{{ $message }}</div>
-                                        @enderror -->
-                                    </div>
+                                        @enderror
+                                    </div> --}}
                                 </div>
                                 <div class="flex justify-start my-8 lg:mx-10 ">
                                     <button type=" submit" 

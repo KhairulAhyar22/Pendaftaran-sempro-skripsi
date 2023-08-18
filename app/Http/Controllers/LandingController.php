@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Dosen;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class LandingController extends Controller
 {
     public function index()
     {
-        
-        return view('layout.landingpage.content.content');
+        $daftardosen = Dosen::all();
+        return view(
+        'layout.landingpage.content.content', compact(
+            'daftardosen'
+        ));
     }
+    
     
 }

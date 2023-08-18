@@ -1,5 +1,5 @@
 <nav class="bg-dark-green fixed top-0 left-0 w-screen z-50 drop-shadow">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-3 sm:px-7 py-2">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4  py-2">
         <div class="flex items-end ">
             <div class="">
                 <a href="/" class="flex items-center">
@@ -30,9 +30,8 @@
                         class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Info</a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Dropdown
-                        nanti disini</a>
+                    <a href="#pendaftaran"
+                        class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pendaftaran</a>
                 </li>
                 <li>
                     <a href="#tentang"

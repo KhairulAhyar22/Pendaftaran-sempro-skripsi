@@ -35,8 +35,8 @@ Route::resource('/proposal', PdSemproController::class);
 
 Route::resource('/proposal', PdSemproController::class);
 
-Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
-Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
+// Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
+// Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
 Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
 Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
 
@@ -48,8 +48,10 @@ Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasil
 
 
 //LANDING PAGE
-Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-
+Route::resource('/', LandingController::class);
+// Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+Route::get('/proposal/create/dokumentpersyaratan/{id}', [LandingController::class, 'createdokumentproposal']);
+Route::post('/proposal/store/dokumentpersyaratan/{id}', [LandingController::class, 'storedokumentproposal']);
 
 
 

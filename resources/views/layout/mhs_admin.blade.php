@@ -10,7 +10,7 @@
             </div>
         </div>
     </div>
-     <div class="flex justify-center w-full gap-10 pt-16">
+    <div class="flex justify-center w-full gap-10 pt-16">
         <a href="/proposal/create" class="">
             <div class="w-auto p-1 hover:-mt-2">
                 <div class="flex flex-col justify-between leading-normal rounded-lg shadow-xl bg-amber-500 h-fit">
@@ -30,7 +30,7 @@
                             </svg>
                         </div>
                     </div>
-                </div>               
+                </div>
             </div>
         </a>
         <a href="/skripsi/create" class="">
@@ -52,10 +52,10 @@
                             </svg>
                         </div>
                     </div>
-                </div>               
+                </div>
             </div>
         </a>
-       
+
         <!-- <div class="w-auto p-1">
             <div class="bg-sky-700 shadow-xl flex flex-col justify-between leading-normal h-[100px] rounded-t-lg">
                 <div class="flex justify-between p-3 leading-normal gap-x-4">
@@ -90,5 +90,5 @@
                 </button>
             </div>
         </div> -->
-    </div> 
+    </div>
 </div>

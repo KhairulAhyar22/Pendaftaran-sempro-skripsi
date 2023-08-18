@@ -64,11 +64,17 @@
                     </div>
                     <form action="/authenticate" method="post">
                         @csrf
+                        @error('username')
+                            <div class="text-red-400">{{ $message }}</div>
+                        @enderror
+                        @error('password')
+                            <div class="text-red-400">{{ $message }}</div>
+                        @enderror
                         <div class="space-y-6">
                             <div class="">
                                 <input
                                     class="w-full px-4 py-3 text-sm bg-gray-200 border border-gray-400 rounded-lg focus:bg-gray-100 focus:outline-none focus:border-purple-400"
-                                    type="text" placeholder="Username" name="username">
+                                    type="text" placeholder="Username/NIM" name="username">
                             </div>
 
                             <div class="relative" x-data="{ show: true }">
@@ -86,12 +92,12 @@
                         </div>
                     </form>
                 </div>
-                <div class="mt-5">
+                {{-- <div class="mt-5">
                     <a href="/mhs_dashboard"
                         class="flex justify-center w-full p-3 font-semibold tracking-wide text-gray-100 transition duration-100 ease-in bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-600">Masuk
                         Sebagai Mahasiswa
                     </a>
-                </div>
+                </div> --}}
 
             </div>
         </div>

@@ -1,11 +1,15 @@
 @extends('layout.index')
 @section('content')
+
+    @php
+        use Carbon\Carbon;
+    @endphp
     <div class="text-center w-full ml-0 bg-gray-100 pb-20 min-h-screen sm:pl-[260px]">
         {{-- navbar profile --}}
         @include('layout.profile')
 
         <div class="w-auto p-3 bg-yellow-300 border-b-2 border-gray-300 rounded-lg shadow-lg mx-7 mt-11 ">
-            <h1 class="font-sans text-lg font-bold text-black">DATA PENDAFTAR SEMINAR PROPOSAL</h1>
+            <h1 class="font-sans text-lg font-bold text-black">JADWAL SEMINAR PROPOSAL</h1>
         </div>
 
         <!-- CARD -->
@@ -14,30 +18,17 @@
                 <div class="flex w-full">
                     <!-- <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full"> -->
                     <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
-                        @if (Auth::user()->level == 'Mahasiswa')
+                        @if (Auth::user()->level == 'Prodi')
                             <div class="flex justify-start">
-                                @if (count($datas) >= 1)
-                                    <button
-                                        onclick="return alert('Tidak dapat melakukan pendaftaran, pendaftaran telah terbuat sebelumnya')"
-                                        class="text-white flex item-center bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-[3px] px-4 py-2.5 my-5 dark:bg-cyan-600 dark:hover:bg-cyan-700 focus:outline-none dark:focus:ring-cyan-800">
-                                        <p class="px-2"> Tambah data</p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24">
-                                            <path fill="currentColor"
-                                                d="M11 13v3q0 .425.288.713T12 17q.425 0 .713-.288T13 16v-3h3q.425 0 .713-.288T17 12q0-.425-.288-.713T16 11h-3V8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8v3H8q-.425 0-.713.288T7 12q0 .425.288.713T8 13h3Zm1 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" />
-                                        </svg>
-                                    </button>
-                                @else
-                                    <a href="/proposal/create"
-                                        class="text-white flex item-center bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-[3px] px-4 py-2.5 my-5 dark:bg-cyan-600 dark:hover:bg-cyan-700 focus:outline-none dark:focus:ring-cyan-800">
-                                        <p class="px-2"> Tambah data</p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24">
-                                            <path fill="currentColor"
-                                                d="M11 13v3q0 .425.288.713T12 17q.425 0 .713-.288T13 16v-3h3q.425 0 .713-.288T17 12q0-.425-.288-.713T16 11h-3V8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8v3H8q-.425 0-.713.288T7 12q0 .425.288.713T8 13h3Zm1 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" />
-                                        </svg>
-                                    </a>
-                                @endif
+                                <a href="/jadwal/seminarproposal/create"
+                                    class="text-white flex item-center bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-[3px] px-4 py-2.5 my-5 dark:bg-cyan-600 dark:hover:bg-cyan-700 focus:outline-none dark:focus:ring-cyan-800">
+                                    <p class="px-2"> Buat Jadwal</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M11 13v3q0 .425.288.713T12 17q.425 0 .713-.288T13 16v-3h3q.425 0 .713-.288T17 12q0-.425-.288-.713T16 11h-3V8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8v3H8q-.425 0-.713.288T7 12q0 .425.288.713T8 13h3Zm1 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" />
+                                    </svg>
+                                </a>
                             </div>
                         @endif
 
@@ -45,43 +36,28 @@
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <thead class="text-sm text-center text-gray-100 bg-emerald-700">
                                     <tr>
-                                        @if (Auth::user()->level == 'Mahasiswa')
-                                            <th scope="col" class="px-2 py-2 font-medium">
-                                                Status
-                                            </th>
-                                        @else
-                                            <th scope="col" class="px-2 py-2 font-medium">
+                                            <th scope="col" class="px-3 py-4 font-medium">
                                                 No
                                             </th>
-                                        @endif
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
+                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             Nama Mahasiswa
                                         </th>
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
+                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             NIM
                                         </th>
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
-                                            Status Mahasiswa
+                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
+                                            No Surat
                                         </th>
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
-                                            Judul Proposal
+                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
+                                            Tanggal/Waktu
                                         </th>
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
-                                            Pembimbing 1 / Pembimbing 2
+                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
+                                            Tempat
                                         </th>
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
-                                            Tgl Acc Pembimbing 1 / Pembimbing 2
-                                        </th>
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
-                                            No.Hp
-                                        </th>
-                                        @if (Auth::user()->level == 'Mahasiswa')
-                                        @else
-                                            <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
-                                                Status
-                                            </th>
-                                        @endif
-                                        <th scope="col" class="px-2 py-2 font-medium border-l-2 border-gray-200">
+                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
+                                            Ketua Tim / Anggota
+                                        </th>                                        
+                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             Aksi
                                         </th>
                                     </tr>
@@ -90,18 +66,11 @@
                                     @foreach ($datas as $data)
                                         <tr
                                             class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                            @if (Auth::user()->level == 'Mahasiswa')
-                                                <td class="px-2.5 py-2">
-                                                    <div class="px-3 py-1 bg-pink-400 text-black rounded">
-                                                        {{ $data->status }}
-                                                    </div>
-                                                </td>
-                                            @else
+                                           
                                                 <th scope="row"
                                                     class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
                                                     {{ $loop->iteration }}
                                                 </th>
-                                            @endif
                                             <td class="px-2.5 py-2">
                                                 {{ $data->nama_mahasiswa }}
                                             </td>
@@ -109,30 +78,21 @@
                                                 {{ $data->nim }}
                                             </td>
                                             <td class="px-2.5 py-2">
-                                                {{ $data->status_mahasiswa }}
-                                            </td>
-                                            <td class="px-2.5 py-2">
-                                                {{ $data->judul_proposal }}
-                                            </td>
-                                            <td class="px-2.5 py-2">
-                                                {{ $data->pembimbing1 }} <br>
-                                                - <br>
-                                                {{ $data->pembimbing2 }}
+                                                {{ $data->no_surat }}
                                             </td>
                                             <td class="px-2.5 py-2 text-center">
-                                                {{ Carbon\Carbon::parse($data->tgl_accp1)->format('d-m-Y') }} <br>
+                                                {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }} <br>
                                                 - <br>
-                                                {{ Carbon\Carbon::parse($data->tgl_accp2)->format('d-m-Y') }}
+                                                {{ Carbon::parse($data->waktu)->format('H:i') }} WITA
                                             </td>
                                             <td class="px-2.5 py-2">
-                                                {{ $data->no_hp }}
+                                                {{ $data->tempat }}
                                             </td>
-                                            @if (Auth::user()->level == 'Mahasiswa')
-                                            @else
-                                                <td class="px-2.5 py-2">
-                                                    {{ $data->status }}
-                                                </td>
-                                            @endif
+                                            <td class="px-2.5 py-2">
+                                                {{ $data->ketua_tim }} <br>
+                                                - <br>
+                                                {{ $data->anggota }}
+                                            </td>
                                             <td
                                                 class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2.5 py-2 text-sm text-center text-gray-500">
                                                 <button id="{{ $data->id }}"
@@ -166,24 +126,12 @@
                                                             </li>
                                                         @endif
                                                         <li>
-                                                            <a href="{{ url("/proposal/{$data->id}") }}"
-                                                                class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
-                                                                <div class="flex items-center justify-end mx-auto w-28">
-                                                                    <iconify-icon icon="iconamoon:eye"
-                                                                        class="text-[18px] mr-2"></iconify-icon>
-                                                                    <p class="text-sm">Show</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
                                                             <a href="{{ url("/proposal/hasilformproposal/{$data->id}") }}"
                                                                 class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
                                                                 <div class="flex items-center justify-end mx-auto w-28">
                                                                     <iconify-icon icon="ic:round-download"
                                                                         class="text-[20px] mr-2"></iconify-icon>
-                                                                    {{-- <iconify-icon icon="iconamoon:eye"
-                                                                        class="text-[18px] mr-2"></iconify-icon> --}}
-                                                                    <p class="text-sm">Unduh Form</p>
+                                                                    <p class="text-sm">Unduh</p>
                                                                 </div>
                                                             </a>
                                                         </li>
@@ -200,7 +148,7 @@
                                                                         <div
                                                                             class="flex items-center justify-end mx-auto w-28">
                                                                             <iconify-icon icon="ant-design:delete-filled"
-                                                                                class="mr-1 text-xl"></iconify-icon>
+                                                                                class="mr-1 text-lg"></iconify-icon>
                                                                             <p class="">Delete</p>
                                                                         </div>
                                                                     </button>

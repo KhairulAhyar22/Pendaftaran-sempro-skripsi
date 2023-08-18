@@ -76,7 +76,7 @@
                     </button>
                     <ul id="dropdown-menu-jadwal" class="hidden ">
                         <li class="p-1.5 list-none">
-                            <a href="/jadwal/seminarproposal"
+                            <a href="/jadwalseminar_admin"
                                 class="flex items-center w-full text-white transition duration-75 rounded-lg pl-11 group hover:bg-emerald-800 hover:text-black">Seminar</a>
                         </li>
                         <li class="p-1.5 list-none">

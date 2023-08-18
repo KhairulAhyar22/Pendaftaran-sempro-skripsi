@@ -58,7 +58,13 @@ Route::group(['middleware' => ['auth']], function () {
         return view('page.general.buatakun');
     });
     Route::post('/storebuatakun', [LoginController::class, 'buatakun']);
-    
+
+
+    //LANDING PAGE
+    Route::resource('/', LandingController::class);
+
+
+
     //=======SEMPRO MAHASISWA========
     // Route::resource('/mhs_proposal', [PdSemproController::class,'index_mhs']);
 

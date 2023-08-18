@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PdSemproController;
 use App\Http\Controllers\PdSkripsiController;
+use App\Http\Controllers\JadwalSemproController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +47,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/skripsi/create/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'createdokumentskripsi']);
     Route::post('/skripsi/store/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'storedokumentskripsi']);
     Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasilformskripsi']);
-
+    
+    // ==================== SURAT JADWAL SEMINAR PROPOSAL =======================
+    Route::get('/jadwal/seminarproposal', [JadwalSemproController::class, 'index']);
+    Route::get('/jadwal/seminarproposal/create', [JadwalSemproController::class, 'create']);
+    Route::get('/jadwal/seminarproposal/create/{id}', [JadwalSemproController::class, 'createbyid']);
+    Route::post('/jadwal/seminarproposal/store', [JadwalSemproController::class, 'store']);
 
 
     Route::get('/buatakun', function () {

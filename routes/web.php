@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PdSemproController;
 use App\Http\Controllers\PdSkripsiController;
+use App\Http\Controllers\JadwalSemproController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,6 @@ Route::group(['middleware' => ['guest']], function () {
 // ADMIN DAN USER PENDAFTARAN SEMINAR,SKRIPSI,YUDISIUM
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [LoginController::class, 'logout']);
-
     Route::get('/dashboard', function () {
         return view('page.general.dashboard');
     });
@@ -35,17 +35,30 @@ Route::group(['middleware' => ['auth']], function () {
     });
     // ==================== SEMINAR PROPOSAL =====================
     Route::resource('/proposal', PdSemproController::class);
-
     Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
     Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
     Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
     Route::get('/proposal/vetifikasi/{id}', [PdSemproController::class, 'verifikasiproposal']);
-
     // ==================== UJIAN SKRIPSI =======================
     Route::resource('skripsi', PdSkripsiController::class);
     Route::get('/skripsi/create/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'createdokumentskripsi']);
     Route::post('/skripsi/store/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'storedokumentskripsi']);
     Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasilformskripsi']);
+
+
+    // ==================== SURAT JADWAL SEMINAR PROPOSAL =======================
+    Route::get('/jadwal/seminarproposal', [JadwalSemproController::class, 'index']);
+    Route::get('/jadwal/seminarproposal/create', [JadwalSemproController::class, 'create']);
+    Route::get('/jadwal/seminarproposal/create/{id}', [JadwalSemproController::class, 'createbyid']);
+    Route::post('/jadwal/seminarproposal/store', [JadwalSemproController::class, 'store']);
+
+
+    /////////////////////LANDING PAGE////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Route::resource('/', LandingController::class);
+    // Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+    Route::get('/proposal/create/dokumentpersyaratan/{id}', [LandingController::class, 'createdokumentproposal']);
+    Route::post('/proposal/store/dokumentpersyaratan/{id}', [LandingController::class, 'storedokumentproposal']);
+
 
 
 
@@ -54,21 +67,11 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::post('/storebuatakun', [LoginController::class, 'buatakun']);
 
-
-    //LANDING PAGE
-    Route::resource('/', LandingController::class);
-
-
-
     //=======SEMPRO MAHASISWA========
     // Route::resource('/mhs_proposal', [PdSemproController::class,'index_mhs']);
-
-
-
     // Route::get('/daftaryudisium', function () {
     //     return view('pendaftaranyudisium_user');
     // });
-
     // ADMIN KELOLA PERSYARATAN SEMINAR,SKRIPSI,YUDISIUM
     Route::get('/persyaratan_userSeminar', function () {
         return view('page.proposal.persyaratan_userSeminar');
@@ -95,100 +98,3 @@ Route::group(['middleware' => ['auth']], function () {
         return view('page.general.register');
     });
 });
-Route::get('/mhs_dashboard', function () {
-    return view('page.general.mhs_dashboard');
-});
-// ==================== SEMINAR PROPOSAL =====================
-Route::resource('/proposal', PdSemproController::class);
-
-Route::resource('/proposal', PdSemproController::class);
-
-// Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
-// Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
-Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
-Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
-
-// ==================== UJIAN SKRIPSI =======================
-Route::resource('skripsi', PdSkripsiController::class);
-Route::get('/skripsi/create/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'createdokumentskripsi']);
-Route::post('/skripsi/store/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'storedokumentskripsi']);
-Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasilformskripsi']);
-
-
-//LANDING PAGE
-Route::resource('/', LandingController::class);
-// Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-Route::get('/proposal/create/dokumentpersyaratan/{id}', [LandingController::class, 'createdokumentproposal']);
-Route::post('/proposal/store/dokumentpersyaratan/{id}', [LandingController::class, 'storedokumentproposal']);
-
-
-
-
-
-
-// Route::get('/daftaryudisium', function () {
-//     return view('pendaftaranyudisium_user');
-// });
-
-// ADMIN KELOLA PERSYARATAN SEMINAR,SKRIPSI,YUDISIUM
-Route::get('/persyaratan_userSeminar', function () {
-    return view('page.proposal.persyaratan_userSeminar');
-});
-Route::get('/persyaratan_userskripsi', function () {
-    return view('page.skripsi.persyaratan_userskripsi');
-});
-Route::get('/persyaratan_useryudisium', function () {
-    return view('persyaratan_useryudisium');
-});
-Route::get('/syaratseminar_admin', function () {
-    return view('syaratseminar_admin');
-});
-Route::get('/syaratskripsi_admin', function () {
-    return view('syaratskripsi_admin');
-});
-Route::get('/syaratyudisium_admin', function () {
-    return view('syaratyudisium_admin');
-});
-Route::get('/tambahdaftarseminar', function () {
-    return view('tambahdaftarseminar');
-});
-Route::get('/login', function () {
-    return view('page.general.login');
-    return view('page.general.login');
-});
-Route::get('/register', function () {
-    return view('page.general.register');
-    return view('page.general.register');
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Route::get('/index', function () {
-//     return view('index');
-// });
-// Route::get('/iren', function () {
-//     return view('dashboard');
-// });

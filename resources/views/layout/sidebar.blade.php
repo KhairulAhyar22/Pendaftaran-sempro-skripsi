@@ -8,7 +8,6 @@
         </path>
     </svg>
 </button>
-
 <aside id="default-sidebar"
     class="fixed top-0 left-0 shadow-lg bg-emerald-700 z-40 w-[260px] h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar">
@@ -22,7 +21,6 @@
         <hr class="border-[1px] border-opacity-50 border-slate-300 w-full">
         <div class="h-full px-6 py-6 overflow-y-auto ">
             <ul class="space-y-2 font-medium text-sm">
-
                 <li>
                     <a href="/dashboard"
                         class="flex items-center py-2 text-white gap-x h-[50px] px-2 hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -32,7 +30,6 @@
                         <span class="ml-2">Dashboard</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="/proposal"
                         class="flex items-center py-2 text-white gap-x h-[50px] px-2 hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -44,7 +41,6 @@
                         <span class="ml-2">Kelola Seminar Proposal</span>
                     </a>
                 </li>
-
                 <li>
                     <a href="/skripsi"
                         class="flex items-center py-2 text-white gap-x h-[50px] px-2 hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -76,14 +72,14 @@
                     </button>
                     <ul id="dropdown-menu-jadwal" class="hidden ">
                         <li class="p-1.5 list-none">
-                            <a href="/jadwalseminar_admin"
+                            {{-- <a href="/jadwalseminar_admin" --}}
+                            <a href="/jadwal/seminarproposal"
                                 class="flex items-center w-full text-white transition duration-75 rounded-lg pl-11 group hover:bg-emerald-800 hover:text-black">Seminar</a>
                         </li>
                         <li class="p-1.5 list-none">
                             <a href="/jadwalskripsi_admin"
                                 class="flex items-center w-full text-white transition duration-75 rounded-lg pl-11 group hover:bg-green-800 hover:text-black">Skripsi</a>
                         </li>
-
                     </ul>
                 </li>
                 <li>
@@ -106,7 +102,6 @@
     function toggleDropdown(menuId, iconId) {
         const dropdown = document.getElementById(menuId);
         const dropdownIcon = document.getElementById(iconId);
-
         dropdown.classList.toggle('hidden');
         dropdownIcon.classList.toggle('rotate-180');
     }

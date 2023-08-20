@@ -66,7 +66,7 @@
                                     @foreach ($datas as $data)
                                         <tr
                                             class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                           
+
                                                 <th scope="row"
                                                     class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
                                                     {{ $loop->iteration }}

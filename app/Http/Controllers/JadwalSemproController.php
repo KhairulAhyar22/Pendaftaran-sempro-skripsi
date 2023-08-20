@@ -95,6 +95,11 @@ class JadwalSemproController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function downloadjadwal($id)
+    {
+        // dd('konek');
+        return view('page.JadwalSempro.suratjadwalsempro');
+    }
     public function show($id)
     {
     }

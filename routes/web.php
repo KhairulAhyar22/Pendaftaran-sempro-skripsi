@@ -53,6 +53,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/jadwal/seminarproposal/create', [JadwalSemproController::class, 'create']);
     Route::get('/jadwal/seminarproposal/create/{id}', [JadwalSemproController::class, 'createbyid']);
     Route::post('/jadwal/seminarproposal/store', [JadwalSemproController::class, 'store']);
+    Route::get('/jadwal/seminarproposal/download/{id}', [JadwalSemproController::class, 'downloadjadwal']);
 
 
     Route::get('/buatakun', function () {

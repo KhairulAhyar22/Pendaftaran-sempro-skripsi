@@ -126,7 +126,7 @@
                                                             </li>
                                                         @endif
                                                         <li>
-                                                            <a href="{{ url("/proposal/hasilformproposal/{$data->id}") }}"
+                                                            <a href="{{ url("/jadwal/seminarproposal/download/{$data->id}") }}"
                                                                 class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
                                                                 <div class="flex items-center justify-end mx-auto w-28">
                                                                     <iconify-icon icon="ic:round-download"

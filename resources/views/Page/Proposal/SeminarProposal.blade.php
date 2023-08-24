@@ -129,7 +129,7 @@
                                             </td>
                                             @if (Auth::user()->level == 'Mahasiswa')
                                             @else
-                                                <td class="px-2.5 py-2">
+                                                <td class="px-2.5 py-2 {{ $data->status == 'Terverifikasi' ? 'text-green-600 font-medium' : '' }}">                                                
                                                     {{ $data->status }}
                                                 </td>
                                             @endif

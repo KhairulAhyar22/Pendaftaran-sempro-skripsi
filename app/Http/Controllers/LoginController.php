@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\JadwalSempro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,15 +24,28 @@ class LoginController extends Controller
         //     'password' => 'required'
         // ]);
 
-        if (Auth::attempt($withusername)) {
+        // if (Auth::attempt($withusername)) {
+        //     $request->session()->regenerate();
+        //     return redirect()->intended('/dashboard')->with('success', 'berhasil');
+        // }
+        // if (Auth::attempt($withnim)) {
+        //     $request->session()->regenerate();
+        //     return redirect()->intended('/dashboard')->with('success', 'berhasil');
+        // }
+        // return back()->with('loginError', 'Login failed, wrong username or password!');
+
+        if (Auth::attempt($withusername) || Auth::attempt($withnim)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard')->with('success', 'berhasil');
+
+            // Cek level pengguna yang login
+            $user = Auth::user();
+            if ($user->level === 'Mahasiswa') {
+                return redirect('/')->with('success', 'Berhasil login sebagai mahasiswa.');
+            } else {
+                return redirect('/dashboard')->with('success', 'Berhasil login.');
+            }
+            return back()->with('loginError', 'Login failed, wrong username or password!');
         }
-        if (Auth::attempt($withnim)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/dashboard')->with('success', 'berhasil');
-        }
-        return back()->with('loginError', 'Login failed, wrong username or password!');
     }
     public function logout(Request $request)
     {
@@ -57,5 +71,20 @@ class LoginController extends Controller
         ];
         User::create($buatakun);
         return redirect()->back();
+    }
+
+    public function index()
+    {
+        $datas = JadwalSempro::join('tb_daftar_sempro', 'tb_daftar_sempro.id', '=', 'tb_jadwal_sempro.id_proposal')
+            ->select(
+                'tb_jadwal_sempro.*',
+                'tb_daftar_sempro.nama_mahasiswa',
+                'tb_daftar_sempro.nim'
+            )
+            ->orderByDesc('tb_jadwal_sempro.created_at')
+            ->get();
+
+        // dd($datas);
+        return view('page.general.login.content.login', ["datas" => $datas,]);
     }
 }

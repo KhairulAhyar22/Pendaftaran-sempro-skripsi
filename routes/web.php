@@ -20,9 +20,11 @@ use App\Http\Controllers\JadwalSemproController;
 
 Route::group(['middleware' => ['guest']], function () {
     Route::post('/authenticate', [LoginController::class, 'authenticate'])->middleware('guest');
-    Route::get('/login', function () {
-        return view('page.general.login');
-    })->name('login');
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    // Route::get('/login', function () {
+        
+    //     return view('page.general.login.content.login');
+    // })->name('login');
 });
 // ADMIN DAN USER PENDAFTARAN SEMINAR,SKRIPSI,YUDISIUM
 Route::group(['middleware' => ['auth']], function () {
@@ -56,11 +58,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     /////////////////////LANDING PAGE////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     Route::resource('/', LandingController::class);
-    // Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-    Route::get('/proposal/create/dokumentpersyaratan/{id}', [LandingController::class, 'createdokumentproposal']);
-    Route::post('/proposal/store/dokumentpersyaratan/{id}', [LandingController::class, 'storedokumentproposal']);
 
-
+    
 
 
     Route::get('/buatakun', function () {

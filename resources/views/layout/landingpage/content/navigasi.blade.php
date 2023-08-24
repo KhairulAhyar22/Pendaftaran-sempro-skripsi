@@ -19,24 +19,47 @@
             </svg>
         </button>
         <div class="hidden w-screen md:block md:w-auto" id="navbar-default">
-            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg  md:flex-row md:space-x-8 md:mt-0 ">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4  items-center rounded-lg  md:flex-row md:space-x-8 md:mt-0 ">
                 <li>
                     <a href="#home"
                         class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                         Home</a>
                 </li>
                 <li>
-                    <a href="#info"
-                        class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Info</a>
-                </li>
-                <li>
                     <a href="#pendaftaran"
-                        class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pendaftaran</a>
+                    class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pendaftaran</a>
                 </li>
+                    <li>
+                        <a href="#info"
+                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Info</a>
+                    </li>
                 <li>
-                    <a href="#tentang"
-                        class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Tentang
-                        Kami</a>
+                    <div class="text-white text-center items-center">
+                        <button id="" data-dropdown-toggle="dropdownlogout"
+                                    class="inline-flex items-center px-3 py-2 text-sm text-center  "
+                                    type="button">
+                                    <i class="fas fa-user-circle fa-lg"></i>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownlogout"
+                                    class="right-0 z-10 hidden bg-dark-green divide-y divide-gray-100 hover:bg-green-700 rounded-lg shadow w-36 ">
+                                    <ul class="py-2 text-sm font-medium text-gray-700 "
+                                        aria-labelledby="dropdownDefaultButton">
+                                        <li>
+                                            <a href="/logout"
+                                                class="block px-4 py-[7px] text-white hover:bg-green-700  justify-center">
+                                                <div class="flex items-center justify-center mx-auto w-28">
+                                                    <i class="fas fa-sign-out-alt"></i>
+                                                    <p class="text-sm">Logout</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        
+
+                                    </ul>
+                                </div>
+                        
+                    </div>
                 </li>
             </ul>
         </div>

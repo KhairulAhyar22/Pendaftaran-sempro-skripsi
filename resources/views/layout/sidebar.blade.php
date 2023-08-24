@@ -30,17 +30,19 @@
                         <span class="ml-2">Dashboard</span>
                     </a>
                 </li>
-                <li>
-                    <a href="/proposal"
-                        class="flex items-center py-2 text-white gap-x h-[50px] px-2 hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M11 17h9M8 15l-2.5 3L4 17m7-5h9M8 10l-2.5 3L4 12m7-5h9M8 5L5.5 8L4 7" />
-                        </svg>
-                        <span class="ml-2">Kelola Seminar Proposal</span>
-                    </a>
-                </li>
+                @if (auth()->user()->level == 'Prodi')
+                    <li>
+                        <a href="/proposal"
+                            class="flex items-center py-2 text-white gap-x h-[50px] px-2 hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"
+                                    d="M11 17h9M8 15l-2.5 3L4 17m7-5h9M8 10l-2.5 3L4 12m7-5h9M8 5L5.5 8L4 7" />
+                            </svg>
+                            <span class="ml-2">Kelola Seminar Proposal</span>
+                        </a>
+                    </li>
+                @endif
                 <li>
                     <a href="/skripsi"
                         class="flex items-center py-2 text-white gap-x h-[50px] px-2 hover:text-black rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -71,11 +73,13 @@
                         </svg>
                     </button>
                     <ul id="dropdown-menu-jadwal" class="hidden ">
-                        <li class="p-1.5 list-none">
-                            {{-- <a href="/jadwalseminar_admin" --}}
-                            <a href="/jadwal/seminarproposal"
-                                class="flex items-center w-full text-white transition duration-75 rounded-lg pl-11 group hover:bg-emerald-800 hover:text-black">Seminar</a>
-                        </li>
+                        @if (auth()->user()->level == 'Prodi')
+                            <li class="p-1.5 list-none">
+                                {{-- <a href="/jadwalseminar_admin" --}}
+                                <a href="/jadwal/seminarproposal"
+                                    class="flex items-center w-full text-white transition duration-75 rounded-lg pl-11 group hover:bg-emerald-800 hover:text-black">Seminar</a>
+                            </li>
+                        @endif
                         <li class="p-1.5 list-none">
                             <a href="/jadwalskripsi_admin"
                                 class="flex items-center w-full text-white transition duration-75 rounded-lg pl-11 group hover:bg-green-800 hover:text-black">Skripsi</a>

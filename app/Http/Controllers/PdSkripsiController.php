@@ -91,7 +91,7 @@ class PdSkripsiController extends Controller
 
         $skripsi = PdSkripsi::create($data);
         // return redirect('/skripsi/hasilformskripsi/'.$skripsi->id);
-        return redirect('/skripsi/create/dokumentpersyaratan/'.$skripsi->id);
+        return redirect('/skripsi/create/dokumentpersyaratan/' . $skripsi->id);
     }
 
     /**
@@ -102,12 +102,26 @@ class PdSkripsiController extends Controller
      */
     public function show($id)
     {
-        $data = PdSkripsi::find($id);
-        $dokument = DokumenPdUjianSkripsi::where('id_daftar_skripsi', $id)->first();
-        // dd($dokument);
+        // $data = PdSkripsi::find($id);
+        // $dokument = DokumenPdUjianSkripsi::where('id_daftar_skripsi', $id)->first();
+
+        $skripsi = PdSkripsi::leftJoin('tb_dok_skripsi', 'tb_dok_skripsi.id_daftar_skripsi', '=', 'tb_daftar_skripsi.id')
+            ->leftJoin('tb_jadwal_skripsi', 'tb_jadwal_skripsi.id_skripsi', '=', 'tb_daftar_skripsi.id')
+            ->select(
+                'tb_daftar_skripsi.*',
+                'tb_dok_skripsi.file_skripsi',
+                'tb_dok_skripsi.file_bukti_acc',
+                'tb_dok_skripsi.file_spus',
+                'tb_dok_skripsi.file_pengesahan_proposal',
+                'tb_dok_skripsi.file_krs',
+                'tb_dok_skripsi.file_ktm',
+                'tb_dok_skripsi.file_bukti_lunasspp',
+                'tb_jadwal_skripsi.id as id_jadwal',
+            )->find($id);
+        // dd($skripsi);
         return view('page.skripsi.detaildaftarujianskripsi', [
-            'data' => $data,
-            'dokument' => $dokument,
+            'skripsi' => $skripsi,
+            // 'dokument' => $dokument,
         ]);
     }
 
@@ -245,6 +259,21 @@ class PdSkripsiController extends Controller
             'daftardosen',
             'skripsi'
         ));
-        
+    }
+    public function verifikasiskripsi($id)
+    {
+        PdSkripsi::find($id)->update([
+            // ini masih belum tau apa bagusnya
+            'status' => 'Terverifikasi',
+        ]);
+        return redirect()->back();    
+    }
+    public function unverifikasiskripsi($id)
+    {
+        PdSkripsi::find($id)->update([
+            // ini masih belum tau apa bagusnya
+            'status' => 'Terbuat',
+        ]);
+        return redirect()->back();    
     }
 }

@@ -7,7 +7,9 @@
                     <span class="font-bold">({{ auth()->user()->username }})</span>
                 </div>
             </div>
-            <iconify-icon icon="ic:sharp-account-circle" width="35" height="35"></iconify-icon>
+            <a href="/buatakun">
+                <iconify-icon icon="ic:sharp-account-circle" width="35" height="35"></iconify-icon>
+            </a>
         </div>
     </div>
 </div>

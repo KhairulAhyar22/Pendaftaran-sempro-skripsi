@@ -6,6 +6,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PdSemproController;
 use App\Http\Controllers\PdSkripsiController;
 use App\Http\Controllers\JadwalSemproController;
+use App\Http\Controllers\JadwalSkripsiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +66,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/jadwal/seminarproposal/create/{id}', [JadwalSemproController::class, 'createbyid']);
     Route::post('/jadwal/seminarproposal/store', [JadwalSemproController::class, 'store']);
     Route::get('/jadwal/seminarproposal/download/{id}', [JadwalSemproController::class, 'downloadjadwal']);
-
+    
+    // ==================== SURAT JADWAL SEMINAR SKRIPSI =======================
+    Route::get('/jadwal/ujianskripsi', [JadwalSkripsiController::class, 'index']);
+    Route::get('/jadwal/ujianskripsi/create', [JadwalSkripsiController::class, 'create']);
+    Route::get('/jadwal/ujianskripsi/create/{id}', [JadwalSkripsiController::class, 'createbyid']);
+    Route::post('/jadwal/ujianskripsi/store', [JadwalSkripsiController::class, 'store']);
 
 
 

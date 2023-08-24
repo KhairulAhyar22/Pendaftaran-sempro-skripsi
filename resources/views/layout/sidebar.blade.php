@@ -81,7 +81,7 @@
                             </li>
                         @endif
                         <li class="p-1.5 list-none">
-                            <a href="/jadwalskripsi_admin"
+                            <a href="/jadwal/ujianskripsi"
                                 class="flex items-center w-full text-white transition duration-75 rounded-lg pl-11 group hover:bg-green-800 hover:text-black">Skripsi</a>
                         </li>
                     </ul>

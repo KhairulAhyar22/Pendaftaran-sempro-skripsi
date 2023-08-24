@@ -53,6 +53,13 @@ class PdSemproController extends Controller
             'daftardosen'
         ));
     }
+    public function createbymahasiswa()
+    {
+        $daftardosen = Dosen::all();
+        return view('Page.Proposal.createdsproposalmhs', compact(
+            'daftardosen'
+        ));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -221,8 +228,10 @@ class PdSemproController extends Controller
         ]);
 
         PdSempro::find($id)->update(['status_dok' => 'Lengkap']);
+        if (Auth::user()->level == 'Mahasiswa') {
+            return redirect('/landingpage');
+        }
         return redirect('/proposal/hasilformproposal/'. $id);
-        return redirect('/login');
     }
     public function hasilformproposal($id)
     {
@@ -240,6 +249,14 @@ class PdSemproController extends Controller
         PdSempro::find($id)->update([
             // ini masih belum tau apa bagusnya
             'status' => 'Terverifikasi',
+        ]);
+        return redirect()->back();
+    }
+    public function unverifikasiproposal($id)
+    {
+        PdSempro::find($id)->update([
+            // ini masih belum tau apa bagusnya
+            'status' => 'Terbuat',
         ]);
         return redirect()->back();
     }

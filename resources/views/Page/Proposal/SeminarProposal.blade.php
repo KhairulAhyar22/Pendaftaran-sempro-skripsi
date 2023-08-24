@@ -129,8 +129,10 @@
                                             </td>
                                             @if (Auth::user()->level == 'Mahasiswa')
                                             @else
-                                                <td class="px-2.5 py-2 {{ $data->status == 'Terverifikasi' ? 'text-green-600 font-medium' : '' }}">                                                
-                                                    {{ $data->status }}
+                                                <td class="px-2.5 py-2">
+                                                    <div class="px-3 py-1 text-center text-black rounded {{ $data->status == 'Terbuat' ? 'text-green-700 bg-green-300' : 'bg-pink-300 text-pink-700' }}">
+                                                        {{ $data->status }}
+                                                    </div>
                                                 </td>
                                             @endif
                                             <td
@@ -190,7 +192,8 @@
                                                         @if (Auth::user()->level == 'Mahasiswa')
                                                         @else
                                                             <li>
-                                                                <form action="/proposal/{{ $data->id }}" method="POST"
+                                                                <form action="/proposal/{{ $data->id }}"
+                                                                    method="POST"
                                                                     onsubmit="return confirm('Anda yakin akan hapus?')">
                                                                     @csrf
                                                                     @method('delete')

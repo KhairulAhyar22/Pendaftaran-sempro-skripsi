@@ -27,7 +27,7 @@
                                         <iconify-icon icon="material-symbols:check-circle-rounded" class=""
                                             width="22" height="20">
                                         </iconify-icon>
-                                        <p class="ml-2 text-sm">Layak</p>
+                                        <p class="ml-2 text-sm">Terverifikasi</p>
                                     </div>
                                 @endif
                             </div>
@@ -177,10 +177,10 @@
                             @if (Auth::user()->level == 'Mahasiswa')
                             @else
                                 @if ($data->status == 'Terverifikasi')
-                                    <a href="/proposal/vetifikasi/{{ $data->id }}"
+                                    <a href="/proposal/unvetifikasi/{{ $data->id }}"
                                         class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 
                                                         font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-red-800">
-                                        Terveriskasi</a>
+                                        Unverifikasi</a>
                                 @else
                                     <a href="/proposal/vetifikasi/{{ $data->id }}"
                                         class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 

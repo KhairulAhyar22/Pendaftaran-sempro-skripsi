@@ -84,8 +84,11 @@ class JadwalSemproController extends Controller
             'ketua_tim' => $request->ketua_tim,
             'anggota' => $request->anggota,
         ];
-        JadwalSempro::create($jadwal);
-        PdSempro::find($request->id_proposal)->update(['status', 'Terjadwal']);
+        $jadwalSempro = JadwalSempro::create($jadwal);
+        $test = PdSempro::where('id', $jadwalSempro->id_proposal)->update([
+            'status' => 'Terjadwal'
+        ]);
+
         return redirect('/jadwal/seminarproposal');
     }
 
@@ -97,8 +100,17 @@ class JadwalSemproController extends Controller
      */
     public function downloadjadwal($id)
     {
-        // dd('konek');
-        return view('page.JadwalSempro.suratjadwalsempro');
+        $data = DB::table('tb_jadwal_sempro')
+            ->join('tb_daftar_sempro', 'tb_daftar_sempro.id', '=', 'tb_jadwal_sempro.id_proposal')
+            ->where('tb_jadwal_sempro.id', $id)
+            ->select(
+                'tb_jadwal_sempro.*',
+            'tb_daftar_sempro.nama_mahasiswa',
+            'tb_daftar_sempro.nim',
+            )
+            ->first();
+        // dd($data);
+        return view('page.JadwalSempro.suratjadwalsempro', compact('data'));
     }
     public function show($id)
     {

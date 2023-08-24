@@ -14,7 +14,7 @@
                 <div class="flex w-full">
                     <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
 
-                        <div class="flex justify-start">
+                        {{-- <div class="flex justify-start">
                             <a href="/skripsi/create"
                                 class="text-white flex item-center bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-[3px] px-4 py-2 my-5 dark:bg-cyan-600 dark:hover:bg-cyan-700 focus:outline-none dark:focus:ring-cyan-800">
                                 <p class="px-2"> Tambah data</p>
@@ -23,7 +23,7 @@
                                         d="M11 13v3q0 .425.288.713T12 17q.425 0 .713-.288T13 16v-3h3q.425 0 .713-.288T17 12q0-.425-.288-.713T16 11h-3V8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8v3H8q-.425 0-.713.288T7 12q0 .425.288.713T8 13h3Zm1 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z" />
                                 </svg>
                             </a>
-                        </div>
+                        </div> --}}
 
                         <div class="mb-3 overflow-x-auto">
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -53,6 +53,9 @@
                                         </th>
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             Nama PA
+                                        </th>
+                                        <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
+                                            Status
                                         </th>
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             Aksi
@@ -88,6 +91,11 @@
                                             <td class="px-3 py-2.5">
                                                 {{ $data->nama_pa }}
                                             </td>
+                                            <td class="px-2.5 py-2">
+                                                    <div class="px-3 py-1 text-center text-black rounded {{ $data->status == 'Terbuat' ? 'text-green-700 bg-green-300' : 'bg-pink-300 text-pink-700' }}">
+                                                        {{ $data->status }}
+                                                    </div>
+                                                </td>
                                             <td
                                                 class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2.5 py-2 text-sm text-center text-gray-500">
                                                 <button id="{{ $data->id }}"

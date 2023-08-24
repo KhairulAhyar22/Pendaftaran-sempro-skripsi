@@ -18,16 +18,21 @@ use App\Http\Controllers\JadwalSemproController;
 |
 */
 
-Route::group(['middleware' => ['guest']], function () {
+/////////////////////LANDING PAGE////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Route::resource('/landingpage', LandingController::class);
+
+
+// Route::group(['middleware' => ['guest']], function () {
     Route::post('/authenticate', [LoginController::class, 'authenticate'])->middleware('guest');
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::get('/', [LoginController::class, 'index'])->name('login');
+    // Route::get('/login', [LoginController::class, 'index'])->name('login');
     // Route::get('/login', function () {
         
     //     return view('page.general.login.content.login');
     // })->name('login');
-});
+// });
 // ADMIN DAN USER PENDAFTARAN SEMINAR,SKRIPSI,YUDISIUM
-Route::group(['middleware' => ['auth']], function () {
+// Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout', [LoginController::class, 'logout']);
     Route::get('/dashboard', function () {
         return view('page.general.dashboard');
@@ -37,12 +42,15 @@ Route::group(['middleware' => ['auth']], function () {
     });
     // ==================== SEMINAR PROPOSAL =====================
     Route::resource('/proposal', PdSemproController::class);
+    Route::get('/proposal/create/mhs', [PdSemproController::class, 'createbymahasiswa']);
     Route::get('/proposal/create/dokumentpersyaratan/{id}', [PdSemproController::class, 'createdokumentproposal']);
     Route::post('/proposal/store/dokumentpersyaratan/{id}', [PdSemproController::class, 'storedokumentproposal']);
     Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
     Route::get('/proposal/vetifikasi/{id}', [PdSemproController::class, 'verifikasiproposal']);
+    Route::get('/proposal/unvetifikasi/{id}', [PdSemproController::class, 'unverifikasiproposal']);
     // ==================== UJIAN SKRIPSI =======================
     Route::resource('skripsi', PdSkripsiController::class);
+    Route::get('/skripsi/create/mhs', [PdSkripsiController::class, 'createbymahasiswa']);
     Route::get('/skripsi/create/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'createdokumentskripsi']);
     Route::post('/skripsi/store/dokumentpersyaratan/{id}', [PdSkripsiController::class, 'storedokumentskripsi']);
     Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasilformskripsi']);
@@ -54,10 +62,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/jadwal/seminarproposal/create/{id}', [JadwalSemproController::class, 'createbyid']);
     Route::post('/jadwal/seminarproposal/store', [JadwalSemproController::class, 'store']);
     Route::get('/jadwal/seminarproposal/download/{id}', [JadwalSemproController::class, 'downloadjadwal']);
-
-
-    /////////////////////LANDING PAGE////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    Route::resource('/', LandingController::class);
 
     
 
@@ -97,4 +101,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/register', function () {
         return view('page.general.register');
     });
-});
+// });

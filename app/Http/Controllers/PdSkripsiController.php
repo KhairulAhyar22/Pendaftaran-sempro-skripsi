@@ -7,6 +7,7 @@ use App\Models\PdSkripsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\DokumenPdUjianSkripsi;
+use Illuminate\Support\Facades\Auth;
 
 class PdSkripsiController extends Controller
 {
@@ -34,6 +35,13 @@ class PdSkripsiController extends Controller
     {
         $daftardosen = Dosen::all();
         return view('page.skripsi.pendaftaranujianskripsi', compact(
+            'daftardosen',
+        ));
+    }
+    public function createbymahasiswa()
+    {
+        $daftardosen = Dosen::all();
+        return view('page.skripsi.createpdskripsimhs', compact(
             'daftardosen',
         ));
     }
@@ -77,12 +85,13 @@ class PdSkripsiController extends Controller
             'nama_pa' => $request->nama_pa,
             'status_dok' => 'Belum Lengkap',
             'status' => 'Terbuat',
+            'user_create' => Auth::user()->id,
             'uji_similarity' => $filename_uji_similarity,
         ];
 
         $skripsi = PdSkripsi::create($data);
-        return redirect('/skripsi/hasilformskripsi/'.$skripsi->id);
-        return redirect('skripsi');
+        // return redirect('/skripsi/hasilformskripsi/'.$skripsi->id);
+        return redirect('/skripsi/create/dokumentpersyaratan/'.$skripsi->id);
     }
 
     /**
@@ -209,6 +218,7 @@ class PdSkripsiController extends Controller
         $file_ktm->move(public_path('UjianSkripsi/KTM'), $filename_ktm);
         $file_bukti_lunasspp->move(public_path('UjianSkripsi/BuktiLunasSPP'), $filename_bukti_lunasspp);
 
+        // dd($request->all());
         // =============== SAVE KE DATABASE ====================
         DokumenPdUjianSkripsi::create([
             'id_daftar_skripsi' => $id,
@@ -221,8 +231,11 @@ class PdSkripsiController extends Controller
             'file_bukti_lunasspp' => $filename_bukti_lunasspp,
         ]);
 
-        PdSkripsi::find($id)->update(['status_dok' => 'Lengkap']);
-        return redirect('/skripsi');
+        PdSkripsi::find($id)->update([
+            'status_dok' => 'Lengkap'
+        ]);
+        return redirect('/landingpage');
+        // return redirect('/skripsi');
     }
     public function hasilformskripsi($id)
     {

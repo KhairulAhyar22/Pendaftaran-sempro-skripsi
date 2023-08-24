@@ -1,22 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('layout.head')
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Seminar Proposal {{ $data->nama_mahasiswa }}-{{ $data->nim }}</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/5.1.0/introjs.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/5.1.0/intro.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.0/iconify.min.js"
+        integrity="sha512-E5zagJczGRm5vRd4acej4RtUFCBd8JDedgljicTgnZrwLYzu4/GvImQ6VtJfxAtnPluq1b3tPNaz9yNuTKWQzw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.css">
+
+    <!-- Tailwindcss -->
+    <script src="https://cdn.tailwindcss.com?plugins=line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        montserrat: ["Montserrat"],
+                    },
+                    colors: {
+                        "dark-green": "#1E3F41",
+                        "light-green": "#659093",
+                        "cream": "#DDB07F",
+                        "cgray": "#F5F5F5",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif !important;
+        }
+    </style>
+</head>
 
 <body class="bg-white">
+    @php
+        use Carbon\Carbon;
+    @endphp
     {{-- format --}}
     <div class="bg-white items-center">
-        <div class="mx-10 ">
+        <div class="mx-4 ">
             {{-- kop surat --}}
             <div class="flex items-center justify-between">
                 <div class="w-32 ml-1 mr-1 h-full justify-start">
                     <img class="h-full w-auto" src="/img/logo.png" alt="">
                 </div>
                 <div class="w-auto h-auto text-center">
-                    <p class="font-bold text-black text-[16px] tracking-wide">UNIVERSITAS COKROAMINOTO PALOPO</p>
-                    <p class="font-bold text-black text-[16px] tracking-wide">FAKULTAS TEKNIK KOMPUTER</p>
-                    <p class="font-bold text-black text-[16px] tracking-wide">PROGRAM STUDI INFORMATIKA</p>
-                    <p class="font-medium text-black text-[11px] tracking-wide leading-3">Alamat: Jalan Latamacelling
+                    <p class="font-bold text-black text-[18px] leading-6 tracking-wide">UNIVERSITAS COKROAMINOTO PALOPO
+                    </p>
+                    <p class="font-bold text-black text-[18px] leading-6 tracking-wide">FAKULTAS TEKNIK KOMPUTER</p>
+                    <p class="font-bold text-black text-[18px] leading-6 tracking-wide">PROGRAM STUDI INFORMATIKA</p>
+                    <p class="font-medium text-black text-[11px] tracking-wide leading-3 mt-1">Alamat: Jalan
+                        Latamacelling
                         No. 19 Kampus 1 Gedung A Kota Palopo 91913 -
                         Sulawesi Selatan</p>
                     <p class="font-medium text-black text-[11px] tracking-wide leading-3">Telepon (0471) 326223, Fax
@@ -26,8 +74,8 @@
             <hr class="border-[2px] border-opacity-100 border-black mt-1">
             <div class="flex justify-between mt-0">
                 {{-- info ketua --}}
-                <div class="flex text-sm text-black mt-2 text-left tracking-wide">
-                    <div class="">
+                <div class="flex text-[16px] text-black mt-2 text-left tracking-wide">
+                    <div class="text-justify">
                         <p class="leading-4">Nomor</p>
                         <p class="leading-4">Lamp.</p>
                         <p class="leading-4">Hal</p>
@@ -49,69 +97,95 @@
                         </a>
                     </div>
                 </div>
-                <div class="text-sm">
-                    Palopo, 02 Maret 2023
+                <div class="text-[16px]">
+                    {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM') }}
                 </div>
             </div>
-            <div class="flex text-sm text-black mt-2 text-left w-full tracking-wide">
-                <div class="">
+            <div class="flex text-[16px] text-black mt-2 text-left w-full tracking-wide">
+                <div class="text-justify">
                 </div>
                 <div class="ml-[85px] mt-4 mr-1 w-full">
                     <p class="leading-4">Kepada Yth:</p>
                     <div class="flex justify-between w-full">
-                        <div class="">
+                        <div class="text-justify">
                             <ul class="list-decimal ml-12">
-                                <li>Vicky Bin Djusmin</li>
-                                <li>Suparman</li>
+                                <li>{{ $data->ketua_tim }}</li>
+                                <li>{{ $data->anggota }}</li>
                             </ul>
                         </div>
-                        <div class="">
+                        <div class="text-justify">
                             <p>(Ketua Tim)</p>
                             <p>(Anggota)</p>
                         </div>
                     </div>
-                    <p class="">Di,-</p>
-                    <p class="">Tempat</p>
-                    <p class=""></p>
-                    <p class="">Assalamualaikum wr. wb.</p>
-                    <p class="">Kami sampaikan dengan hormat bahwa sehubungan dengan pelaksanaan seminar proposal mahasiswa berikut:</p>
-                    <p class=" ml-10">ISHAM MAULANA/190</p>
-                    <p class="">Maka kami mengundang bapak/ibu untuk menghadiri dan menguji hasil proposal dari mahasiswa tersebut. Adapun pelaksanaannya akan dilaksanakan pada:
+                    <p class="text-justify">Di,-</p>
+                    <p class="text-justify">Tempat</p>
+                    <p class="text-justify"></p>
+                    <p class="text-justify">Assalamualaikum wr. wb.</p>
+                    <p class="text-justify">Kami sampaikan dengan hormat bahwa sehubungan dengan pelaksanaan seminar proposal
+                        mahasiswa berikut:</p>
+                    <p class="my-3 ml-7 uppercase">{{ $data->nama_mahasiswa }}/{{ $data->nim }}</p>
+                    <p class="text-justify">Maka kami mengundang bapak/ibu untuk menghadiri dan menguji hasil proposal dari
+                        mahasiswa tersebut. Adapun pelaksanaannya akan dilaksanakan pada:
 
                     </p>
 
+                    {{-- detail jadwal --}}
+                    <div class="flex ml-7 text-[16px] text-black my-3 text-left tracking-wide">
+                        <div class="text-justify">
+                            <p class="text-justify">Hari/Tanggal</p>
+                            <p class="text-justify">Waktu</p>
+                            <p class="text-justify">Tempat</p>
+                        </div>
+                        <div class="ml-10 mr-1">
+                            <p class="text-justify">:</p>
+                            <p class="text-justify">:</p>
+                            <p class="text-justify">:</p>
+                        </div>
+                        <div>
+                            <a href="" class="text-justify">
+                                <p>{{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM') }}</p>
+                            </a>
+                            <a href="" class="text-justify">
+                                <p>{{ Carbon::parse($data->waktu)->format('H:i') }} WITA</p>
+                            </a>
+                            <a href="" class="text-justify">
+                                <p>{{ $data->tempat }}</p>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <p class="text-justify">Kehadiran Bapak/Ibu sangat diharapkan tepat pada waktunya. Seminar proposal dapat
+                        dilaksanakan apabila semua dosen penguji telah hadir diruangan.
+                    </p>
+                    <p class="text-justify">Demikian undangan ini, atas perhatian dan kerjasamanya kami ucapkan terima kasih.
+                    </p>
+
+                    <div class="grid grid-cols-2 mt-5">
+                        <div>
+                            <p>Mengetahui,</p>
+                            <p>Dekan Fakultas Teknik Komputer</p>
+                        </div>
+                        <div>
+                            <p>Ketua Program Studi <br> Informatika</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 mt-20">
+                        <div>
+                            <p>Nirsal, S.Kom., M.Kom</p>
+                        </div>
+                        <div>
+                            <p>Vicky Bin Djusmin, S.Kom., M.Kom</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
         {{-- mahasiswa --}}
-        <div class="ml-4 flex text-base text-black mt-2 text-left font-normal tracking-wide">
-            <div class="mr-4">
+        <div class="ml-4 text-base text-black mt-2 text-left font-normal tracking-wide">
 
-                <div class="mr-14">
-                    -
-                </div>
-                <div class="mr-7">
-                    <p>(Mahasiswa)</p>
-                    <p>(Mahasiswa)</p>
-                </div>
-            </div>
-            {{-- perihal surat --}}
-            <div class="text-justify text-base text-black font-normal mt-2 tracking-wide">
-                <p>Untuk melakukan penelitian yang berjudul <span></p>
-            </div>
-            <div class="text-left text-base text-black font-normal mt-2 tracking-wide">
-                <p>Demikian Surat Tugas ini dibuat untuk dapat digunakan sebagaimana mestinya.</p>
-            </div>
-            {{-- tanda tangan ketua lppm --}}
-            <div class="flex items-center justify-end text-base text-black mt-5 tracking-wide">
-                <div>
-                    <p>Palopo, </p>
-                    <p class="font-bold mb-[70px] mt-3">Plt Ketua LPPM</p>
-                    <P class="font-bold">-</P>
-                    <p>NIDN.</p>
-                </div>
-            </div>
             {{-- Tembusan --}}
             <div class="text-base text-black font-normal mt-5 tracking-wide">
                 <p>Tembusan disampaikan dengan hormat kepada:</p>
@@ -123,7 +197,7 @@
                     <p>3.</p>
                     <p>4.</p>
                 </div>
-                <div class="">
+                <div class="text-justify">
                     <p>Rektor</p>
                     <p>Dekan</p>
                     <p>Ketua Prodi</p>

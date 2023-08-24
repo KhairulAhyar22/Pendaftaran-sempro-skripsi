@@ -40,12 +40,13 @@ class LoginController extends Controller
             // Cek level pengguna yang login
             $user = Auth::user();
             if ($user->level === 'Mahasiswa') {
-                return redirect('/')->with('success', 'Berhasil login sebagai mahasiswa.');
+                return redirect('/landingpage')->with('success', 'Berhasil login sebagai mahasiswa.');
             } else {
                 return redirect('/dashboard')->with('success', 'Berhasil login.');
             }
             return back()->with('loginError', 'Login failed, wrong username or password!');
         }
+        return back()->with('loginError', 'Login failed, wrong username or password!');
     }
     public function logout(Request $request)
     {
@@ -56,7 +57,7 @@ class LoginController extends Controller
 
         request()->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/');
     }
 
     public function buatakun(Request $request)

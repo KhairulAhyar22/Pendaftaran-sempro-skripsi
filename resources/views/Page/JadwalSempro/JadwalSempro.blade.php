@@ -113,7 +113,7 @@
                                                         aria-labelledby="dropdownDefaultButton">
                                                         @if (Auth::user()->level == 'Mahasiswa')
                                                         @else
-                                                            <li>
+                                                            {{-- <li>
                                                                 <a href="/proposal/{{ $data->id }}/edit"
                                                                     class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center">
                                                                     <div class="flex items-center justify-end mx-auto w-28">
@@ -123,7 +123,7 @@
                                                                         <p class="text-sm">Edit</p>
                                                                     </div>
                                                                 </a>
-                                                            </li>
+                                                            </li> --}}
                                                         @endif
                                                         <li>
                                                             <a href="{{ url("/jadwal/seminarproposal/download/{$data->id}") }}"
@@ -137,7 +137,7 @@
                                                         </li>
                                                         @if (Auth::user()->level == 'Mahasiswa')
                                                         @else
-                                                            <li>
+                                                            {{-- <li>
                                                                 <form action="/proposal/{{ $data->id }}" method="POST"
                                                                     onsubmit="return confirm('Anda yakin akan hapus?')">
                                                                     @csrf
@@ -153,7 +153,7 @@
                                                                         </div>
                                                                     </button>
                                                                 </form>
-                                                            </li>
+                                                            </li> --}}
                                                         @endif
                                                     </ul>
                                                 </div>

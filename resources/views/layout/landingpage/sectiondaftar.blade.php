@@ -1,40 +1,46 @@
-<section id="pendaftaran" class="">
-    <div class="container py-5 max-w-screen-xl items-center justify-between mx-auto pt-14 pb-5 h-fit">
-        <div class="w-full border  rounded-lg shadow ">
-            <ul class="flex flex-wrap text-sm font-medium text-center text-gray-900 border-b border-gray-200 rounded-t-lg bg-gray-50  "
-                id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-                <li class="mr-2">
-                    <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about"
-                        aria-selected="true"
-                        class="inline-block p-3 text-green-800 text-xl rounded-tl-lg  ">Seminar
-                        Proposal</button>
-                </li>
-                <li class="mr-2">
-                    <button id="services-tab" data-tabs-target="#services" type="button" role="tab"
-                        aria-controls="services" aria-selected="false"
-                        class="inline-block p-3 hover:text-green-800 text-xl  ">Ujian
-                        Skripsi</button>
-                </li>
-                <li class="mr-2">
-                    <button id="services-tab" data-tabs-target="#services2" type="button" role="tab"
-                        aria-controls="services" aria-selected="false"
-                        class="inline-block p-3 hover:text-green-800 text-xl  ">Yudisium</button>
-                </li>
-            </ul>
-            <div id="defaultTabContent " class="py-4">
-                <div class="hidden w-full bg-white rounded-lg md:px-4 " id="about" role="tabpanel"
-                    aria-labelledby="about-tab">
-                    @include('layout.landingpage.sectiondaftarsempro')
-                </div>
-                <div class="hidden w-full bg-white rounded-lg md:px-4 " id="services" role="tabpanel"
-                    aria-labelledby="services-tab">
-                    @include('layout.landingpage.sectiondaftarskripsi')
-                </div>
-                <div class="hidden w-full bg-white rounded-lg md:px-4 " id="services2" role="tabpanel"
-                    aria-labelledby="services-tab">
-                    @include('layout.landingpage.sectiondaftaryudisium')
-                </div>
-            </div>
-        </div>
+<section id="pendaftaran" class="border p-5 py-14 ">
+    <div class="lg:grid-cols-3 grid md:px-10 sm:grid-cols-2 grid-cols-1 gap-5">
+
+        @if (count($proposal) >= 1)
+            <a onclick="return alert('Tidak dapat melakukan pendaftaran, pendaftaran telah terbuat sebelumnya')"
+                class=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-50">
+                <svg class="w-6 h-6 text-green-600 dark:text-white" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="none" viewBox="0 0 18 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                        d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
+                </svg>
+                <h5 class="mb-2 text-2xl font-semibold tracking-tight text-green-600 dark:text-white">Daftar Proposal
+                </h5>
+            </a>
+        @else
+            <a href="/proposal/create/mhs"
+                class=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-50">
+                <svg class="w-6 h-6 text-green-600 dark:text-white" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="none" viewBox="0 0 18 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                        d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
+                </svg>
+                <h5 class="mb-2 text-2xl font-semibold tracking-tight text-green-600 dark:text-white">Daftar Proposal
+                </h5>
+            </a>
+        @endif
+        <a href="/skripsi/create/mhs"
+            class=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-50">
+            <svg class="w-6 h-6 text-yellow-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="18" height="20" fill="none" viewBox="0 0 18 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                    d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
+            </svg>
+            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-yellow-600 dark:text-white">Daftar Skripsi</h5>
+        </a>
+        <a onclick="return alert('Fitur daftar yudisium masih dalam tahap pengembangan')"
+            class=" p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-50">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="18" height="20" fill="none" viewBox="0 0 18 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                    d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5" />
+            </svg>
+            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Daftar Yudisium</h5>
+        </a>
     </div>
 </section>

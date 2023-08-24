@@ -3,5 +3,5 @@
     @include('layout.landingpage.sectionhome')
     @include('layout.landingpage.sectiondaftar')
     @include('layout.landingpage.sectioninfo')
-    @include('layout.landingpage.sectiontentang')
+    {{-- @include('layout.landingpage.sectiontentang') --}}
 @endsection

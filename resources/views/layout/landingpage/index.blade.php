@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.css">
-
+    <script src="https://kit.fontawesome.com/c855b9c726.js" crossorigin="anonymous"></script>
     <!-- Tailwindcss -->
     <script src="https://cdn.tailwindcss.com?plugins=line-clamp"></script>
     <script>

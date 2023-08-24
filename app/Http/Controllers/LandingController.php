@@ -11,6 +11,7 @@ class LandingController extends Controller
     public function index()
     {
         $daftardosen = Dosen::all();
+        
         return view(
         'layout.landingpage.content.content', compact(
             'daftardosen'

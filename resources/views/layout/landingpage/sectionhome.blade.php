@@ -1,4 +1,4 @@
-<section id="home" class="bg-blue-500 w-screen">
+<section id="home" class="bg-cover w-screen" style="background-image: url('/Img/1.png'); ">
     <div class="container py-5 max-w-screen-xl items-center justify-between mx-auto px-4 h-screen">
         <div class="flex justify-between ">
             <div class="z-10 flex self-center justify-center w-2/3  pt-10 sm:mt-0 ">
@@ -70,7 +70,7 @@
                                         </li>
                                     </ul>
                                     <button type="button"
-                                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
+                                        class="text-white bg-green-800 focus:bg-green-900 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
                                 </div>
                             </div>
                             <!-- Item 1 -->
@@ -137,7 +137,7 @@
                                         </li>
                                     </ul>
                                     <button type="button"
-                                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
+                                        class="text-white bg-green-800 focus:bg-green-900 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
                                 </div>
                             </div>                         
                             <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
@@ -203,7 +203,7 @@
                                         </li>
                                     </ul>
                                     <button type="button"
-                                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
+                                        class="text-white bg-green-800 focus:bg-green-900 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
                                 </div>
                             </div>                         
                             <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
@@ -269,7 +269,7 @@
                                         </li>
                                     </ul>
                                     <button type="button"
-                                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
+                                        class="text-white bg-green-800 focus:bg-green-900 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
                                 </div>
                             </div>                         
                             <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
@@ -335,7 +335,7 @@
                                         </li>
                                     </ul>
                                     <button type="button"
-                                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
+                                        class="text-white bg-green-800 focus:bg-green-900 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar Sekarang</button>
                                 </div>
                             </div>                         
                                                     <!-- Item 2 -->
@@ -390,35 +390,23 @@
             </div>
             <div class="z-10 flex self-center justify-center px-5 pt-10 sm:mt-0 ">
                 <div class="p-1 pt-36 ">
-                    <div class="p-12 mx-auto bg-white rounded-xl w-96 h-96 ">
+                    <div class="p-5 mx-auto bg-white rounded-xl w-96 h-96 ">
                         <div class="mb-7">
-                            <h3 class="text-2xl font-bold text-slate-800-800">Silahkan Login </h3>
+                            <h3 class="text-xl font-bold text-slate-800-800">Selamat Datang <i class="text-base font-light">Nama mahasiswa yg login</i> </h3>
                         </div>
-                        <form action="/authenticate" method="post">
-                            @csrf
-                            <div class="space-y-6">
-                                <div class="">
-                                    <input
-                                        class="w-full px-4 py-3 text-sm bg-gray-200 border border-gray-400 rounded-lg focus:bg-gray-100 focus:outline-none focus:border-purple-400"
-                                        type="text" placeholder="Username" name="username">
-                                </div>
+                        <p class="text-lg">Status Pendaftaran </p>
+                        <p class="text-base">Seminar Proposal : Selesai / terjadwal/ belum terjadwal</p>
+                        <p class="text-base">Ujian Skripsi : Selesai / terjadwal/ belum terjadwal</p>
+                        <p class="text-base">Yudisium : Selesai / terjadwal/ belum terjadwal</p>
+                        <div class="pt-4">
 
-                                <div class="relative" x-data="{ show: true }">
-                                    <input placeholder="Password" type="password" name="password"
-                                        class="w-full px-4 py-3 text-sm bg-gray-200 border border-gray-400 rounded-lg text-black-200 focus:bg-gray-100 focus:outline-none focus:border-purple-400">
-                                    <div class="absolute inset-y-0 right-0 flex items-center mr-3 text-sm leading-5">
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center justify-between"></div>
-                                <div>
-                                    <button type="submit"
-                                        class="flex justify-center w-full p-3 font-semibold tracking-wide text-gray-100 transition duration-1000 ease-in-out  bg-green-800 rounded-lg cursor-pointer hover:bg-green-700">Login
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                            <a href="#info"
+                                        class="text-white bg-green-800 hover:bg-green-900 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Detail</a>
+                                
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

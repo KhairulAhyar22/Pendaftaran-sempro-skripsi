@@ -1,5 +1,5 @@
-<section id="home" class="bg-yellow-400 bg-gradient-to-b from-yellow-400 via-green-600 to-yellow-400 w-screen">
-    <div class="container justify-betwen max-w-screen-xl mx-auto px-4 min-h-screen  sm:flex sm:flex-row rounded-3xl">
+<section id="home" class="bg-cover w-screen" style="background-image: url('/Img/1.png'); ">
+    <div class="container justify-betwen mx-auto px-4 min-h-screen  sm:flex sm:flex-row rounded-3xl">
         <div class="justify-center flex w-2/3">
             <div class="z-10 flex flex-col self-center lg:px-14 sm:max-w-4xl xl:max-w-md">
                 <div class="flex-col self-start hidden px-5 text-gray-200 sm:flex">

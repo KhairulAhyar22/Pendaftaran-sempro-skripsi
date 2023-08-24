@@ -21,7 +21,7 @@ use App\Http\Controllers\JadwalSemproController;
 Route::group(['middleware' => ['guest']], function () {
     Route::post('/authenticate', [LoginController::class, 'authenticate'])->middleware('guest');
     Route::get('/login', function () {
-        return view('page.general.login');
+        return view('page.general.login.content.login');
     })->name('login');
 });
 // ADMIN DAN USER PENDAFTARAN SEMINAR,SKRIPSI,YUDISIUM

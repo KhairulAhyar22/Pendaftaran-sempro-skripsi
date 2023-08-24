@@ -6,338 +6,482 @@
             <div class=" shadow rounded-lg w-full">
                 <div id="default-carousel" class="relative w-full rounded-lg " data-carousel="slide">
                     <!-- Carousel wrapper -->
-                    <div class="relative h-72 overflow-hidden rounded-lg md:h-96">
+                    <div class="relative h-[30rem] overflow-hidden rounded-lg ">
                         <!-- Item 1 -->
                         <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
                             <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                <h5 class="mb-4 text-xl font-medium text-gray-500 ">Persyartan Seminar
+                                <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Seminar
                                     Proposal
                                 </h5>
-                                <ul role="list" class="space-y-3 my-2">
+                                <ul role="list" class="space-y-3 my-1">
                                     <li class="flex space-x-3 items-center">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <p class="text-base font-normal leading-tight text-gray-900 ">
+                                            Menyiapkan Kelengkapan Berkas berikut :</p>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
-                                        <span class="text-base font-normal leading-tight text-gray-500 ">2
-                                            team members</span>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy kartu konsultasi yang memiliki keterangan telah disetujui oleh kedua pembimbing dan telah menghadiri minimal 10 seminar penelitian </span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
-                                        <span class="text-base font-normal leading-tight text-gray-500 ">20GB
-                                            Cloud storage</span>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KRS semester yang berjalan dan telah ditandatangani oleh ketua program studi</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
-                                        <span class="text-base font-normal leading-tight text-gray-500 ">20GB
-                                            Cloud storage</span>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KTM</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span class="text-base font-normal leading-tight text-gray-500 ">20GB
-                                            Cloud storage</span>
-                                    </li>
-                                    <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration
-                                            help</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KHS</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Surat keterangan lunas SPP (Dari Keuangan)</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan 2 rangkap proposal yang telah dijilid (warna merah)</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Formulir Pendaftaran Seminar Proposal</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy Slip Pembayaran Semester Berjalan</span>
                                     </li>
                                 </ul>
                                 <button type="button"
-                                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
+                                    class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
                                     Sekarang</button>
                             </div>
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
                             <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Persyartan Uijan
+                                <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Ujian
                                     Skripsi
                                 </h5>
-                                <ul role="list" class="space-y-3 my-2">
+                                <ul role="list" class="space-y-3 my-1">
                                     <li class="flex space-x-3 items-center">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
+                                        
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2
-                                            team members</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Menyiapkan Kelengkapan Berkas berikut :</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Hasil Print Pengisian Formulir Pendaftaran ujian skripsi</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan hasil cetak skripsi yang telah acc uji similarity (4 rangkap)</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan Hasil Cetak Bukti acc skripsi dari kedua pembimbing</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration
-                                            help</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan Surat Keterangan Persetujuan ujian skripsi dari ketua prodi</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan Bukti Lembar Pengesahan seminar proposal yang telah disetujui oleh kedua penguji dan ketua prodi</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KRS semester berjalan dan telah ditanda tangani oleh program studi</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KTM</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Surat keterangan Lunas SPP</span>
                                     </li>
                                 </ul>
                                 <button type="button"
-                                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
+                                    class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
                                     Sekarang</button>
                             </div>
                         </div>
                         <!--3-->
                         <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
                             <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Persyartan Uijan
-                                    Skripsi
+                                <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Seminar
+                                    Proposal
                                 </h5>
-                                <ul role="list" class="space-y-3 my-2">
+                                <ul role="list" class="space-y-3 my-1">
                                     <li class="flex space-x-3 items-center">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2
-                                            team members</span>
+                                        <p class="text-base font-normal leading-tight text-gray-900 ">
+                                            Menyiapkan Kelengkapan Berkas berikut :</p>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy kartu konsultasi yang memiliki keterangan telah disetujui oleh kedua pembimbing dan telah menghadiri minimal 10 seminar penelitian </span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KRS semester yang berjalan dan telah ditandatangani oleh ketua program studi</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KTM</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration
-                                            help</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KHS</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Surat keterangan lunas SPP (Dari Keuangan)</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan 2 rangkap proposal yang telah dijilid (warna merah)</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Formulir Pendaftaran Seminar Proposal</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy Slip Pembayaran Semester Berjalan</span>
                                     </li>
                                 </ul>
                                 <button type="button"
-                                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
+                                    class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
                                     Sekarang</button>
                             </div>
                         </div>
-                        <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
-                            <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8 ">
-                                <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Persyartan Uijan
-                                    Skripsi
-                                </h5>
-                                <ul role="list" class="space-y-3 my-2">
-                                    <li class="flex space-x-3 items-center">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2
-                                            team members</span>
-                                    </li>
-                                    <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
-                                    </li>
-                                    <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
-                                    </li>
-                                    <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
-                                    </li>
-                                    <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
-                                        <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration
-                                            help</span>
-                                    </li>
-                                </ul>
-                                <button type="button"
-                                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                    Sekarang</button>
-                            </div>
-                        </div>
+                        <!-- Item 2 -->
                         <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
                             <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Persyartan Uijan
+                                <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Ujian
                                     Skripsi
                                 </h5>
-                                <ul role="list" class="space-y-3 my-2">
+                                <ul role="list" class="space-y-3 my-1">
                                     <li class="flex space-x-3 items-center">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                            viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                        </svg>
+                                        
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2
-                                            team members</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Menyiapkan Kelengkapan Berkas berikut :</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Hasil Print Pengisian Formulir Pendaftaran ujian skripsi</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan hasil cetak skripsi yang telah acc uji similarity (4 rangkap)</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB
-                                            Cloud storage</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan Hasil Cetak Bukti acc skripsi dari kedua pembimbing</span>
                                     </li>
                                     <li class="flex space-x-3">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path
                                                 d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                         </svg>
                                         <span
-                                            class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration
-                                            help</span>
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan Surat Keterangan Persetujuan ujian skripsi dari ketua prodi</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan Bukti Lembar Pengesahan seminar proposal yang telah disetujui oleh kedua penguji dan ketua prodi</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KRS semester berjalan dan telah ditanda tangani oleh program studi</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KTM</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Surat keterangan Lunas SPP</span>
                                     </li>
                                 </ul>
                                 <button type="button"
-                                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
+                                    class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
+                                    Sekarang</button>
+                            </div>
+                        </div>
+                        <!--3-->
+                        <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
+                            <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
+                                <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Seminar
+                                    Proposal
+                                </h5>
+                                <ul role="list" class="space-y-3 my-1">
+                                    <li class="flex space-x-3 items-center">
+                                        <p class="text-base font-normal leading-tight text-gray-900 ">
+                                            Menyiapkan Kelengkapan Berkas berikut :</p>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy kartu konsultasi yang memiliki keterangan telah disetujui oleh kedua pembimbing dan telah menghadiri minimal 10 seminar penelitian </span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KRS semester yang berjalan dan telah ditandatangani oleh ketua program studi</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KTM</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy KHS</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Surat keterangan lunas SPP (Dari Keuangan)</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Mengumpulkan 2 rangkap proposal yang telah dijilid (warna merah)</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Formulir Pendaftaran Seminar Proposal</span>
+                                    </li>
+                                    <li class="flex space-x-3">
+                                        <svg class="flex-shrink-0 w-4 h-4 text-green-800 "
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                        </svg>
+                                        <span
+                                            class="text-base font-normal leading-tight text-gray-900 ">Fotocopy Slip Pembayaran Semester Berjalan</span>
+                                    </li>
+                                </ul>
+                                <button type="button"
+                                    class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
                                     Sekarang</button>
                             </div>
                         </div>

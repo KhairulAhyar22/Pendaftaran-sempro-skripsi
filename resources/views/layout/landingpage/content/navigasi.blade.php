@@ -35,13 +35,13 @@
                     </li>
                 <li>
                     <div class="text-white text-center items-center">
-                        <button id="" data-dropdown-toggle="dropdown"
+                        <button id="" data-dropdown-toggle="dropdownlogout"
                                     class="inline-flex items-center px-3 py-2 text-sm text-center  "
                                     type="button">
                                     <i class="fas fa-user-circle fa-lg"></i>
                                 </button>
                                 <!-- Dropdown menu -->
-                                <div id="dropdown"
+                                <div id="dropdownlogout"
                                     class="right-0 z-10 hidden bg-dark-green divide-y divide-gray-100 hover:bg-green-700 rounded-lg shadow w-36 ">
                                     <ul class="py-2 text-sm font-medium text-gray-700 "
                                         aria-labelledby="dropdownDefaultButton">

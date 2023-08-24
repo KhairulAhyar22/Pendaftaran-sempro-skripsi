@@ -78,7 +78,7 @@
                             <div class="mb-3 overflow-x-auto">
                                 <table class="w-full text-sm text-left text-gray-500 ">
                                     <thead class="text-sm text-center text-gray-100 bg-emerald-700">
-                                        <p>Jadwal Seminar Skripsi</p>
+                                        <p>Jadwal Ujian Skripsi</p>
                                         <tr>
                                             <th scope="col" class="px-3 py-4 font-medium">
                                                 No

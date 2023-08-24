@@ -6,6 +6,7 @@ use App\Models\Dosen;
 use App\Models\PdSkripsi;
 use Illuminate\Http\Request;
 use App\Models\JadwalSkripsi;
+use Illuminate\Support\Facades\DB;
 
 class JadwalSkripsiController extends Controller
 {
@@ -84,6 +85,20 @@ class JadwalSkripsiController extends Controller
         return redirect('/jadwal/ujianskripsi');
     }
 
+    public function downloadjadwal($id)
+    {
+        $data = DB::table('tb_jadwal_skripsi')
+        ->join('tb_daftar_skripsi', 'tb_daftar_skripsi.id', '=', 'tb_jadwal_skripsi.id_skripsi')
+        ->where('tb_jadwal_skripsi.id', $id)
+            ->select(
+                'tb_jadwal_skripsi.*',
+                'tb_daftar_skripsi.nama_mahasiswa',
+                'tb_daftar_skripsi.nim',
+            )
+            ->first();
+        // dd($data);
+        return view('page.JadwalSkripsi.suratjadwalskripsi', compact('data'));
+    }
     /**
      * Display the specified resource.
      *

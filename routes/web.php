@@ -72,6 +72,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/jadwal/ujianskripsi/create', [JadwalSkripsiController::class, 'create']);
     Route::get('/jadwal/ujianskripsi/create/{id}', [JadwalSkripsiController::class, 'createbyid']);
     Route::post('/jadwal/ujianskripsi/store', [JadwalSkripsiController::class, 'store']);
+    Route::get('/jadwal/ujianskripsi/download/{id}', [JadwalSkripsiController::class, 'downloadjadwal']);
 
 
 

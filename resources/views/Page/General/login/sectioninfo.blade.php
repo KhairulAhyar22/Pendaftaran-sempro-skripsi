@@ -29,20 +29,20 @@
                                                 Tempat
                                             </th>
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
-                                                Ketua Tim 
+                                                Ketua Tim Penguji
                                             </th>
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
-                                                Anggota 
+                                                Dosen Penguji
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($datas as $data)
                                             <tr
-                                                class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                class="text-left text-slate-700 bg-white border-b ">
 
                                                 <th scope="row"
-                                                    class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
+                                                    class="px-3 py-2.5 text-gray-900 whitespace-nowrap ">
                                                     {{ $loop->iteration }}
                                                 </th>
                                                 <td class="px-2.5 py-2">
@@ -93,20 +93,20 @@
                                                 Tempat
                                             </th>
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
-                                                Ketua Tim 
+                                                Ketua Tim Penguji
                                             </th>
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
-                                                Anggota
+                                                Dosen Peenguji
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($datas as $data)
                                             <tr
-                                                class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                class="text-left text-slate-700 bg-white border-b ">
 
                                                 <th scope="row"
-                                                    class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
+                                                    class="px-3 py-2.5 text-gray-900 whitespace-nowrap ">
                                                     {{ $loop->iteration }}
                                                 </th>
                                                 <td class="px-2.5 py-2">

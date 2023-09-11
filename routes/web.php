@@ -63,7 +63,7 @@ Route::group(['middleware' => ['auth']], function () {
     // ==================== SURAT JADWAL SEMINAR PROPOSAL =======================
     Route::get('/jadwal/seminarproposal', [JadwalSemproController::class, 'index']);
     Route::get('/jadwal/seminarproposal/create', [JadwalSemproController::class, 'create']);
-    Route::get('/jadwal/seminarproposal/create/{id}', [JadwalSemproController::class, 'createbyid']);
+    Route::get('/jadwal/seminarproposal/crePdashbate/{id}', [JadwalSemproController::class, 'createbyid']);
     Route::post('/jadwal/seminarproposal/store', [JadwalSemproController::class, 'store']);
     Route::get('/jadwal/seminarproposal/download/{id}', [JadwalSemproController::class, 'downloadjadwal']);
     

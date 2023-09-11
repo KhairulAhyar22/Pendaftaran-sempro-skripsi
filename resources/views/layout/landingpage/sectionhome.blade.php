@@ -571,11 +571,11 @@
                             <h3 class="text-xl font-bold text-slate-800-800">Selamat Datang <br> <i
                                     class="text-base font-semibold">{{ auth()->user()->username }}</i> </h3>
                         </div>
-                        <p class="text-lg font-bold ">Status Pendaftaran </p><br>
+                        <p class="text-lg font-bold ">Status Pendaftaran</p><br>
                         <p class="text-base font-semibold py-2.5">Seminar Proposal : <span
-                                class="font-normal p-0.5 bg-green-700  rounded">Selesai</span></p>
+                                class="font-normal p-0.5 bg-green-700  rounded">{{$status_proposal->status}}</span></p>
                         <p class="text-base font-semibold py-2.5">Ujian Skripsi : <span
-                                class="font-normal p-0.5 bg-yellow-500 rounded ">terjadwal</span></p>
+                                class="font-normal p-0.5 bg-yellow-500 rounded ">{{$status_skripsi->status}}</span></p>
                         <p class="text-base font-semibold py-2.5">Yudisium : <span
                                 class="font-normal p-0.5 bg-red-500 rounded ">belum terjadwal</span></p>
                         <div class="pt-4">

@@ -43,11 +43,21 @@ class LandingController extends Controller
             )
             ->get();
 
+        $status_proposal = PdSempro::where('tb_daftar_sempro.user_create', Auth::user()->id)
+            ->first('status');
+        // dd($status_proposal);
+
+        $status_skripsi = PdSkripsi::where('tb_daftar_skripsi.user_create', Auth::user()->id)
+            ->first('status');
+        // dd($status_skripsi);
+
         // dd($skripsi);
         return view('layout.landingpage.content.content', compact(
             'daftardosen',
             'proposal',
             'skripsi',
+            'status_proposal',
+            'status_skripsi',
         ));
     }
 }

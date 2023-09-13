@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PdYudisium extends Model
 {
     use HasFactory;
-    protected $table='tb_daftar_yudisium';
-    protected $guarded=[''];
+    protected $table = 'tb_daftar_yudis';
+    protected $guarded = [''];
 }

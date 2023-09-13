@@ -42,10 +42,10 @@
                                         </th>
                                         <th scope="col"
                                             class="px-3 py-2.5 border-l-2 whitespace-nowrap font-medium border-gray-200">
-                                            Tgl Ujian Skripsi
+                                            No HP
                                         </th>
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
-                                            Penasihat Akademik
+                                            File PPT
                                         </th>
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             Status
@@ -77,11 +77,11 @@
                                             </td>
                                             <td class="px-3 py-2.5">
                                                 <p class="text-center">
-                                                    {{ Carbon\Carbon::parse($data->tglacc_proposal)->format('d/m/Y') }}</p>
-
+                                                    {{-- {{ Carbon\Carbon::parse($data->tglacc_proposal)->format('d/m/Y') }}</p> --}}
+                                                    {{ $data->no_hp }}
                                             </td>
                                             <td class="px-3 py-2.5 whitespace-nowrap">
-                                                {{ $data->nama_pa }}
+                                                {{ $data->file_ppt }}
                                             </td>
                                             <td class="px-2.5 py-2">
                                                 <div

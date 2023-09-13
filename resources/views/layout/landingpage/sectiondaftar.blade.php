@@ -133,29 +133,35 @@
                     <p class="ml-2 mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Daftar
                         Yudisium</p>
                 </button>
-                <div id="dropdownyudis" class="w-screen ">
+                <div id="dropdownyudis" class="w-screen hidden">
                     <div class="container max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-3 sm:px-7"
                         aria-labelledby="dropdownDefaultButton">
-                        <div class="bg-slate-50 rounded-md p-2 my-2 w-full">
-                            <p class="text-center font-bold text-lg uppercase">Pendaftaran Yudisium</p>
-                            <div class="mb-3 px-3">
-                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                    for="file_PPT_yudis">Upload PPT</label>
-                                <input name="file_PPT_yudis"
-                                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="file_PPT_yudis_help" id="file_PPT_yudis" type="file">
-                                <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_PPT_yudis_help">
-                                    Gunakan template PPT yudisium yang di sediakan, jika belum ada, silahkan
-                                    download <i class="text-blue-700 font-semibold"><a href="#">disini!</a></i>
-                                </p>
-                                @error('file_PPT_yudis')
-                                    <div class="text-xs text-red-500">{{ $message }}</div>
-                                @enderror
-                                <button type="submit" class="rounded mt-2 px-4 bg-emerald-800" >
-                                    <p class="p-2 text-center  text-slate-50 ">Daftar</p>
-                                </button>
-                            </div>
-                        </div>
+                        <ul class="bg-slate-50 rounded-md p-2 my-2 w-full">
+                            <li>
+                                <p class="text-center font-bold text-lg uppercase">Pendaftaran Yudisium</p>
+                                <div class="mb-3 px-3">
+                                <form action="/yudisium/store" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        for="file_PPT_yudis">Upload PPT</label>
+                                    <input name="file_PPT_yudis"
+                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        aria-describedby="file_PPT_yudis_help" id="file_PPT_yudis" type="file">
+                                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_PPT_yudis_help">
+                                        Gunakan template PPT yudisium yang di sediakan, jika belum ada, silahkan
+                                        download <i class="text-blue-700 font-semibold"><a
+                                                href="#">disini!</a></i>
+                                    </p>
+                                    @error('file_PPT_yudis')
+                                        <div class="text-xs text-red-500">{{ $message }}</div>
+                                    @enderror
+                                    <button type="submit" class="rounded mt-2 px-4 bg-emerald-800">
+                                        <p class="p-2 text-center  text-slate-50 ">Daftar</p>
+                                    </button>
+                                </form>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

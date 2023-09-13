@@ -19,14 +19,27 @@ class PdYudisiumController extends Controller
      */
     public function index()
     {
-        $datas = DB::table('tb_daftar_skripsi')
-            ->orderByDesc('created_at')->get();
+        // $datas = DB::table('tb_daftar_yudis')
+        //     ->orderByDesc('created_at')->get();
 
+        $datas = PDSkripsi::join('tb_daftar_yudis', 'tb_daftar_skripsi.user_create', 'tb_daftar_yudis.user_create')
+            ->select(
+                'tb_daftar_yudis.*',
+                'tb_daftar_skripsi.nim',
+                'tb_daftar_skripsi.nama_mahasiswa',
+                'tb_daftar_skripsi.judul_skripsi',
+                'tb_daftar_skripsi.no_hp',
+            )
+            ->orderByDesc('tb_daftar_yudis.created_at')
+            ->get();
 
         // dd($datas);
+
         return view(
             'Page.Yudisium.kelolayudisium',
-            ["datas" => $datas]
+            [
+                "datas" => $datas,
+            ]
         );
     }
 
@@ -52,19 +65,28 @@ class PdYudisiumController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
-            'file_ppt' => 'required',
+            'file_PPT_yudis' => 'required',
         ]);
 
+        $file_PPT_yudis = $request->file('file_PPT_yudis');
+        // dd($file_PPT_yudis);
+        $filename_PPT = time() . ' ' . $file_PPT_yudis->getClientOriginalName();
+
+        $file_PPT_yudis->move(public_path('Dokument/Yudisium/PPT'), $filename_PPT);
+
         $data = [
-            'nama_mahasiswa' => $request->nama_mahasiswa,
             'status' => 'Terbuat',
+            'file_ppt' => $filename_PPT,
             'user_create' => Auth::user()->id,
         ];
+        // dd($data);
 
-        $skripsi = PdSkripsi::create($data);
+        $yudisium = PdYudisium::create($data);
         // return redirect('/skripsi/hasilformskripsi/'.$skripsi->id);
-        return redirect('/skripsi/create/dokumentpersyaratan/' . $skripsi->id);
+        // return redirect('/landingpage/' . $yudisium->id);
+        return redirect('/landingpage');
     }
 
     /**

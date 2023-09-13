@@ -81,7 +81,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('yudisium', PdYudisiumController::class);
     Route::get('/yudisium/create/mhs', [PdYudisiumController::class, 'createbymahasiswa']);
     Route::get('/yudisium/create/dokumentpersyaratan/{id}', [PdYudisiumController::class, 'createdokumentyudisium']);
-    Route::post('/yudisium/store/dokumentpersyaratan/{id}', [PdYudisiumController::class, 'storedokumentyudisium']);
+    Route::post('/yudisium/store', [PdYudisiumController::class, 'store']);
     Route::get('/yudisium/hasilformyudisium/{id}', [PdYudisiumController::class, 'hasilformyudisium']);
     Route::get('/yudisium/vetifikasi/{id}', [PdYudisiumController::class, 'verifikasiyudisium']);
     Route::get('/yudisium/unvetifikasi/{id}', [PdYudisiumController::class, 'unverifikasiyudisium']);

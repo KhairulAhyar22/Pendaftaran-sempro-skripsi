@@ -1,4 +1,4 @@
-<section id="proposal" class="">
+<section id="proposal">
     <div class="container w-full ">
         <div class="overflow-x-auto bg-gray-100 border rounded-lg h-fit">
             <div class="rounded-lg ">

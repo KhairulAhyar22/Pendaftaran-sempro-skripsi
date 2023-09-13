@@ -9,7 +9,7 @@
         @include('layout.profile')
 
         <div class="w-auto p-3 bg-yellow-300 border-b-2 border-gray-300 rounded-lg shadow-lg mx-7 mt-11 ">
-            <h1 class="font-sans text-lg font-bold text-black">JADWAL SEMINAR SKRIPSI</h1>
+            <h1 class="font-sans text-lg font-bold text-black">JADWAL UJIAN SKRIPSI</h1>
         </div>
 
         <!-- CARD -->

@@ -14,14 +14,14 @@
                             <div class="mb-3 overflow-x-auto">
                                 <table class="w-full text-sm text-left text-gray-500 ">
                                     <thead class="text-sm text-center text-gray-100 bg-emerald-700">
-                                        <p>Jadwal Seminar Proposal</p>
+                                        <p><strong>Jadwal Seminar Proposal</strong></p>
                                         <tr>
                                             <th scope="col" class="px-3 py-4 font-medium">
                                                 No
                                             </th>
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                                 Nama Mahasiswa
-                                                                                    
+
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                                 Waktu / Tanggal
                                             </th>
@@ -38,31 +38,30 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($datas as $data)
-                                            <tr
-                                                class="text-left text-slate-700 bg-white border-b ">
+                                            <tr class="text-left text-slate-700 bg-white border-b ">
 
-                                                <th scope="row"
-                                                    class="px-3 py-2.5 text-gray-900 whitespace-nowrap ">
+                                                <th scope="row" class="px-3 py-2.5 text-gray-900 whitespace-nowrap ">
                                                     {{ $loop->iteration }}
                                                 </th>
                                                 <td class="px-2.5 py-2">
                                                     {{ $data->nama_mahasiswa }}
-                                                <br>
+                                                    <br>
                                                     <p class="text-xs">
                                                         {{ $data->nim }}
                                                     </p>
                                                 </td>
-                                               
+
                                                 <td class="px-2.5 py-2 text-center">
-                                                   {{ Carbon::parse($data->waktu)->format('H:i') }} / {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }}
-                                                    
-                                                    
+                                                    {{ Carbon::parse($data->waktu)->format('H:i') }} /
+                                                    {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }}
+
+
                                                 </td>
                                                 <td class="px-2.5 py-2">
                                                     {{ $data->tempat }}
                                                 </td>
                                                 <td class="px-2.5 py-2">
-                                                    {{ $data->ketua_tim }} 
+                                                    {{ $data->ketua_tim }}
                                                 </td>
                                                 <td>
                                                     {{ $data->anggota }}
@@ -72,20 +71,20 @@
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                         </div>
                         <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
                             <div class="mb-3 overflow-x-auto">
                                 <table class="w-full text-sm text-left text-gray-500 ">
                                     <thead class="text-sm text-center text-gray-100 bg-emerald-700">
-                                        <p>Jadwal Ujian Skripsi</p>
+                                        <p><strong>Jadwal Ujian Skripsi</strong></p>
                                         <tr>
                                             <th scope="col" class="px-3 py-4 font-medium">
                                                 No
                                             </th>
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                                 Nama Mahasiswa
-                                                                                    
+
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                                 Waktu / Tanggal
                                             </th>
@@ -102,51 +101,50 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($datas as $data)
-                                            <tr
-                                                class="text-left text-slate-700 bg-white border-b ">
+                                            <tr class="text-left text-slate-700 bg-white border-b ">
 
-                                                <th scope="row"
-                                                    class="px-3 py-2.5 text-gray-900 whitespace-nowrap ">
+                                                <th scope="row" class="px-3 py-2.5 text-gray-900 whitespace-nowrap ">
                                                     {{ $loop->iteration }}
                                                 </th>
                                                 <td class="px-2.5 py-2">
                                                     {{ $data->nama_mahasiswa }}
-                                                <br>
+                                                    <br>
                                                     <p class="text-xs">
                                                         {{ $data->nim }}
                                                     </p>
                                                 </td>
-                                               
+
                                                 <td class="px-2.5 py-2 text-center">
-                                                   {{ Carbon::parse($data->waktu)->format('H:i') }} / {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }}
-                                                    
-                                                    
+                                                    {{ Carbon::parse($data->waktu)->format('H:i') }} /
+                                                    {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }}
+
+
                                                 </td>
                                                 <td class="px-2.5 py-2">
                                                     {{ $data->tempat }}
                                                 </td>
                                                 <td class="px-2.5 py-2">
-                                                    {{ $data->ketua_tim }} 
+                                                    {{ $data->ketua_tim }}
                                                 </td>
                                                 <td>
-                                                    {{ $data->anggota }} 
-                                                   <br> {{ $data->anggota }}
-                                                   <br> {{ $data->anggota }}
+                                                    {{ $data->anggota }}
+                                                    <br> {{ $data->anggota }}
+                                                    <br> {{ $data->anggota }}
                                                 </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
 
-    
+
 </section>

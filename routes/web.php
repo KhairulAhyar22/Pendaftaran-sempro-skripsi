@@ -5,8 +5,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PdSemproController;
 use App\Http\Controllers\PdSkripsiController;
+use App\Http\Controllers\PdYudisiumController;
 use App\Http\Controllers\JadwalSemproController;
 use App\Http\Controllers\JadwalSkripsiController;
+use App\Http\Controllers\JadwalYudisiumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,13 +76,30 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/jadwal/ujianskripsi/store', [JadwalSkripsiController::class, 'store']);
     Route::get('/jadwal/ujianskripsi/download/{id}', [JadwalSkripsiController::class, 'downloadjadwal']);
 
+    /////////////////////// YUDISIUM ///////////////////////////
+    // ==================== DAFTAR =======================
+    Route::resource('yudisium', PdYudisiumController::class);
+    Route::get('/yudisium/create/mhs', [PdYudisiumController::class, 'createbymahasiswa']);
+    Route::get('/yudisium/create/dokumentpersyaratan/{id}', [PdYudisiumController::class, 'createdokumentyudisium']);
+    Route::post('/yudisium/store/dokumentpersyaratan/{id}', [PdYudisiumController::class, 'storedokumentyudisium']);
+    Route::get('/yudisium/hasilformyudisium/{id}', [PdYudisiumController::class, 'hasilformyudisium']);
+    Route::get('/yudisium/vetifikasi/{id}', [PdYudisiumController::class, 'verifikasiyudisium']);
+    Route::get('/yudisium/unvetifikasi/{id}', [PdYudisiumController::class, 'unverifikasiyudisium']);
 
-
+    // ==================== JADWAL =======================
+    Route::get('/jadwal/yudisium', [JadwalYudisiumController::class, 'index']);
+    Route::get('/jadwal/yudisium/create', [JadwalYudisiumController::class, 'create']);
+    Route::get('/jadwal/yudisium/crePdashbate/{id}', [JadwalYudisiumController::class, 'createbyid']);
+    Route::post('/jadwal/yudisium/store', [JadwalYudisiumController::class, 'store']);
+    Route::get('/jadwal/yudisium/download/{id}', [JadwalYudisiumController::class, 'downloadjadwal']);
+ 
     Route::get('/buatakun', function () {
         return view('page.general.buatakun');
     });
     Route::post('/storebuatakun', [LoginController::class, 'buatakun']);
 
+
+//___________________________________________________________________________
     // ADMIN KELOLA PERSYARATAN SEMINAR,SKRIPSI,YUDISIUM
     Route::get('/persyaratan_userSeminar', function () {
         return view('page.proposal.persyaratan_userSeminar');

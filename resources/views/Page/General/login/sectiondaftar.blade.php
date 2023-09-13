@@ -1,8 +1,7 @@
-<section id="pendaftaran" class="bg-[#237045] pt-14 w-screen h-screen">
+<section id="pendaftaran" class=" pt-14 w-screen h-screen">
     <div class="container max-w-screen-xl items-center justify-between mx-auto pt-2 px-3 sm:px-7">
-        <p class=" font-semibold text-2xl py-2 ">Syarat Pendaftaran </p><br>
+        <p class=" font-semibold text-2xl py-2  text-center text-white">Syarat Pendaftaran </p><br>
         <div class="z-10 pt-2 flex flex-col self-center justify-center w-auto px-52  sm:mt-0 ">
-
             <div class=" shadow rounded-lg w-full">
                 <div id="default-carousel" class="relative w-full rounded-lg " data-carousel="slide">
                     <!-- Carousel wrapper -->
@@ -96,9 +95,9 @@
                                             class="text-base font-normal leading-tight text-gray-900 ">Fotocopy Slip Pembayaran Semester Berjalan</span>
                                     </li>
                                 </ul>
-                                <button type="button"
+                                {{-- <button type="button"
                                     class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                    Sekarang</button>
+                                    Sekarang</button> --}}
                             </div>
                         </div>
                         <!-- Item 2 -->
@@ -194,9 +193,9 @@
                                             class="text-base font-normal leading-tight text-gray-900 ">Surat keterangan Lunas SPP</span>
                                     </li>
                                 </ul>
-                                <button type="button"
+                                {{-- <button type="button"
                                     class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                    Sekarang</button>
+                                    Sekarang</button> --}}
                             </div>
                         </div>
                         <!--3-->
@@ -288,9 +287,9 @@
                                             class="text-base font-normal leading-tight text-gray-900 ">Fotocopy Slip Pembayaran Semester Berjalan</span>
                                     </li>
                                 </ul>
-                                <button type="button"
+                                {{-- <button type="button"
                                     class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                    Sekarang</button>
+                                    Sekarang</button> --}}
                             </div>
                         </div>
                         <!-- Item 2 -->
@@ -386,9 +385,9 @@
                                             class="text-base font-normal leading-tight text-gray-900 ">Surat keterangan Lunas SPP</span>
                                     </li>
                                 </ul>
-                                <button type="button"
+                                {{-- <button type="button"
                                     class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                    Sekarang</button>
+                                    Sekarang</button> --}}
                             </div>
                         </div>
                         <!--3-->
@@ -480,9 +479,9 @@
                                             class="text-base font-normal leading-tight text-gray-900 ">Fotocopy Slip Pembayaran Semester Berjalan</span>
                                     </li>
                                 </ul>
-                                <button type="button"
+                                {{-- <button type="button"
                                     class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                    Sekarang</button>
+                                    Sekarang</button> --}}
                             </div>
                         </div>
                         <!-- Item 2 -->

@@ -1,4 +1,4 @@
-<section id="info" class="bg-[#237045] w-screen">
+<section id="info" class=" w-screen">
     @php
         use Carbon\Carbon;
     @endphp

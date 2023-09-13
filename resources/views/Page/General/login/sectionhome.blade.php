@@ -1,7 +1,6 @@
-<section id="home" class="bg-cover w-screen" style="background-image: url('/Img/1.png'); ">
-    <div class="flex flex-col">
-        <div class="container justify-betwen mx-auto px-4 min-h-screen flex flex-row rounded-3xl">
-
+<section id="home" class="bg-cover w-screen " style="background-image: url('/Img/1.png'); ">
+    <div class="flex flex-col mx-auto px-4">
+        <div class="container justify-betwen  min-h-screen flex flex-row rounded-3xl">
             <div class="justify-center flex w-2/3">
                 <div class="z-10 flex flex-col self-center lg:px-14 sm:max-w-4xl xl:max-w-md">
                     <div class="flex-col self-start hidden px-5 text-gray-200 sm:flex">
@@ -56,7 +55,7 @@
         </div>
         <div class="-mt-20 mb-10 flex flex-col text-white justify-center self-center ">
             <p>Swipe</p>
-            <a href="" class="text-center">
+            <a href="#info" class="text-center">
                 <i class="fas fa-angle-double-down"></i>
             </a>
         </div>

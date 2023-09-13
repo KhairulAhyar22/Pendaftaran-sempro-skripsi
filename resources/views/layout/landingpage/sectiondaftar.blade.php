@@ -151,6 +151,9 @@
                                 @error('file_PPT_yudis')
                                     <div class="text-xs text-red-500">{{ $message }}</div>
                                 @enderror
+                                <button class="rounded mt-2 px-4 bg-emerald-800" >
+                                    <p class="p-2 text-center  text-slate-50 ">Daftar</p>
+                                </button>
                             </div>
                         </div>
                     </div>

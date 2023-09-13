@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\PdSkripsi;
+use App\Models\PdYudisium;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\DokumenPdUjianSkripsi;
@@ -23,9 +24,10 @@ class PdYudisiumController extends Controller
 
 
         // dd($datas);
-        return view('Page.Yudisium.kelolayudisium', 
-        ["datas" => $datas    ]
-    );
+        return view(
+            'Page.Yudisium.kelolayudisium',
+            ["datas" => $datas]
+        );
     }
 
     /**
@@ -33,7 +35,7 @@ class PdYudisiumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function createbymahasiswa()
     {
         $daftardosen = Dosen::all();
@@ -51,38 +53,13 @@ class PdYudisiumController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_mahasiswa' => 'required',
-            'nim' => 'required',
-            'status_mahasiswa' => 'required',
-            'jenis_kelamin' => 'required',
-            'judul_skripsi' => 'required',
-            'pembimbing1' => 'required',
-            'pembimbing2' => 'required',
-            'tglacc_proposal' => 'required',
-            'no_hp' => 'required',
-            'nama_pa' => 'required',
-            'uji_similarity' => 'required',
+            'file_ppt' => 'required',
         ]);
-
-        $uji_similarity = $request->file('uji_similarity');
-        $filename_uji_similarity = time() . ' ' . $uji_similarity->getClientOriginalName();
-        $uji_similarity->move(public_path('Dokument/Skripsi/UjiSimilarity'), $filename_uji_similarity);
 
         $data = [
             'nama_mahasiswa' => $request->nama_mahasiswa,
-            'nim' => $request->nim,
-            'status_mahasiswa' => $request->status_mahasiswa,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'judul_skripsi' => $request->judul_skripsi,
-            'pembimbing1' => $request->pembimbing1,
-            'pembimbing2' => $request->pembimbing2,
-            'tglacc_proposal' => $request->tglacc_proposal,
-            'no_hp' => $request->no_hp,
-            'nama_pa' => $request->nama_pa,
-            'status_dok' => 'Belum Lengkap',
             'status' => 'Terbuat',
             'user_create' => Auth::user()->id,
-            'uji_similarity' => $filename_uji_similarity,
         ];
 
         $skripsi = PdSkripsi::create($data);
@@ -127,8 +104,8 @@ class PdYudisiumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
-     public function edit($id)
+
+    public function edit($id)
     {
 
         $daftardosen = Dosen::all();
@@ -263,7 +240,7 @@ class PdYudisiumController extends Controller
             // ini masih belum tau apa bagusnya
             'status' => 'Terverifikasi',
         ]);
-        return redirect()->back();    
+        return redirect()->back();
     }
     public function unverifikasiskripsi($id)
     {
@@ -271,6 +248,6 @@ class PdYudisiumController extends Controller
             // ini masih belum tau apa bagusnya
             'status' => 'Terbuat',
         ]);
-        return redirect()->back();    
+        return redirect()->back();
     }
 }

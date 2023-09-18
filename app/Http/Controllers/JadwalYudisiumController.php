@@ -6,13 +6,14 @@ use App\Models\Dosen;
 use App\Models\PdSkripsi;
 use Illuminate\Http\Request;
 use App\Models\JadwalSkripsi;
+use App\Models\JadwalYudisium;
 use Illuminate\Support\Facades\DB;
 
 class JadwalYudisiumController extends Controller
 {
-    
+
     //db skripsi diganti yudis nnti
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -20,17 +21,11 @@ class JadwalYudisiumController extends Controller
      */
     public function index()
     {
-        $datas = JadwalSkripsi::leftJoin('tb_daftar_skripsi', 'tb_daftar_skripsi.id', '=', 'tb_jadwal_skripsi.id_skripsi')
-        ->select(
-            'tb_jadwal_skripsi.*',
-            'tb_daftar_skripsi.nama_mahasiswa',
-            'tb_daftar_skripsi.nim'
-        )
-            ->orderByDesc('tb_jadwal_skripsi.created_at')
+        $datas = JadwalYudisium::orderByDesc('tb_jadwal_yudis.created_at')
             ->get();
 
         // dd($datas);
-        return view('Page.Yudisium.jadwalyudis-kelola', ["datas" => $datas,]);
+        return view('Page.Yudisium.jadwalyudis-kelola', ["datas" => $datas]);
     }
 
     /**
@@ -46,7 +41,7 @@ class JadwalYudisiumController extends Controller
             'listskripsi'
         ));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -56,27 +51,19 @@ class JadwalYudisiumController extends Controller
     public function store(Request $request)
     {
         $jadwal = [
-            'id_skripsi' => $request->id_skripsi,
-            'tempat' => $request->tempat,
+            'periode' => $request->periode,
+            'tahun' => $request->tahun,
             'tanggal' => $request->tanggal,
-            'waktu_mulai' => $request->waktu_mulai,
-            'waktu_selesai' => $request->waktu_selesai,
-            'no_surat' => $request->no_surat,
-            'ketua_tim' => $request->ketua_tim,
-            'anggota1' => $request->anggota1,
-            'anggota2' => $request->anggota2,
-            'anggota3' => $request->anggota3,
+            'tempat' => $request->tempat,
+            'waktu' => $request->waktu,
         ];
         // dd($jadwal);
-        $jadwalskripsi = JadwalSkripsi::create($jadwal);
-        $test = PdSkripsi::where('id', $jadwalskripsi->id_skripsi)->update([
-            'status' => 'Terjadwal'
-        ]);
+        $jadwalyudisium = JadwalYudisium::create($jadwal);
 
         return redirect('/jadwal/yudisium');
     }
 
-    
+
     /**
      * Display the specified resource.
      *
@@ -96,7 +83,11 @@ class JadwalYudisiumController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = JadwalYudisium::where('id', $id)
+            ->first();
+        // dd($data);
+        // return view('Page.Yudisium.createdokumenskripsi', compact('data'));
+        return view('Page.Yudisium.jadwalyudis-edit', compact('data'));
     }
 
     /**
@@ -108,7 +99,15 @@ class JadwalYudisiumController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datainput = [
+            'periode' => $request->periode,
+            'tahun' => $request->tahun,
+            'tanggal' => $request->tanggal,
+            'tempat' => $request->tempat,
+            'waktu' => $request->waktu,
+        ];
+        JadwalYudisium::find($id)->update($datainput);
+        return redirect('/jadwal/yudisium');
     }
 
     /**
@@ -119,6 +118,7 @@ class JadwalYudisiumController extends Controller
      */
     public function destroy($id)
     {
-        //
+        JadwalYudisium::find($id)->delete();
+        return redirect('/jadwalyudisium');
     }
 }

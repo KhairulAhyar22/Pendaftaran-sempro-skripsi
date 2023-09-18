@@ -47,9 +47,9 @@
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             File PPT
                                         </th>
-                                        <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
+                                        {{-- <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             Status
-                                        </th>
+                                        </th> --}}
                                         <th scope="col" class="px-3 py-2.5 border-l-2 font-medium border-gray-200">
                                             Aksi
                                         </th>
@@ -83,12 +83,12 @@
                                             <td class="px-3 py-2.5 whitespace-nowrap">
                                                 {{ $data->file_ppt }}
                                             </td>
-                                            <td class="px-2.5 py-2">
+                                            {{-- <td class="px-2.5 py-2">
                                                 <div
                                                     class="px-3 py-1 text-center text-black rounded {{ $data->status == 'Terbuat' ? 'text-green-700 bg-green-300' : 'bg-pink-300 text-pink-700' }}">
                                                     {{ $data->status }}
                                                 </div>
-                                            </td>
+                                            </td> --}}
                                             <td
                                                 class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2.5 py-2 text-sm text-center text-gray-500">
                                                 <button id="{{ $data->id }}"
@@ -108,7 +108,7 @@
                                                     class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700 right-0">
                                                     <ul class="py-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                         aria-labelledby="dropdownDefaultButton">
-                                                        <li>
+                                                        {{-- <li>
                                                             <a href="/skripsi/{{ $data->id }}/edit"
                                                                 class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center">
                                                                 <div class="flex items-center justify-end w-28 mx-auto">
@@ -128,22 +128,22 @@
                                                                     <p class="text-sm">Show</p>
                                                                 </div>
                                                             </a>
-                                                        </li>
+                                                        </li> --}}
 
                                                         <li>
-                                                            <a href="/skripsi/hasilformskripsi/{{ $data->id }}"
-                                                                class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                            {{-- <a href="/skripsi/hasilformskripsi/{{ $data->id }}" --}}
+                                                                <a href="{{ route('unduh.ppt', ['id' => $data->id]) }}" class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
                                                                 <div class="flex items-center justify-end w-28 mx-auto">
                                                                     {{-- <iconify-icon icon="simple-line-icons:check"
                                                                         class="text-[18px] mr-2"></iconify-icon> --}}
                                                                     <iconify-icon icon="ic:round-download"
                                                                         class="text-[20px] mr-2"></iconify-icon>
-                                                                    <p class="text-sm">Unduh Form</p>
+                                                                    <p class="text-sm">Unduh PPT</p>
                                                                 </div>
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <form action="/skripsi/{{ $data->id }}" method="POST"
+                                                            <form action="/yudisium/{{ $data->id }}" method="POST"
                                                                 onsubmit="return confirm('Anda yakin akan hapus?')">
                                                                 @csrf
                                                                 @method('delete')

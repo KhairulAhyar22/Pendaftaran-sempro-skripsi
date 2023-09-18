@@ -266,7 +266,7 @@ class PdSkripsiController extends Controller
             // ini masih belum tau apa bagusnya
             'status' => 'Terverifikasi',
         ]);
-        return redirect()->back();    
+        return redirect()->back();
     }
     public function unverifikasiskripsi($id)
     {
@@ -274,6 +274,6 @@ class PdSkripsiController extends Controller
             // ini masih belum tau apa bagusnya
             'status' => 'Terbuat',
         ]);
-        return redirect()->back();    
+        return redirect()->back();
     }
 }

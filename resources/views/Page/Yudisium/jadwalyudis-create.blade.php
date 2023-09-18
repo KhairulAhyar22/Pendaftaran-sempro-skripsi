@@ -7,7 +7,7 @@
             <div class="relative overflow-x-auto bg-white border rounded-lg">
                 <div class="flex w-full">
                     <div class="w-full rounded-lg border-b-3">
-                        <form action="/yudisium" method="post" class="" enctype="multipart/form-data">
+                        <form action="/jadwal/yudisium/store" method="post" class="" enctype="multipart/form-data">
                             @csrf
                             <div class="px-8 py-3 mb-10 rounded-t-lg bg-emerald-700">
                                 <h3 class="text-lg font-medium text-white">Jadwal Yudisium</h3>
@@ -15,26 +15,28 @@
                             <div class="p-6 lg:p-6 ">
                                 <div class="grid grid-cols-1 mb-5 lg:grid-cols-2 lg:mx-10 gap-7 ">
                                     <div class="mb-3">
-                                        <label for="nama_mahasiswa"
+                                        <label for="periode"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Yudisium Periode ke-</label>
-                                        <select id="id_proposal" name="id_proposal" onchange="redirectToById(this)"
-                                            class="{{ $errors->has('id_proposal') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} block w-full p-2.5 text-sm text-gray-900 border rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            
+                                        <select id="periode" name="periode" onchange="redirectToById(this)"
+                                            class="{{ $errors->has('periode') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} block w-full p-2.5 text-sm text-gray-900 border rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
-                                            <option>Pilih Mahasiswa</option>
-                                            @foreach ($listskripsi as $sempro)
-                                                <option value="{{ $sempro->id }}">{{ $sempro->nama_mahasiswa }} /
-                                                    {{ $sempro->nim }}</option>
-                                            @endforeach
+                                            <option>Pilih Periode</option>
+                                                <option value="Periode 1">Periode 1</option>
+                                                <option value="Periode 2">Periode 2</option>
+                                                <option value="Periode 3">Periode 3</option>
+                                                <option value="Periode 4">Periode 4</option>
+                                                <option value="Periode 5">Periode 5</option>
                                         </select>
-                                        <script>
-                                            function redirectToById(selectElement) {
-                                                var selectedOption = selectElement.value;
-                                                if (selectedOption !== "") {
-                                                    window.location.href = "/jadwal/ujianskripsi/create/" + selectedOption;
-                                                }
-                                            }
-                                        </script>
-                                        @error('nama_mahasiswa')
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="tahun"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tahun</label>
+                                        <input type="text" id="tahun" name="tahun" value="{{ old('tahun') }}"
+                                            placeholder="Contoh: 2023"
+                                            class="{{ $errors->has('tahun') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required>
+                                        @error('tahun')
                                             <div class="text-xs text-red-500">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -53,7 +55,7 @@
                                         <label for="tempat"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tempat/Ruangan</label>
                                         <input type="text" id="tempat" name="tempat" value="{{ old('tempat') }}"
-                                            placeholder="Write tempat here..."
+                                            placeholder="Tuliskan nama ruangan/tempat"
                                             class="{{ $errors->has('tempat') ? 'bg-red-50 border border-red-500' : 'bg-gray-50 border border-gray-300' }} text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required>
                                         @error('tempat')
@@ -74,7 +76,7 @@
                                 </div>
 
                                 <div class="flex justify-start my-8 lg:mx-10 ">
-                                    <button type=" submit"
+                                    <button type="submit"
                                         class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 
                                                     font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit
                                     </button>

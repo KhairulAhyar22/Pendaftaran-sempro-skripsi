@@ -42,42 +42,43 @@
                                             Periode
                                         </th>
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
+                                            Tahun
+                                        </th>
+                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             Tanggal/Waktu
                                         </th>
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             Tempat
                                         </th>
-
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             Aksi
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($datas as $data) --}}
+                                    @foreach ($datas as $data)
                                     <tr
                                         class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
                                         <th scope="row"
                                             class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
-                                            {{-- {{ $loop->iteration }} --}}
-                                            1
+                                            {{ $loop->iteration }}
                                         </th>
                                         <td class="px-2.5 py-2">
-                                            {{-- {{ $data->nama_mahasiswa }} --}}
-                                            Yudisium Periode 1 2023
+                                            {{ $data->periode }}
+                                        </td>
+                                        <td class="px-2.5 py-2">
+                                            {{ $data->tahun }}
                                         </td>
 
                                         <td class="px-2.5 py-2 text-center">
-                                            {{-- {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }}
-                                            <br>
-                                            {{ Carbon::parse($data->waktu_mulai)->format('H:i') }} s/d
-                                            {{ Carbon::parse($data->waktu_selesai)->format('H:i') }}  --}}
-                                            <span class="font-semibold">19 Juni 2023 | 10.00 WITA</span>
+                                            {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }}
+                                            |
+                                            {{ Carbon::parse($data->waktu)->format('H:i') }}
+                                            {{-- <span class="font-semibold">19 Juni 2023 | 10.00 WITA</span> --}}
                                         </td>
                                         <td class="px-2.5 py-2">
-                                            {{-- {{ $data->tempat }} --}}
-                                            Aula B
+                                            {{ $data->tempat }}
                                         </td>
                                         <td
                                             class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2.5 py-2 text-sm text-center text-gray-500">
@@ -97,7 +98,7 @@
                                                 <ul class="py-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                     aria-labelledby="dropdownDefaultButton">
                                                     <li>
-                                                        <a href=""
+                                                        <a href="/jadwal/yudisium/edit/{{ $data->id }}"
                                                             class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
                                                             <div class="flex items-center justify-end mx-auto w-28">
                                                                 <iconify-icon icon="tabler:edit" class="text-[18px] mr-2">
@@ -106,12 +107,27 @@
                                                             </div>
                                                         </a>
                                                     </li>
-
+                                                    <li>
+                                                        <form action="/jadwalyudisium/{{ $data->id }}" method="POST"
+                                                            onsubmit="return confirm('Anda yakin akan hapus?')">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit"
+                                                                onclick="return  alert('Hanya bisa delete data pendaftar dan belum bisa delete dokumennya, dokumen masih akan tersimpan di aplikasi karena pengembangan belum selesai!')"
+                                                                class="block px-4 py-[7px] text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                                <div class="flex items-center justify-end w-28 mx-auto">
+                                                                    <iconify-icon icon="ant-design:delete-filled"
+                                                                        class="text-xl mr-1"></iconify-icon>
+                                                                    <p class="">Delete</p>
+                                                                </div>
+                                                            </button>
+                                                        </form>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
-                                    {{-- @endforeach --}}
+                                    @endforeach
 
 
                                 </tbody>

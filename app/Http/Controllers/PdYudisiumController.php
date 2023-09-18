@@ -7,7 +7,6 @@ use App\Models\PdSkripsi;
 use App\Models\PdYudisium;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\DokumenPdUjianSkripsi;
 use Illuminate\Support\Facades\Auth;
 
 class PdYudisiumController extends Controller
@@ -171,10 +170,11 @@ class PdYudisiumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy($id)
     {
-        PdSkripsi::find($id)->delete();
-        return redirect('/skripsi');
+        PdYudisium::find($id)->delete();
+        return redirect('/yudisium');
     }
 
     public function createdokumentskripsi($id)
@@ -184,92 +184,22 @@ class PdYudisiumController extends Controller
         return view('Page.Yudisium.createdokumenskripsi', compact('skripsi'));
     }
 
-    public function storedokumentskripsi(Request $request, $id)
+    public function unduhPPT($id)
     {
-        $request->validate([
-            // 'file' => 'required|mimes:pdf,xlx,csv|max:2048',
-            'file_skripsi' => 'required|mimes:pdf',
-            'file_bukti_acc' => 'required|mimes:pdf',
-            'file_spus' => 'required|mimes:pdf',
-            'file_pengesahan_proposal' => 'required|mimes:pdf',
-            'file_krs' => 'required|mimes:pdf',
-            'file_ktm' => 'required|mimes:pdf',
-            'file_bukti_lunasspp' => 'required|mimes:pdf',
-        ]);
+        $data = PdYudisium::find($id);
 
-        // dd($request->all());
-        $file_skripsi = $request->file('file_skripsi');
-        $filename_skripsi = time() . ' ' . $file_skripsi->getClientOriginalName();
+        if ($data) {
+            $file_path = public_path('Dokument/Yudisium/PPT/' . $data->file_ppt);
 
-        $file_bukti_acc = $request->file('file_bukti_acc');
-        $filename_bukti_acc = time() . ' ' . $file_bukti_acc->getClientOriginalName();
-
-        $file_spus = $request->file('file_spus');
-        $filename_spus = time() . ' ' . $file_spus->getClientOriginalName();
-
-        $file_pengesahan_proposal = $request->file('file_pengesahan_proposal');
-        $filename_pengesahan_proposal = time() . ' ' . $file_pengesahan_proposal->getClientOriginalName();
-
-        $file_krs = $request->file('file_krs');
-        $filename_krs = time() . ' ' . $file_krs->getClientOriginalName();
-
-        $file_ktm = $request->file('file_ktm');
-        $filename_ktm = time() . ' ' . $file_ktm->getClientOriginalName();
-
-        $file_bukti_lunasspp = $request->file('file_bukti_lunasspp');
-        $filename_bukti_lunasspp = time() . ' ' . $file_bukti_lunasspp->getClientOriginalName();
-
-        // ============ UPLOAD FILE GAMBAR ==================
-        $file_skripsi->move(public_path('UjianSkripsi/Skripsi'), $filename_skripsi);
-        $file_bukti_acc->move(public_path('UjianSkripsi/BuktiACC'), $filename_bukti_acc);
-        $file_spus->move(public_path('UjianSkripsi/SPUS'), $filename_spus);
-        $file_pengesahan_proposal->move(public_path('UjianSkripsi/PengesahanProposal'), $filename_pengesahan_proposal);
-        $file_krs->move(public_path('UjianSkripsi/KRS'), $filename_krs);
-        $file_ktm->move(public_path('UjianSkripsi/KTM'), $filename_ktm);
-        $file_bukti_lunasspp->move(public_path('UjianSkripsi/BuktiLunasSPP'), $filename_bukti_lunasspp);
-
-        // dd($request->all());
-        // =============== SAVE KE DATABASE ====================
-        DokumenPdUjianSkripsi::create([
-            'id_daftar_skripsi' => $id,
-            'file_skripsi' => $filename_skripsi,
-            'file_bukti_acc' => $filename_bukti_acc,
-            'file_spus' => $filename_spus,
-            'file_pengesahan_proposal' => $filename_pengesahan_proposal,
-            'file_krs' => $filename_krs,
-            'file_ktm' => $filename_ktm,
-            'file_bukti_lunasspp' => $filename_bukti_lunasspp,
-        ]);
-
-        PdSkripsi::find($id)->update([
-            'status_dok' => 'Lengkap'
-        ]);
-        return redirect('/landingpage');
-        // return redirect('/skripsi');
-    }
-    // public function hasilformskripsi($id)
-    // {
-    //     $daftardosen = Dosen::all();
-    //     $skripsi = DB::table('tb_daftar_skripsi')->find($id);
-    //     return view('Page.Yudisium.hasilformskripsi', compact(
-    //         'daftardosen',
-    //         'skripsi'
-    //     ));
-    // }
-    public function verifikasiskripsi($id)
-    {
-        PdSkripsi::find($id)->update([
-            // ini masih belum tau apa bagusnya
-            'status' => 'Terverifikasi',
-        ]);
-        return redirect()->back();
-    }
-    public function unverifikasiskripsi($id)
-    {
-        PdSkripsi::find($id)->update([
-            // ini masih belum tau apa bagusnya
-            'status' => 'Terbuat',
-        ]);
-        return redirect()->back();
+            if (file_exists($file_path)) {
+                return response()->download($file_path);
+            } else {
+                // Handle jika file tidak ditemukan
+                abort(404);
+            }
+        } else {
+            // Handle jika data tidak ditemukan
+            abort(404);
+        }
     }
 }

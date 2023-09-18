@@ -567,21 +567,41 @@
             <div class="z-10 flex self-center justify-center px-5 pt-10 sm:mt-0 ">
                 <div class="p-1 pt-24 ">
                     <div class="p-5 mx-auto bg-white rounded-xl w-96 h-[26rem] ">
-                        <div class="mb-12 ">
+                        <div class="mb-12">
                             <p class="text-xl font-bold text-slate-800-800">Selamat Datang </p>
                             <p class="pt-2 text-lg font-semibold uppercase">{{ auth()->user()->username }}</p>
                             <p><i class="text-base font-normal">{{ auth()->user()->nim }}</i> </p>
                         </div>
-                        <p class="text-lg font-bold pb-2 ">Status Pendaftaran</p>
-                        <p class="text-base font-semibold py-2.5">Seminar Proposal : <span
-                                class="font-normal p-0.5 bg-green-700  rounded">{{ $status_proposal->status }}</span>
+                        <p class="text-lg font-bold pb-2">Status Pendaftaran</p>
+                        <p class="text-base font-semibold py-2.5">Seminar Proposal :
+                            <span class="font-normal p-0.5 bg-green-700 rounded">
+                                @if ($statusSempro == 'belum daftar')
+                                    belum daftar
+                                @else
+                                    {{ $statusSempro }}
+                                @endif
+                            </span>
                         </p>
-                        <p class="text-base font-semibold py-2.5">Ujian Skripsi : <span
-                                class="font-normal p-0.5 bg-yellow-500 rounded ">{{ $status_skripsi->status }}</span>
+                        <p class="text-base font-semibold py-2.5">Ujian Skripsi :
+                            <span class="font-normal p-0.5 bg-yellow-500 rounded">
+                                @if ($statusSkripsi == 'belum daftar')
+                                    belum daftar
+                                @else
+                                    {{ $statusSkripsi}}
+                                @endif
+                            </span>
                         </p>
-                        <p class="text-base font-semibold py-2.5">Yudisium : <span
-                                class="font-normal p-0.5 bg-red-500 rounded ">belum terjadwal</span></p>
+                        <p class="text-base font-semibold py-2.5">Yudisium :
+                            <span class="font-normal p-0.5 bg-red-500 rounded">
+                                @if ($statusYudisium == 'belum daftar')
+                                    belum di jadwalkan
+                                @else
+                                    {{ $statusYudisium }}
+                                @endif
+                            </span>
+                        </p>
                         <div class="pt-4">
+
 
                             <a href="#info"
                                 class="text-white bg-green-800 hover:bg-green-900 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Detail</a>

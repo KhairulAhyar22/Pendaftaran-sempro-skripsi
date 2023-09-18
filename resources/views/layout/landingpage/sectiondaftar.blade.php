@@ -71,8 +71,8 @@
         </li>
         <li>
             <!-- KALAU SELESAI DI ATUR STATUS PENDAFTARANNYA AKTIFKAN YG INI -->
-            {{-- <div class="w-full">
-                @if ($skripsi != 'selesai' && $proposal != 'selesai')
+            <div class="w-full">
+                @if ($skripsi != 'Terjadwal' && $proposal != 'Terjadwal')
                     <a onclick="return alert('Pendaftaran yudisium hanya dapat dilakukan apa bila telah selesai ujian skripsi')"
                         class=" flex flex-row items-center p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-50 w-96 ">
                         <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
@@ -96,12 +96,15 @@
                         <p class="ml-2 mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Daftar
                             Yudisium</p>
                     </button>
-                    <div id="dropdownyudis" class="w-screen ">
-                        <div class="container max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-3 sm:px-7"
-                            aria-labelledby="dropdownDefaultButton">
-                            <div class="bg-slate-50 rounded-md p-2 my-2 w-full">
+                    <div id="dropdownyudis" class="w-screen hidden">
+                    <div class="container max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-3 sm:px-7"
+                        aria-labelledby="dropdownDefaultButton">
+                        <ul class="bg-slate-50 rounded-md p-2 my-2 w-full">
+                            <li>
                                 <p class="text-center font-bold text-lg uppercase">Pendaftaran Yudisium</p>
                                 <div class="mb-3 px-3">
+                                <form action="/yudisium/store" method="POST" enctype="multipart/form-data">
+                                    @csrf
                                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                         for="file_PPT_yudis">Upload PPT</label>
                                     <input name="file_PPT_yudis"
@@ -110,18 +113,24 @@
                                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_PPT_yudis_help">
                                         Gunakan template PPT yudisium yang di sediakan, jika belum ada, silahkan
                                         download <i class="text-blue-700 font-semibold"><a
-                                                href="#">disini!</a></i></p>
+                                                href="#">disini!</a></i>
+                                    </p>
                                     @error('file_PPT_yudis')
                                         <div class="text-xs text-red-500">{{ $message }}</div>
                                     @enderror
+                                    <button type="submit" class="rounded mt-2 px-4 bg-emerald-800">
+                                        <p class="p-2 text-center  text-slate-50 ">Daftar</p>
+                                    </button>
+                                </form>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
+                </div>
                 @endif
-            </div> --}}
+            </div>
             <!-- INI YANG BELUM AKTIF KONDISI IF STATUSNYA -->
-            <div class="w-full">
+            {{-- <div class="w-full">
                 <button id="daftaryudis" data-dropdown-toggle="dropdownyudis"
                     class=" flex flex-row items-center p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-50 w-96 ">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
@@ -164,7 +173,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </li>
     </ul>
 </section>

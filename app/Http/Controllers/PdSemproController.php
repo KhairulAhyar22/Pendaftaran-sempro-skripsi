@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\DokumenPdSempro;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+
 
 class PdSemproController extends Controller
 {
@@ -46,13 +49,13 @@ class PdSemproController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $daftardosen = Dosen::all();
-        return view('Page.Proposal.createdaftarseminarproposal', compact(
-            'daftardosen'
-        ));
-    }
+    // public function create()
+    // {
+    //     $daftardosen = Dosen::all();
+    //     return view('Page.Proposal.createdaftarseminarproposal', compact(
+    //         'daftardosen'
+    //     ));
+    // }
     public function createbymahasiswa()
     {
         $daftardosen = Dosen::all();
@@ -106,8 +109,8 @@ class PdSemproController extends Controller
         $sempro = PdSempro::create($datainput);
         // dd($sempro);
         // return redirect('/proposal/hasilformproposal/'. $sempro->id);
-        return redirect('/proposal/create/dokumentpersyaratan/'. $sempro->id);
-        return redirect('/proposal');
+        // return redirect('/proposal/create/dokumentpersyaratan/'. $sempro->id);
+        return redirect('/landingpage');
     }
 
     /**
@@ -171,11 +174,7 @@ class PdSemproController extends Controller
         return redirect('/proposal');
     }
 
-    public function destroy($id)
-    {
-        PdSempro::find($id)->delete();
-        return redirect('/proposal');
-    }
+   
 
     public function createdokumentproposal($id)
     {
@@ -260,4 +259,71 @@ class PdSemproController extends Controller
         ]);
         return redirect()->back();
     }
+
+
+  // public function destroy($id)
+    // {
+    //     PdSempro::find($id)->delete();
+    //     return redirect('/proposal');
+    // }
+
+
+
+
+public function destroy($id)
+{
+    try {
+        $data = PdSempro::find($id);
+
+        if (!$data) {
+            return redirect('/proposal')->with('error', 'Data tidak ditemukan');
+        }
+
+        // Hapus file terkait dari folder penyimpanan
+        $krsPath = 'Dokument/Proposal/KRS/' . $data->file_krs;
+        $proposalPath = 'Dokument/Proposal/Proposal/' . $data->file_proposal;
+
+        // ...
+
+        // Hapus data dari tabel DokumenPdSempro berdasarkan id_daftar_sempro yang sama
+        $dokumen = DokumenPdSempro::where('id_daftar_sempro', $id)->get();
+
+        foreach ($dokumen as $dok) {
+            // Hapus file terkait dari folder penyimpanan
+            $kartuKonsulPath = 'Dokument/Proposal/KartuKonsul/' . $dok->file_kartu_konsul;
+            $khsPath = 'Dokument/Proposal/KHS/' . $dok->file_khs;
+            $lunasSppPath = 'Dokument/Proposal/LunasSPP/' . $dok->file_lunas_spp;
+            $slipPembayaranPath = 'Dokument/Proposal/SlipPembayaran/' . $dok->file_slip_pembayaran;
+
+            if (Storage::exists($kartuKonsulPath)) {
+                Storage::delete($kartuKonsulPath);
+            }
+
+            if (Storage::exists($khsPath)) {
+                Storage::delete($khsPath);
+            }
+
+            if (Storage::exists($lunasSppPath)) {
+                Storage::delete($lunasSppPath);
+            }
+
+            if (Storage::exists($slipPembayaranPath)) {
+                Storage::delete($slipPembayaranPath);
+            }
+
+            // Hapus data dari tabel DokumenPdSempro
+            $dok->delete();
+        }
+
+        // Hapus data dari database
+        $data->delete();
+
+        return redirect('/proposal')->with('success', 'Data berhasil dihapus');
+    } catch (\Exception $e) {
+        Log::error('Terjadi kesalahan: ' . $e->getMessage());
+        return redirect('/proposal')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
+}
+
+
 }

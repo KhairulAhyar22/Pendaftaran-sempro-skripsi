@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\JadwalSempro;
 use Illuminate\Http\Request;
+use App\Models\JadwalSkripsi;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -74,18 +76,81 @@ class LoginController extends Controller
         return redirect()->back();
     }
 
-    public function index()
-    {
-        $datas = JadwalSempro::join('tb_daftar_sempro', 'tb_daftar_sempro.id', '=', 'tb_jadwal_sempro.id_proposal')
+    // public function index()
+    // {
+    //     $datas = JadwalSempro::join('tb_daftar_sempro', 'tb_daftar_sempro.id', '=', 'tb_jadwal_sempro.id_proposal')
+    //         ->select(
+    //             'tb_jadwal_sempro.*',
+    //             'tb_daftar_sempro.nama_mahasiswa',
+    //             'tb_daftar_sempro.nim'
+    //         )
+    //         ->orderByDesc('tb_jadwal_sempro.created_at')
+    //         ->get();
+
+    //     // dd($datas);
+    //     return view('page.general.login.content.login', ["datas" => $datas,]);
+    // }
+public function index()
+{
+    $daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    $datasByDate = [];
+
+    foreach ($daysOfWeek as $day) {
+        // Mendapatkan tanggal hari ini
+        $today = Carbon::now();
+        // Menghitung selisih hari antara hari saat ini dengan hari dalam loop
+        $dayOfWeek = Carbon::parse($day);
+        $daysDiff = $today->dayOfWeek - $dayOfWeek->dayOfWeek;
+        
+        // Mengubah tanggal saat ini berdasarkan selisih hari
+        $formattedDate = $today->subDays($daysDiff)->startOfDay();
+        $datasForDayS = JadwalSempro::join('tb_daftar_sempro', 'tb_daftar_sempro.id', '=', 'tb_jadwal_sempro.id_proposal')
             ->select(
                 'tb_jadwal_sempro.*',
                 'tb_daftar_sempro.nama_mahasiswa',
                 'tb_daftar_sempro.nim'
             )
-            ->orderByDesc('tb_jadwal_sempro.created_at')
+            ->whereDate('tb_jadwal_sempro.tanggal', $formattedDate)
+            ->orderBy('tb_jadwal_sempro.tanggal')
+            ->get();
+        $datasForDayU = JadwalSkripsi::join('tb_daftar_skripsi', 'tb_daftar_skripsi.id', '=', 'tb_jadwal_skripsi.id_skripsi')
+            ->select(
+                'tb_jadwal_skripsi.*',
+                'tb_daftar_skripsi.nama_mahasiswa',
+                'tb_daftar_skripsi.nim'
+            )
+            ->whereDate('tb_jadwal_skripsi.tanggal', $formattedDate)
+            ->orderBy('tb_jadwal_skripsi.tanggal')
             ->get();
 
-        // dd($datas);
-        return view('page.general.login.content.login', ["datas" => $datas,]);
+        $datasByDateS[$day] = $datasForDayS;
+        $datasByDateU[$day] = $datasForDayU;
     }
+
+    return view('page.general.login.content.login', [
+        "datasByDateS" => $datasByDateS,
+        "datasByDateU" => $datasByDateU,
+]);
+}
+
+private function getDayOfWeek($day)
+{
+    switch ($day) {
+        case 'senin':
+            return 2;
+        case 'selasa':
+            return 3;
+        case 'rabu':
+            return 4;
+        case 'kamis':
+            return 5;
+        case 'jumat':
+            return 6;
+        case 'sabtu':
+            return 7;
+        default:
+            return 1;
+    }
+}
+
 }

@@ -88,7 +88,7 @@ class PdSkripsiController extends Controller
             'user_create' => Auth::user()->id,
             'uji_similarity' => $filename_uji_similarity,
         ];
-
+        // dd($data);
         $skripsi = PdSkripsi::create($data);
         // return redirect('/skripsi/hasilformskripsi/'.$skripsi->id);
         return redirect('/skripsi/create/dokumentpersyaratan/' . $skripsi->id);

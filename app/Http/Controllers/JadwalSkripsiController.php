@@ -18,11 +18,11 @@ class JadwalSkripsiController extends Controller
     public function index()
     {
         $datas = JadwalSkripsi::leftJoin('tb_daftar_skripsi', 'tb_daftar_skripsi.id', '=', 'tb_jadwal_skripsi.id_skripsi')
-        ->select(
-            'tb_jadwal_skripsi.*',
-            'tb_daftar_skripsi.nama_mahasiswa',
-            'tb_daftar_skripsi.nim'
-        )
+            ->select(
+                'tb_jadwal_skripsi.*',
+                'tb_daftar_skripsi.nama_mahasiswa',
+                'tb_daftar_skripsi.nim'
+            )
             ->orderByDesc('tb_jadwal_skripsi.created_at')
             ->get();
 
@@ -88,8 +88,8 @@ class JadwalSkripsiController extends Controller
     public function downloadjadwal($id)
     {
         $data = DB::table('tb_jadwal_skripsi')
-        ->join('tb_daftar_skripsi', 'tb_daftar_skripsi.id', '=', 'tb_jadwal_skripsi.id_skripsi')
-        ->where('tb_jadwal_skripsi.id', $id)
+            ->join('tb_daftar_skripsi', 'tb_daftar_skripsi.id', '=', 'tb_jadwal_skripsi.id_skripsi')
+            ->where('tb_jadwal_skripsi.id', $id)
             ->select(
                 'tb_jadwal_skripsi.*',
                 'tb_daftar_skripsi.nama_mahasiswa',

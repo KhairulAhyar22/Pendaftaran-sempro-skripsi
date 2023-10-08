@@ -38,7 +38,7 @@
                                             function redirectToById(selectElement) {
                                                 var selectedOption = selectElement.value;
                                                 if (selectedOption !== "") {
-                                                    window.location.href = "/jadwal/seminarproposal/create/" + selectedOption;
+                                                    window.location.href = "/jadwal/seminarproposal/crePdashbate/" + selectedOption;
                                                 }
                                             }
                                         </script>

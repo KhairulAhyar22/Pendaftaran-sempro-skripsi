@@ -76,7 +76,7 @@ class PdYudisiumController extends Controller
         $file_PPT_yudis->move(public_path('Dokument/Yudisium/PPT'), $filename_PPT);
 
         $data = [
-            'status' => 'Terbuat',
+            'status' => 'Telah Daftar',
             'file_ppt' => $filename_PPT,
             'user_create' => Auth::user()->id,
         ];
@@ -170,7 +170,7 @@ class PdYudisiumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function destroy($id)
     {
         PdYudisium::find($id)->delete();

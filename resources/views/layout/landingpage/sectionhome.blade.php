@@ -594,7 +594,7 @@
                         <p class="text-base font-semibold py-2.5">Yudisium :
                             <span class="font-normal p-0.5 bg-red-500 rounded">
                                 @if ($statusYudisium == 'belum daftar')
-                                    belum di jadwalkan
+                                    belum daftar
                                 @else
                                     {{ $statusYudisium }}
                                 @endif

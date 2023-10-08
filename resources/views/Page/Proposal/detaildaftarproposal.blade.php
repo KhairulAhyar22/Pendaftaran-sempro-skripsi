@@ -149,24 +149,55 @@
                                                     target="_blank"
                                                     class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $data->file_proposal ? $data->file_proposal : '-' }}</a>
                                             </td>
-                                            <td class="px-4 py-4">
+                                            {{-- <td class="px-4 py-4">
                                                 <a href="/Dokument/Proposal/KartuKonsul/{{ $file->file_kartu_konsul }}"
                                                     target="_blank"
-                                                    class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $file->file_kartu_konsul ? $file->file_kartu_konsul : '-' }}</a>
-                                            </td>
+                                                    class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">
+                                                    {{ isset($file->file_kartu_konsul) ? $file->file_kartu_konsul : '-' }}
+                                                </a>
+                                            </td> --}}
                                             <td class="px-4 py-4">
+                                                <a href="/Dokument/Proposal/KartuKonsul/{{ isset($file) && isset($file->file_kartu_konsul) ? $file->file_kartu_konsul : '-' }}"
+                                                    target="_blank"
+                                                    class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">
+                                                    {{ isset($file) && isset($file->file_kartu_konsul) ? $file->file_kartu_konsul : '-' }}
+                                                </a>
+                                            </td>
+                                            
+                                            {{-- <td class="px-4 py-4">
                                                 <a href="/Dokument/Proposal/KHS/{{ $file->file_khs }}" target="_blank"
                                                     class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $file->file_khs ? $file->file_khs : '-' }}</a>
-                                            </td>
+                                            </td> --}}
                                             <td class="px-4 py-4">
+                                                <a href="/Dokument/Proposal/KartuKonsul/{{ isset($file) && isset($file->file_khs) ? $file->file_khs : '-' }}"
+                                                    target="_blank"
+                                                    class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">
+                                                    {{ isset($file) && isset($file->file_khs) ? $file->file_khs : '-' }}
+                                                </a>
+                                            </td>
+                                            {{-- <td class="px-4 py-4">
                                                 <a href="/Dokument/Proposal/LunasSPP/{{ $file->file_lunas_spp }}"
                                                     target="_blank"
                                                     class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $file->file_lunas_spp ? $file->file_lunas_spp : '-' }}</a>
-                                            </td>
+                                            </td> --}}
                                             <td class="px-4 py-4">
+                                                <a href="/Dokument/Proposal/KartuKonsul/{{ isset($file) && isset($file->file_lunas_spp) ? $file->file_lunas_spp : '-' }}"
+                                                    target="_blank"
+                                                    class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">
+                                                    {{ isset($file) && isset($file->file_lunas_spp) ? $file->file_lunas_spp : '-' }}
+                                                </a>
+                                            </td>
+                                            {{-- <td class="px-4 py-4">
                                                 <a href="/Dokument/Proposal/SlipPembayaran/{{ $file->file_slip_pembayaran }}"
                                                     target="_blank"
                                                     class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">{{ $file->file_slip_pembayaran ? $file->file_slip_pembayaran : '-' }}</a>
+                                            </td> --}}
+                                            <td class="px-4 py-4">
+                                                <a href="/Dokument/Proposal/KartuKonsul/{{ isset($file) && isset($file->file_slip_pembayaran) ? $file->file_slip_pembayaran : '-' }}"
+                                                    target="_blank"
+                                                    class="font-normal text-slate-700 hover:font-medium hover:text-slate-800">
+                                                    {{ isset($file) && isset($file->file_slip_pembayaran) ? $file->file_slip_pembayaran : '-' }}
+                                                </a>
                                             </td>
                                         </tr>
                                     </tbody>

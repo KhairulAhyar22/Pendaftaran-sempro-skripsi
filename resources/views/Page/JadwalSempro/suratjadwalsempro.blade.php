@@ -87,7 +87,7 @@
                     </div>
                     <div>
                         <a href="" class="leading-4">
-                            <p>-</p>
+                            <p>{{$data->no_surat}}</p>
                         </a>
                         <a href="" class="leading-4">
                             <p>-</p>

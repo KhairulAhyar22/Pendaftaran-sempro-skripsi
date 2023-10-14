@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\JadwalSempro;
 use Illuminate\Http\Request;
+use App\Models\JadwalSkripsi;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -86,6 +87,17 @@ class LoginController extends Controller
             ->get();
 
         // dd($datas);
-        return view('page.general.login.content.login', ["datas" => $datas,]);
+        $dataskrip = JadwalSkripsi::leftJoin('tb_daftar_skripsi', 'tb_daftar_skripsi.id', '=', 'tb_jadwal_skripsi.id_skripsi')
+        ->select(
+            'tb_jadwal_skripsi.*',
+            'tb_daftar_skripsi.nama_mahasiswa',
+            'tb_daftar_skripsi.nim'
+        )
+            ->orderByDesc('tb_jadwal_skripsi.created_at')
+            ->get();
+        return view('page.general.login.content.login', [
+            "datas" => $datas,
+            "dataskrip" => $dataskrip,
+        ]);
     }
 }

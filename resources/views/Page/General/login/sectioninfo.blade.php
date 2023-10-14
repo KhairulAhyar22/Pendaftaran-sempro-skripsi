@@ -2,12 +2,12 @@
     @php
         use Carbon\Carbon;
     @endphp
-    <div class="container max-w-screen-xl items-center justify-between mx-auto pt-2 px-3 sm:px-7">
-        <p class=" font-semibold text-2xl  text-green-800 py-2 ">Informasi Jadwal </p>
-        <div class="text-lg  text-green-800 py-2">
+    <div class="container items-center justify-between max-w-screen-xl px-3 pt-2 mx-auto sm:px-7">
+        <p class="py-2 text-2xl font-semibold text-green-800 ">Informasi Jadwal </p>
+        <div class="py-2 text-lg text-green-800">
             </p>
             <div class="container pb-8 my-3 px-7 mt-7">
-                <div class=" bg-white border rounded-lg">
+                <div class="bg-white border rounded-lg ">
                     <div class="flex flex-col w-full">
                         <!-- <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full"> -->
                         <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
@@ -21,7 +21,7 @@
                                             </th>
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                                 Nama Mahasiswa
-                                                                                    
+<</th>                             
                                             <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                                 Waktu / Tanggal
                                             </th>
@@ -37,9 +37,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        
                                         @foreach ($datas as $data)
                                             <tr
-                                                class="text-left text-slate-700 bg-white border-b ">
+                                                class="text-left bg-white border-b text-slate-700 ">
 
                                                 <th scope="row"
                                                     class="px-3 py-2.5 text-gray-900 whitespace-nowrap ">
@@ -101,9 +102,44 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($datas as $data)
+                                    <tr>
+                                        @foreach ($dataskrip as $item)
+                                        <tr
+                                            class="text-left bg-white border-b text-slate-700 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                                <th scope="row"
+                                                    class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {{ $loop->iteration }}
+                                                </th>
+                                            <td class="px-2.5 py-2">
+                                                {{ $item->nama_mahasiswa }}
+                                            </td>
+                                            <td class="px-2.5 py-2">
+                                                {{ $item->nim }}
+                                            </td>                                            
+                                            <td class="px-2.5 py-2 text-center">
+                                                {{ Carbon::parse($item->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }} /
+                                                {{ Carbon::parse($item->waktu_mulai)->format('H:i') }} s/d {{ Carbon::parse($item->waktu_selesai)->format('H:i') }} <span class="font-semibold">WITA</span>
+                                            </td>
+                                            <td class="px-2.5 py-2">
+                                                {{ $item->tempat }}
+                                            </td>
+                                            <td class="px-2.5 py-2">
+                                                {{ $item->ketua_tim }} (Ketua Tim)
+                                                
+                                            </td>
+                                            <td
+                                                class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2.5 py-2 text-sm text-center text-gray-500">
+                                                
+                                                {{ $item->anggota1 }} (Anggota)
+                                                {{ $item->anggota2 }} (Anggota)<br>
+                                                {{ $item->anggota3 }} (Anggota)<br>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                        <!-- @foreach ($datas as $data)
                                             <tr
-                                                class="text-left text-slate-700 bg-white border-b ">
+                                                class="text-left bg-white border-b text-slate-700 ">
 
                                                 <th scope="row"
                                                     class="px-3 py-2.5 text-gray-900 whitespace-nowrap ">
@@ -134,7 +170,7 @@
                                                    <br> {{ $data->anggota }}
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                        @endforeach -->
                                     </tbody>
                                 </table>
                             </div>

@@ -1,16 +1,16 @@
-<section id="home" class="bg-cover w-screen" style="background-image: url('/Img/1.png'); ">
-    <div class="container py-5 max-w-screen-xl items-center justify-between mx-auto px-4 h-screen">
+<section id="home" class=" w-screen">
+    <div class="container py-5 max-w-screen-xl items-center justify-between mx-auto px-3 sm:px-7 h-screen">
         <div class="flex justify-between ">
             <div class="z-10 flex self-center justify-center w-2/3  pt-10 sm:mt-0 ">
-                
+
                 <div class=" shadow rounded-lg py-1 pt-24   w-full">
                     <div id="default-carousel" class="relative w-full rounded-lg " data-carousel="slide">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-[30rem] overflow-hidden rounded-lg ">
+                        <div class="relative h-[26rem] overflow-hidden rounded-lg ">
                             <!-- Item 1 -->
                             <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
-                                <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                    <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Seminar
+                                <div class="w-full h-full px-4 bg-white border  rounded-lg shadow   ">
+                                    <h5 class="mb-3 text-xl font-medium text-gray-900 ">Persyaratan Seminar
                                         Proposal
                                     </h5>
                                     <ul role="list" class="space-y-3 my-1">
@@ -102,15 +102,15 @@
                                                 Slip Pembayaran Semester Berjalan</span>
                                         </li>
                                     </ul>
-                                    <button type="button"
+                                    <a href="#pendaftaran" type="button"
                                         class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                        Sekarang</button>
+                                        Sekarang</a>
                                 </div>
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
-                                <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                    <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Ujian
+                                <div class="w-full h-full px-4 bg-white border  rounded-lg shadow   ">
+                                    <h5 class="mb-3 text-xl font-medium text-gray-900 ">Persyaratan Ujian
                                         Skripsi
                                     </h5>
                                     <ul role="list" class="space-y-3 my-1">
@@ -206,15 +206,15 @@
                                                 keterangan Lunas SPP</span>
                                         </li>
                                     </ul>
-                                    <button type="button"
+                                    <a href="#pendaftaran" type="button"
                                         class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                        Sekarang</button>
+                                        Sekarang</a>
                                 </div>
                             </div>
                             <!--3-->
                             <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
-                                <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                    <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Seminar
+                                <div class="w-full h-full px-4 bg-white border  rounded-lg shadow   ">
+                                    <h5 class="mb-3 text-xl font-medium text-gray-900 ">Persyaratan Seminar
                                         Proposal
                                     </h5>
                                     <ul role="list" class="space-y-3 my-1">
@@ -306,15 +306,15 @@
                                                 Slip Pembayaran Semester Berjalan</span>
                                         </li>
                                     </ul>
-                                    <button type="button"
+                                    <a href="#pendaftaran" type="button"
                                         class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                        Sekarang</button>
+                                        Sekarang</a>
                                 </div>
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
-                                <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                    <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Ujian
+                                <div class="w-full h-full px-4 bg-white border  rounded-lg shadow   ">
+                                    <h5 class="mb-3 text-xl font-medium text-gray-900 ">Persyaratan Ujian
                                         Skripsi
                                     </h5>
                                     <ul role="list" class="space-y-3 my-1">
@@ -410,15 +410,15 @@
                                                 keterangan Lunas SPP</span>
                                         </li>
                                     </ul>
-                                    <button type="button"
+                                    <a href="#pendaftaran" type="button"
                                         class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                        Sekarang</button>
+                                        Sekarang</a>
                                 </div>
                             </div>
                             <!--3-->
                             <div class="hidden duration-1000 bg-white ease-in-out " data-carousel-item>
-                                <div class="w-full h-full p-4 bg-white border  rounded-lg shadow sm:p-8  ">
-                                    <h5 class="mb-4 text-xl font-medium text-gray-900 ">Persyaratan Seminar
+                                <div class="w-full h-full px-4 bg-white border  rounded-lg shadow   ">
+                                    <h5 class="mb-3 text-xl font-medium text-gray-900 ">Persyaratan Seminar
                                         Proposal
                                     </h5>
                                     <ul role="list" class="space-y-3 my-1">
@@ -510,15 +510,15 @@
                                                 Slip Pembayaran Semester Berjalan</span>
                                         </li>
                                     </ul>
-                                    <button type="button"
+                                    <a href="#pendaftaran" type="button"
                                         class="text-white bg-green-800 hover:bg-green-700 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200  font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Daftar
-                                        Sekarang</button>
+                                        Sekarang</a>
                                 </div>
                             </div>
                             <!-- Item 2 -->
                         </div>
                         <!-- Slider indicators -->
-                        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-[-1.5rem] left-1/2">
                             <button type="button" class="w-3 h-3 rounded-full" aria-current="true"
                                 aria-label="Slide 1" data-carousel-slide-to="0"></button>
                             <button type="button" class="w-3 h-3 rounded-full" aria-current="false"
@@ -564,21 +564,44 @@
                     </div>
                 </div>
             </div>
-            <div class="z-10 flex self-center justify-center px-5  sm:mt-0 ">
+            <div class="z-10 flex self-center justify-center px-5 pt-10 sm:mt-0 ">
                 <div class="p-1 pt-24 ">
-                    <div class="p-5 mx-auto bg-white rounded-xl w-96 h-96 ">
-                        <div class="mb-7">
-                            <h3 class="text-xl font-bold text-slate-800-800">Selamat Datang <br> <i
-                                    class="text-base font-semibold">{{ auth()->user()->username }}</i> </h3>
+                    <div class="p-5 mx-auto bg-white rounded-xl w-96 h-[26rem] ">
+                        <div class="mb-12">
+                            <p class="text-xl font-bold text-slate-800-800">Selamat Datang </p>
+                            <p class="pt-2 text-lg font-semibold uppercase">{{ auth()->user()->username }}</p>
+                            <p><i class="text-base font-normal">{{ auth()->user()->nim }}</i> </p>
                         </div>
-                        <p class="text-lg font-bold ">Status Pendaftaran </p><br>
-                        <p class="text-base font-semibold py-2.5">Seminar Proposal : <span
-                                class="font-normal p-0.5 bg-green-700  rounded">Selesai</span></p>
-                        <p class="text-base font-semibold py-2.5">Ujian Skripsi : <span
-                                class="font-normal p-0.5 bg-yellow-500 rounded ">terjadwal</span></p>
-                        <p class="text-base font-semibold py-2.5">Yudisium : <span
-                                class="font-normal p-0.5 bg-red-500 rounded ">belum terjadwal</span></p>
+                        <p class="text-lg font-bold pb-2">Status Pendaftaran</p>
+                        <p class="text-base font-semibold py-2.5">Seminar Proposal :
+                            <span class="font-normal p-0.5 bg-green-700 rounded">
+                                @if ($statusSempro == 'belum daftar')
+                                    belum daftar
+                                @else
+                                    {{ $statusSempro }}
+                                @endif
+                            </span>
+                        </p>
+                        <p class="text-base font-semibold py-2.5">Ujian Skripsi :
+                            <span class="font-normal p-0.5 bg-yellow-500 rounded">
+                                @if ($statusSkripsi == 'belum daftar')
+                                    belum daftar
+                                @else
+                                    {{ $statusSkripsi}}
+                                @endif
+                            </span>
+                        </p>
+                        <p class="text-base font-semibold py-2.5">Yudisium :
+                            <span class="font-normal p-0.5 bg-red-500 rounded">
+                                @if ($statusYudisium == 'belum daftar')
+                                    belum daftar
+                                @else
+                                    {{ $statusYudisium }}
+                                @endif
+                            </span>
+                        </p>
                         <div class="pt-4">
+
 
                             <a href="#info"
                                 class="text-white bg-green-800 hover:bg-green-900 focus:ring-4  mt-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Detail</a>

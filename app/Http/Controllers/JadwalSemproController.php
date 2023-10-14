@@ -105,8 +105,8 @@ class JadwalSemproController extends Controller
             ->where('tb_jadwal_sempro.id', $id)
             ->select(
                 'tb_jadwal_sempro.*',
-            'tb_daftar_sempro.nama_mahasiswa',
-            'tb_daftar_sempro.nim',
+                'tb_daftar_sempro.nama_mahasiswa',
+                'tb_daftar_sempro.nim',
             )
             ->first();
         // dd($data);

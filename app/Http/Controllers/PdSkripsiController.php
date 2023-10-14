@@ -88,7 +88,7 @@ class PdSkripsiController extends Controller
             'user_create' => Auth::user()->id,
             'uji_similarity' => $filename_uji_similarity,
         ];
-
+        // dd($data);
         $skripsi = PdSkripsi::create($data);
         // return redirect('/skripsi/hasilformskripsi/'.$skripsi->id);
         return redirect('/skripsi/create/dokumentpersyaratan/' . $skripsi->id);
@@ -266,7 +266,7 @@ class PdSkripsiController extends Controller
             // ini masih belum tau apa bagusnya
             'status' => 'Terverifikasi',
         ]);
-        return redirect()->back();    
+        return redirect()->back();
     }
     public function unverifikasiskripsi($id)
     {
@@ -274,6 +274,6 @@ class PdSkripsiController extends Controller
             // ini masih belum tau apa bagusnya
             'status' => 'Terbuat',
         ]);
-        return redirect()->back();    
+        return redirect()->back();
     }
 }

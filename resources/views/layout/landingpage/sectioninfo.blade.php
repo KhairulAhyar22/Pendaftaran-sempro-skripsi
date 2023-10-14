@@ -1,4 +1,4 @@
-<section id="info" class="bg-[#237045] w-screen">
+<section id="info" class=" w-screen">
     @php
         use Carbon\Carbon;
     @endphp
@@ -375,12 +375,12 @@
                                         </li>                                        
                                         <li>
                                             @if ($data->id_jadwal)
-                                            <a href="/jadwal/seminarproposal/download/{{ $data->id_jadwal }}"
+                                            <a href="/jadwal/ujianskripsi/download/{{ $data->id_jadwal }}"
                                                 class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100  justify-end">
                                                 <div class="flex items-center justify-end mx-auto w-28">
                                                     <iconify-icon icon="ic:round-download"
                                                         class="text-[20px] mr-2"></iconify-icon>
-                                                    <p class="text-sm">Undangan </p>
+                                                    <p class="text-sm">Undangan Skripsi  </p>
                                                 </div>
                                             </a>
                                             @else

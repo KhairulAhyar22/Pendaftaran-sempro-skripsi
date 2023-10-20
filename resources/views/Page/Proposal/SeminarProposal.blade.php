@@ -160,7 +160,7 @@
                                                                 <a href="/proposal/{{ $data->id }}/edit"
                                                                     class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center">
                                                                     <div class="flex items-center justify-end mx-auto w-28"
-                                                                        target="_blank">
+                                                                        >
                                                                         <iconify-icon icon="tabler:edit"
                                                                             class="text-[18px] mr-2">
                                                                         </iconify-icon>
@@ -171,9 +171,9 @@
                                                         @endif
                                                         <li>
                                                             <a href="{{ url("/proposal/{$data->id}") }}"
-                                                                class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end" >
                                                                 <div class="flex items-center justify-end mx-auto w-28"
-                                                                    target="_blank">
+                                                                    >
                                                                     <iconify-icon icon="iconamoon:eye"
                                                                         class="text-[18px] mr-2"></iconify-icon>
                                                                     <p class="text-sm">Show</p>
@@ -182,9 +182,9 @@
                                                         </li>
                                                         <li>
                                                             <a href="{{ url("/proposal/hasilformproposal/{$data->id}") }}"
-                                                                class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end" target="_blank">
                                                                 <div class="flex items-center justify-end mx-auto w-28"
-                                                                    target="_blank">
+                                                                    >
                                                                     <iconify-icon icon="ic:round-download"
                                                                         class="text-[20px] mr-2"></iconify-icon>
                                                                     {{-- <iconify-icon icon="iconamoon:eye"

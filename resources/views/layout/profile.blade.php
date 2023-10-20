@@ -20,7 +20,8 @@
                     @if (auth()->user()->level == 'Prodi')
                         <li>
                             <a href="/buatakun"
-                                class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center">
+                                class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center"
+                                target="_blank">
                                 <div class="flex items-center justify-end w-28 mx-auto">
                                     <iconify-icon icon="tabler:edit" class="text-[18px] mr-2">
                                     </iconify-icon>

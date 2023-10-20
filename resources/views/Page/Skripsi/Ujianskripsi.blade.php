@@ -117,7 +117,7 @@
                                                         aria-labelledby="dropdownDefaultButton">
                                                         <li>
                                                             <a href="/skripsi/{{ $data->id }}/edit"
-                                                                class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center" target="_blank">
+                                                                class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center" >
                                                                 <div class="flex items-center justify-end w-28 mx-auto">
                                                                     <iconify-icon icon="tabler:edit"
                                                                         class="text-[18px] mr-2">
@@ -128,7 +128,7 @@
                                                         </li>
                                                         <li>
                                                             <a href="{{ url("/skripsi/{$data->id}") }}"
-                                                                class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end" target="_blank">
+                                                                class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end" >
                                                                 <div class="flex items-center justify-end w-28 mx-auto">
                                                                     <iconify-icon icon="iconamoon:eye"
                                                                         class="text-[18px] mr-2"></iconify-icon>

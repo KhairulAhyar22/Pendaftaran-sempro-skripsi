@@ -1,6 +1,5 @@
 @extends('layout.index')
 @section('content')
-
     @php
         use Carbon\Carbon;
     @endphp
@@ -36,14 +35,11 @@
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <thead class="text-sm text-center text-gray-100 bg-emerald-700">
                                     <tr>
-                                            <th scope="col" class="px-3 py-4 font-medium">
-                                                No
-                                            </th>
-                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
-                                            Nama Mahasiswa
+                                        <th scope="col" class="px-3 py-4 font-medium">
+                                            No
                                         </th>
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
-                                            NIM
+                                            Nama Mahasiswa
                                         </th>
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             No Surat
@@ -56,7 +52,7 @@
                                         </th>
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             Ketua Tim / Anggota
-                                        </th>                                        
+                                        </th>
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             Aksi
                                         </th>
@@ -67,24 +63,25 @@
                                         <tr
                                             class="text-left text-slate-700 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
-                                                <th scope="row"
-                                                    class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
-                                                    {{ $loop->iteration }}
-                                                </th>
+                                            <th scope="row"
+                                                class="px-3 py-2.5 text-gray-900 whitespace-nowrap dark:text-white">
+                                                {{ $loop->iteration }}
+                                            </th>
                                             <td class="px-2.5 py-2">
-                                                {{ $data->nama_mahasiswa }}
-                                            </td>
-                                            <td class="px-2.5 py-2">
-                                                {{ $data->nim }}
+                                                <span class="uppercase">{{ $data->nama_mahasiswa }}</span> <br>
+                                                <span class="font-light font-italic text-sm">{{ $data->nim }}</span>
                                             </td>
                                             <td class="px-2.5 py-2">
                                                 {{ $data->no_surat }}
                                             </td>
                                             <td class="px-2.5 py-2 text-center">
-                                                {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }} <br>
-                                                {{ Carbon::parse($data->waktu_mulai)->format('H:i') }} s/d {{ Carbon::parse($data->waktu_selesai)->format('H:i') }} <span class="font-semibold">WITA</span>
+                                                {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }}
+                                                <br>
+                                                {{ Carbon::parse($data->waktu_mulai)->format('H:i') }} s/d
+                                                {{ Carbon::parse($data->waktu_selesai)->format('H:i') }} <span
+                                                    class="font-semibold">WITA</span>
                                             </td>
-                                            <td class="px-2.5 py-2">
+                                            <td class="px-2.5 py-2 text-center">
                                                 {{ $data->tempat }}
                                             </td>
                                             <td class="px-2.5 py-2">
@@ -96,7 +93,7 @@
                                             <td
                                                 class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2.5 py-2 text-sm text-center text-gray-500">
                                                 <button id="{{ $data->id }}"
-                                                    data-dropdown-toggle="dropdown{{ $data->id }}"
+                                                    data-dropdown-toggle="dropdownjs{{ $data->id }}"
                                                     class="inline-flex items-center px-3 py-2 text-sm text-center text-gray-800 border rounded-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                                     type="button">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -107,7 +104,7 @@
                                                     </svg>
                                                 </button>
                                                 <!-- Dropdown menu -->
-                                                <div id="dropdown{{ $data->id }}"
+                                                <div id="dropdownjs{{ $data->id }}"
                                                     class="right-0 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-36 dark:bg-gray-700">
                                                     <ul class="py-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                         aria-labelledby="dropdownDefaultButton">

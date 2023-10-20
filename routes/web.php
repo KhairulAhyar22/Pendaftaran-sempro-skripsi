@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/proposal/hasilformproposal/{id}', [PdSemproController::class, 'hasilformproposal']);
     Route::get('/proposal/vetifikasi/{id}', [PdSemproController::class, 'verifikasiproposal']);
     Route::get('/proposal/unvetifikasi/{id}', [PdSemproController::class, 'unverifikasiproposal']);
+    Route::get('/proposal/hasilformproposal/{id}/complete', [PdSemproController::class,'completeProposal']);
 
     // ==================== UJIAN SKRIPSI =======================
     Route::resource('skripsi', PdSkripsiController::class);
@@ -60,6 +61,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/skripsi/hasilformskripsi/{id}', [PdSkripsiController::class, 'hasilformskripsi']);
     Route::get('/skripsi/vetifikasi/{id}', [PdSkripsiController::class, 'verifikasiskripsi']);
     Route::get('/skripsi/unvetifikasi/{id}', [PdSkripsiController::class, 'unverifikasiskripsi']);
+    Route::get('/skripsi/hasilformskripsi/{id}/complete', [PdSkripsiController::class,'completeSkripsi']);
 
 
     // ==================== SURAT JADWAL SEMINAR PROPOSAL =======================
@@ -69,7 +71,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/jadwal/seminarproposal/store', [JadwalSemproController::class, 'store']);
     Route::get('/jadwal/seminarproposal/download/{id}', [JadwalSemproController::class, 'downloadjadwal']);
 
-    ==================== SURAT JADWAL SEMINAR SKRIPSI =======================
+   // ==================== SURAT JADWAL SEMINAR SKRIPSI =======================
     Route::get('/jadwal/ujianskripsi', [JadwalSkripsiController::class, 'index']);
     Route::get('/jadwal/ujianskripsi/create', [JadwalSkripsiController::class, 'create']);
     Route::get('/jadwal/ujianskripsi/create/{id}', [JadwalSkripsiController::class, 'createbyid']);

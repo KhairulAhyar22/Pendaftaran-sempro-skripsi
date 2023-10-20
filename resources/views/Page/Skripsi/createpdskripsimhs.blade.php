@@ -153,7 +153,7 @@
                                         <label for="tglacc_proposal"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal
                                             ACC
-                                            Proposal</label>
+                                            Skripsi</label>
                                         <input type="date" id="tglacc_proposal" name="tglacc_proposal"
                                             value="{{ old('tglacc_proposal') }}"
                                             placeholder="Write tglacc_proposal here..."

@@ -15,6 +15,8 @@ class LandingController extends Controller
     public function index()
     {
         $daftardosen = Dosen::all();
+        $yudisium = PdYudisium::where('user_create', Auth::user()->id)->get();
+
         $proposal = PdSempro::where('tb_daftar_sempro.user_create', Auth::user()->id)
             ->leftJoin('tb_dok_sempro', 'tb_dok_sempro.id_daftar_sempro', '=', 'tb_daftar_sempro.id')
             ->leftJoin('tb_jadwal_sempro', 'tb_jadwal_sempro.id_proposal', '=', 'tb_daftar_sempro.id')
@@ -43,7 +45,22 @@ class LandingController extends Controller
                 'tb_jadwal_skripsi.id as id_jadwal',
             )
             ->get();
+        
+            $yudis= PdYudisium::where('tb_daftar_yudis.user_create', Auth::user()->id)
+            ->leftJoin('tb_daftar_skripsi', 'tb_daftar_skripsi.id', '=', 'tb_daftar_yudis.user_create')
+            ->leftJoin('tb_jadwal_skripsi', 'tb_jadwal_skripsi.id_skripsi', '=', 'tb_daftar_yudis.user_create')
+            ->select(
+                'tb_daftar_yudis.*',
+                'tb_daftar_skripsi.nim',
+                'tb_daftar_skripsi.nama_mahasiswa',
+                'tb_daftar_skripsi.judul_skripsi',
+                'tb_daftar_skripsi.no_hp',
+                'tb_jadwal_skripsi.tanggal',
+                'tb_jadwal_skripsi.waktu_mulai',
 
+            )
+            ->orderByDesc('tb_daftar_yudis.created_at')
+            ->get();
         // $status_proposal = PdSempro::where('tb_daftar_sempro.user_create', Auth::user()->id)
         //     ->first('status');
         // // dd($status_proposal);
@@ -77,7 +94,9 @@ class LandingController extends Controller
             'skripsi',
             'statusSempro',
             'statusSkripsi',
-            'statusYudisium'
+            'statusYudisium',
+            'yudisium',
+            'yudis'
         ));
     }
 }

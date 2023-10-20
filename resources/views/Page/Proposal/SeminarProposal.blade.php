@@ -130,7 +130,8 @@
                                             @if (Auth::user()->level == 'Mahasiswa')
                                             @else
                                                 <td class="px-2.5 py-2">
-                                                    <div class="px-3 py-1 text-center text-black rounded {{ $data->status == 'Terbuat' ? 'text-green-700 bg-green-300' : 'bg-pink-300 text-pink-700' }}">
+                                                    <div
+                                                        class="px-3 py-1 text-center text-black rounded {{ $data->status == 'Terbuat' ? 'text-green-700 bg-green-300' : 'bg-pink-300 text-pink-700' }}">
                                                         {{ $data->status }}
                                                     </div>
                                                 </td>
@@ -158,7 +159,8 @@
                                                             <li>
                                                                 <a href="/proposal/{{ $data->id }}/edit"
                                                                     class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center">
-                                                                    <div class="flex items-center justify-end mx-auto w-28">
+                                                                    <div class="flex items-center justify-end mx-auto w-28"
+                                                                        target="_blank">
                                                                         <iconify-icon icon="tabler:edit"
                                                                             class="text-[18px] mr-2">
                                                                         </iconify-icon>
@@ -170,7 +172,8 @@
                                                         <li>
                                                             <a href="{{ url("/proposal/{$data->id}") }}"
                                                                 class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
-                                                                <div class="flex items-center justify-end mx-auto w-28">
+                                                                <div class="flex items-center justify-end mx-auto w-28"
+                                                                    target="_blank">
                                                                     <iconify-icon icon="iconamoon:eye"
                                                                         class="text-[18px] mr-2"></iconify-icon>
                                                                     <p class="text-sm">Show</p>
@@ -180,7 +183,8 @@
                                                         <li>
                                                             <a href="{{ url("/proposal/hasilformproposal/{$data->id}") }}"
                                                                 class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
-                                                                <div class="flex items-center justify-end mx-auto w-28">
+                                                                <div class="flex items-center justify-end mx-auto w-28"
+                                                                    target="_blank">
                                                                     <iconify-icon icon="ic:round-download"
                                                                         class="text-[20px] mr-2"></iconify-icon>
                                                                     {{-- <iconify-icon icon="iconamoon:eye"
@@ -189,6 +193,25 @@
                                                                 </div>
                                                             </a>
                                                         </li>
+                                                        @php
+                                                            $status = $data->status; // Pastikan $data->status berisi status yang sesuai
+                                                        @endphp
+
+                                                        @if ($status === 'Terjadwal')
+                                                            <li>
+                                                                <a href="{{ url("/proposal/hasilformproposal/{$data->id}/complete") }}"
+                                                                    class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                    <div
+                                                                        class="flex items-center justify-end mx-auto w-28">
+                                                                        <iconify-icon
+                                                                            icon="material-symbols:bookmark-added"
+                                                                            class="text-[20px] mr-2"></iconify-icon>
+                                                                        <p class="text-sm">Selesaikan</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        @endif
+
                                                         @if (Auth::user()->level == 'Mahasiswa')
                                                         @else
                                                             <li>

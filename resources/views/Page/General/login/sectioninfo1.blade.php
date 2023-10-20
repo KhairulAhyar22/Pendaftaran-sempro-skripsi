@@ -289,7 +289,7 @@
     @endphp
     <div class="max-w-screen-xl items-center justify-between mx-auto pt-2 px-4 mb-3">
         <div class="flex flex-col lg:p-4 p-4 mb-3 rounded-[5px] w-full">
-            <div class="mb-10">
+            <div class="mb-5">
                 <p class="text-xl pb-4 text-center text-white"><strong>Jadwal Seminar Proposal</strong></p>
                 <div class="flex flex-row justify-between">
                     @php
@@ -301,7 +301,7 @@
                             @php
                                 $dayName = \Carbon\Carbon::parse($day)->isoFormat('dddd');
                                 $datasForDayS = $datasByDateS[$day] ?? [];
-
+                                
                                 // Hitung tanggal berdasarkan hari dalam loop
                                 $today = Carbon::now();
                                 $dayOfWeek = Carbon::parse($day);
@@ -337,7 +337,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-5">
                 <p class="text-xl pb-4 text-center text-white"><strong>Jadwal Ujian Skripsi</strong></p>
                 <div class="flex flex-row justify-between">
                     @php
@@ -349,7 +349,7 @@
                             @php
                                 $dayName = \Carbon\Carbon::parse($day)->isoFormat('dddd');
                                 $datasForDayU = $datasByDateU[$day] ?? [];
-
+                                
                                 // Hitung tanggal berdasarkan hari dalam loop
                                 $today = Carbon::now();
                                 $dayOfWeek = Carbon::parse($day);
@@ -385,7 +385,29 @@
                     @endforeach
                 </div>
             </div>
+            <div class="mb-5">
+                <p class="text-xl pb-4 text-center text-white"><strong>Jadwal Yudisium</strong></p>
+                <div class="min-h-[300px] min-w-[190px] p-2 rounded-[5px] border border-emerald-50 shadow-md">
+                    <div class="flex flex-col justify-between">
+                        @foreach ($jadwalyudis as $data)
+                            <div
+                                class="flex w-full flex-row gap-2 items-center my-1 shadow rounded-md p-1 bg-orange-100">
+                                <div class="border-r-4 p-2 py-2 border-black text-2xl font-black uppercase">
+                                    <p>{{ $data->periode }} {{ $data->tahun }}</p>
+                                </div>
+                                <div class="items-center ">
+                                    <p class="uppercase text-black  font-semibold">
+                                        <b>{{ $data->tempat }}</b></p>
+                                    <p class="text-black">
+                                        <span class="text-green-700">{{ \Carbon\Carbon::parse($data->tanggal)->format('l, d F Y') }}
+                                       </span> | <span class="text-red-500">{{ \Carbon\Carbon::parse($data->waktu)->format('H:i') }} WITA </span> 
+                                    </p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-

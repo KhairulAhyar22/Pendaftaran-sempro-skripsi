@@ -117,7 +117,7 @@
                                                         aria-labelledby="dropdownDefaultButton">
                                                         <li>
                                                             <a href="/skripsi/{{ $data->id }}/edit"
-                                                                class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center">
+                                                                class="block px-4 py-[7px] text-green-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-center" target="_blank">
                                                                 <div class="flex items-center justify-end w-28 mx-auto">
                                                                     <iconify-icon icon="tabler:edit"
                                                                         class="text-[18px] mr-2">
@@ -128,7 +128,7 @@
                                                         </li>
                                                         <li>
                                                             <a href="{{ url("/skripsi/{$data->id}") }}"
-                                                                class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                class="block px-4 py-[7px] text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end" target="_blank">
                                                                 <div class="flex items-center justify-end w-28 mx-auto">
                                                                     <iconify-icon icon="iconamoon:eye"
                                                                         class="text-[18px] mr-2"></iconify-icon>
@@ -139,7 +139,7 @@
 
                                                         <li>
                                                             <a href="/skripsi/hasilformskripsi/{{ $data->id }}"
-                                                                class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end" target="_blank">
                                                                 <div class="flex items-center justify-end w-28 mx-auto">
                                                                     {{-- <iconify-icon icon="simple-line-icons:check"
                                                                         class="text-[18px] mr-2"></iconify-icon> --}}
@@ -149,6 +149,24 @@
                                                                 </div>
                                                             </a>
                                                         </li>
+                                                        @php
+                                                            $status = $data->status; // Pastikan $data->status berisi status yang sesuai
+                                                        @endphp
+
+                                                        @if ($status === 'Terjadwal')
+                                                            <li>
+                                                                <a href="{{ url("/skripsi/hasilformskripsi/{$data->id}/complete") }}"
+                                                                    class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                    <div
+                                                                        class="flex items-center justify-end mx-auto w-28">
+                                                                        <iconify-icon
+                                                                            icon="material-symbols:bookmark-added"
+                                                                            class="text-[20px] mr-2"></iconify-icon>
+                                                                        <p class="text-sm">Selesaikan</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        @endif
                                                         <li>
                                                             <form action="/skripsi/{{ $data->id }}" method="POST"
                                                                 onsubmit="return confirm('Anda yakin akan hapus?')">

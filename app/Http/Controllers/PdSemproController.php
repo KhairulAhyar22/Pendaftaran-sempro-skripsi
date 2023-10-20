@@ -325,5 +325,20 @@ public function destroy($id)
     }
 }
 
+public function completeProposal($id)
+{
+    // Cari proposal berdasarkan ID
+    $proposal = PdSempro::find($id);
+
+    if (!$proposal) {
+        // Proposal tidak ditemukan, lakukan penanganan kesalahan yang sesuai
+    }
+
+    // Ubah status proposal menjadi "Selesai"
+    $proposal->status = 'Selesai';
+    $proposal->save();
+    return redirect()->back();
+    // Redirect atau lakukan tindakan lain yang sesuai
+}
 
 }

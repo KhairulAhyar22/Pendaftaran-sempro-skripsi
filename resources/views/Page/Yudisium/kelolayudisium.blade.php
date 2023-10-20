@@ -132,7 +132,7 @@
 
                                                         <li>
                                                             {{-- <a href="/skripsi/hasilformskripsi/{{ $data->id }}" --}}
-                                                                <a href="{{ route('unduh.ppt', ['id' => $data->id]) }}" class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end">
+                                                                <a href="{{ route('unduh.ppt', ['id' => $data->id]) }}" class="block px-4 py-[7px] text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white justify-end" target="_blank">
                                                                 <div class="flex items-center justify-end w-28 mx-auto">
                                                                     {{-- <iconify-icon icon="simple-line-icons:check"
                                                                         class="text-[18px] mr-2"></iconify-icon> --}}

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\JadwalSempro;
 use Illuminate\Http\Request;
 use App\Models\JadwalSkripsi;
+use App\Models\JadwalYudisium;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -94,7 +95,7 @@ public function index()
 {
     $daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     $datasByDate = [];
-
+    $jadwalyudis =JadwalYudisium::all();
     foreach ($daysOfWeek as $day) {
         // Mendapatkan tanggal hari ini
         $today = Carbon::now();
@@ -130,6 +131,7 @@ public function index()
     return view('page.general.login.content.login', [
         "datasByDateS" => $datasByDateS,
         "datasByDateU" => $datasByDateU,
+        "jadwalyudis"=>$jadwalyudis,
 ]);
 }
 

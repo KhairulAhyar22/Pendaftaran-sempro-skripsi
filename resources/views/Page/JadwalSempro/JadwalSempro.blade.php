@@ -41,10 +41,7 @@
                                             </th>
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             Nama Mahasiswa
-                                        </th>
-                                        <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
-                                            NIM
-                                        </th>
+                                        </th>                                        
                                         <th scope="col" class="px-3 py-4 font-medium border-l-2 border-gray-200">
                                             No Surat
                                         </th>
@@ -72,25 +69,23 @@
                                                     {{ $loop->iteration }}
                                                 </th>
                                             <td class="px-2.5 py-2">
-                                                {{ $data->nama_mahasiswa }}
+                                                <span class="uppercase">{{ $data->nama_mahasiswa }}</span> <br>
+                                                <span class="font-light font-italic text-sm">{{ $data->nim }}</span>
                                             </td>
-                                            <td class="px-2.5 py-2">
-                                                {{ $data->nim }}
-                                            </td>
-                                            <td class="px-2.5 py-2">
+                                            <td class="px-2.5 py-2 text-center">
                                                 {{ $data->no_surat }}
                                             </td>
                                             <td class="px-2.5 py-2 text-center">
-                                                {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }} <br>
-                                                - <br>
+                                                {{ Carbon::parse($data->tanggal)->locale('id')->isoFormat('dddd, D MMMM Y') }}
+                                                 <br>
                                                 {{ Carbon::parse($data->waktu)->format('H:i') }} WITA
                                             </td>
-                                            <td class="px-2.5 py-2">
+                                            <td class="px-2.5 py-2 text-center">
                                                 {{ $data->tempat }}
                                             </td>
                                             <td class="px-2.5 py-2">
                                                 {{ $data->ketua_tim }} <br>
-                                                - <br>
+                                                
                                                 {{ $data->anggota }}
                                             </td>
                                             <td

@@ -276,4 +276,19 @@ class PdSkripsiController extends Controller
         ]);
         return redirect()->back();
     }
+    public function completeSkripsi($id)
+{
+    // Cari proposal berdasarkan ID
+    $skripsi = PdSkripsi::find($id);
+
+    if (!$skripsi) {
+        // Proposal tidak ditemukan, lakukan penanganan kesalahan yang sesuai
+    }
+
+    // Ubah status proposal menjadi "Selesai"
+    $skripsi->status = 'Selesai';
+    $skripsi->save();
+    return redirect()->back();
+    // Redirect atau lakukan tindakan lain yang sesuai
+}
 }
